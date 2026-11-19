@@ -1,0 +1,283 @@
+/* /tariff/rules only — never under .tariff-ui (keeps 3/4·4/4 Compact intact) */
+
+.tariff-rules-ui {
+  min-width: 0;
+  width: 100%;
+}
+
+/* PageHeader·중복 crumb 제거 — 문서 헤더(연도·통칙 제목)만 유지 */
+
+.tariff-rules-ui .tariff-rules-layout {
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .tariff-rules-ui .tariff-rules-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Year card */
+.tariff-rules-ui .tariff-rules-years {
+  background: #fff;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  position: sticky;
+  top: 8px;
+}
+
+.tariff-rules-ui .tariff-rules-years-hd {
+  padding: 11px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e2f4f;
+  background: #eff6ff;
+  border-bottom: 1px solid #e5e9ef;
+}
+
+.tariff-rules-ui .tariff-rules-years a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+.tariff-rules-ui .tariff-rules-years a:hover {
+  background: #f8fafc;
+  text-decoration: none;
+  color: #1e2f4f;
+}
+
+.tariff-rules-ui .tariff-rules-years a.on {
+  background: #eff6ff;
+  color: #3b82f6;
+  border-left-color: #3b82f6;
+  font-weight: 700;
+}
+
+/* Document card */
+.tariff-rules-ui .tariff-rules-doc {
+  background: #fff;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.tariff-rules-ui .tariff-rules-doc-hd {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  background: #eff6ff;
+  border-bottom: 1px solid #e5e9ef;
+}
+
+.tariff-rules-ui .tariff-rules-doc-hd-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.tariff-rules-ui .tariff-rules-year-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tariff-rules-ui .tariff-rules-doc-hd h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e2f4f;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  line-height: 1.35;
+}
+
+.tariff-rules-ui .tariff-rules-print:not(.sl-ui-btn) {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #e5e9ef;
+  border-radius: 8px;
+  background: #fff;
+  color: #1e2f4f;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.tariff-rules-ui .tariff-rules-print:not(.sl-ui-btn):hover {
+  background: #f8fafc;
+}
+
+.tariff-rules-ui .tariff-rules-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 0;
+  padding: 6px 12px;
+  border-bottom: 1px solid #e5e9ef;
+  background: #fafbfc;
+}
+
+.tariff-rules-ui .tariff-rules-jump a {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.tariff-rules-ui .tariff-rules-jump a:hover {
+  color: #3b82f6;
+  background: #eff6ff;
+  text-decoration: none;
+}
+
+.tariff-rules-ui .tariff-rules-body {
+  padding: 18px 20px 28px;
+  max-width: 920px;
+}
+
+.tariff-rules-ui .hs-rules-src {
+  margin: 0 0 14px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
+
+.tariff-rules-ui .hs-rules-intro-title {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e2f4f;
+  letter-spacing: -0.02em;
+}
+
+.tariff-rules-ui .hs-rules-intro {
+  margin: 0 0 16px;
+  color: #1f2937;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
+
+.tariff-rules-ui .hs-rule {
+  padding: 16px 0;
+  border-top: 1px solid #e5e9ef;
+  scroll-margin-top: 72px;
+}
+
+.tariff-rules-ui .hs-rule:first-of-type {
+  border-top: 0;
+  padding-top: 4px;
+}
+
+.tariff-rules-ui .hs-rule-kicker {
+  margin: 0 0 6px;
+  color: #64748b;
+  font-size: 12.5px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.tariff-rules-ui .hs-rule h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e2f4f;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+}
+
+.tariff-rules-ui .hs-rule h4 {
+  margin: 0 0 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.tariff-rules-ui .hs-rule > p {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.tariff-rules-ui .hs-rule .hs-rule-note,
+.tariff-rules-ui .hs-rule .hs-rule-foot {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border: 1px solid #eef2f6;
+  border-radius: 8px;
+}
+
+.tariff-rules-ui .hs-rule .hs-rule-note p,
+.tariff-rules-ui .hs-rule .hs-rule-foot p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #334155;
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
+
+.tariff-rules-ui #rule-intro {
+  scroll-margin-top: 72px;
+  margin-bottom: 8px;
+}
+
+@media print {
+  .tariff-rules-ui .tariff-rules-years,
+  .tariff-rules-ui .tariff-rules-jump,
+  .tariff-rules-ui .tariff-rules-print {
+    display: none !important;
+  }
+
+  .tariff-rules-ui .tariff-rules-layout {
+    display: block;
+  }
+
+  .tariff-rules-ui .tariff-rules-doc {
+    box-shadow: none;
+    border: 0;
+  }
+
+  .tariff-rules-ui .tariff-rules-body {
+    max-width: none;
+  }
+}

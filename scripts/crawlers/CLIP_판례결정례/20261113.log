@@ -1,0 +1,75 @@
+2026-11-13 13:23:41 [INFO] Log file: D:\CursorProject\smart-law-ai\scripts\crawlers\CLIP_판례결정례\20261113.log
+2026-11-13 13:23:41 [INFO] Starting CLIP Precedent Crawler
+2026-11-13 13:23:41 [INFO] DB Path: D:/SQLiteDB/smart_law_ai.db
+2026-11-13 13:23:41 [INFO] Attach Path: D:\SQLiteDB\ATTACH\CLIP_PRECEDENT
+2026-11-13 13:23:41 [INFO] DB initialized at D:/SQLiteDB/smart_law_ai.db
+2026-11-13 13:23:41 [INFO] Attachment dir at D:\SQLiteDB\ATTACH\CLIP_PRECEDENT
+2026-11-13 13:23:42 [INFO] Fetching list page 1...
+2026-11-13 13:23:42 [INFO] Total records: 3770, Total pages: 377
+2026-11-13 13:23:42 [INFO] Starting crawl from page 1 to 5 (page_unit=10)
+2026-11-13 13:23:42 [INFO] Fetching list page 1...
+2026-11-13 13:23:42 [INFO] Found 10 items on page 1
+2026-11-13 13:23:42 [INFO] Skipping 관세청-심사-2026-6 (already exists)
+2026-11-13 13:23:42 [INFO] Skipping 관세청-적부심사-2026-19 (already exists)
+2026-11-13 13:23:42 [INFO] Skipping 관세청-적부심사-2026-12 (already exists)
+2026-11-13 13:23:42 [INFO] Skipping 관세청-심사-2026-2 (already exists)
+2026-11-13 13:23:42 [INFO] Skipping 관세청-심사-2026-3 (already exists)
+2026-11-13 13:23:42 [INFO] Skipping 관세청-심사-2026-1 (already exists)
+2026-11-13 13:23:42 [INFO] Skipping 관세청-심사-2026-7 (already exists)
+2026-11-13 13:23:42 [INFO] Skipping 관세청-적부심사-2025-39 (already exists)
+2026-11-13 13:23:42 [INFO] Skipping 관세청-적부심사-2025-29 (already exists)
+2026-11-13 13:23:42 [INFO] Skipping 관세청-적부심사-2025-46 (already exists)
+2026-11-13 13:23:42 [INFO] Completed page 1/5
+2026-11-13 13:23:44 [INFO] Fetching list page 2...
+2026-11-13 13:23:44 [INFO] Found 10 items on page 2
+2026-11-13 13:23:44 [INFO] Skipping 관세청-적부심사-2025-45 (already exists)
+2026-11-13 13:23:44 [INFO] Skipping 관세청-적부심사-2025-37 (already exists)
+2026-11-13 13:23:44 [INFO] Skipping 관세청-적부심사-2025-41 (already exists)
+2026-11-13 13:23:44 [INFO] Skipping 관세청-적부심사-2026-2 (already exists)
+2026-11-13 13:23:44 [INFO] Skipping 관세청-적부심사-2026-5 (already exists)
+2026-11-13 13:23:44 [INFO] Skipping 관세청-적부심사-2025-33 (already exists)
+2026-11-13 13:23:44 [INFO] Skipping 관세청-적부심사-2025-47 (already exists)
+2026-11-13 13:23:44 [INFO] Skipping 관세청-심사-2025-7 (already exists)
+2026-11-13 13:23:44 [INFO] Skipping 관세청-적부심사-2026-1 (already exists)
+2026-11-13 13:23:44 [INFO] Skipping 관세청-적부심사-2025-23 (already exists)
+2026-11-13 13:23:44 [INFO] Completed page 2/5
+2026-11-13 13:23:47 [INFO] Fetching list page 3...
+2026-11-13 13:23:47 [INFO] Found 10 items on page 3
+2026-11-13 13:23:47 [INFO] Skipping 관세청-적부심사-2025-31 (already exists)
+2026-11-13 13:23:47 [INFO] Skipping 관세청-적부심사-2025-36 (already exists)
+2026-11-13 13:23:47 [INFO] Skipping 관세청-적부심사-2026-3 (already exists)
+2026-11-13 13:23:47 [INFO] Skipping 관세청-적부심사-2025-42 (already exists)
+2026-11-13 13:23:47 [INFO] Skipping 관세청-적부심사-2025-38 (already exists)
+2026-11-13 13:23:47 [INFO] Skipping 관세청-심사-2025-8 (already exists)
+2026-11-13 13:23:47 [INFO] Skipping 관세청-적부심사-2025-28 (already exists)
+2026-11-13 13:23:47 [INFO] Skipping 관세청-적부심사-2025-16 (already exists)
+2026-11-13 13:23:47 [INFO] Skipping 부산세관-조심-2025-65 (already exists)
+2026-11-13 13:23:47 [INFO] Skipping 군산세관-조심-2025-72 (already exists)
+2026-11-13 13:23:47 [INFO] Completed page 3/5
+2026-11-13 13:23:49 [INFO] Fetching list page 4...
+2026-11-13 13:23:50 [INFO] Found 10 items on page 4
+2026-11-13 13:23:50 [INFO] Skipping 부산세관-조심-2025-70 (already exists)
+2026-11-13 13:23:50 [INFO] Skipping 평택세관-조심-2025-66 (already exists)
+2026-11-13 13:23:50 [INFO] Skipping 부산세관-조심-2025-60 (already exists)
+2026-11-13 13:23:50 [INFO] Skipping 인천공항세관-조심-2025-75 (already exists)
+2026-11-13 13:23:50 [INFO] Skipping 평택세관-조심-2025-51 (already exists)
+2026-11-13 13:23:50 [INFO] Skipping 관세청-심사-2025-5 (already exists)
+2026-11-13 13:23:50 [INFO] Skipping 서울세관-조심-2025-55 (already exists)
+2026-11-13 13:23:50 [INFO] Skipping 부산세관-조심-2025-50 (already exists)
+2026-11-13 13:23:50 [INFO] Skipping 서울세관-조심-2024-24 (already exists)
+2026-11-13 13:23:50 [INFO] Skipping 서울세관-조심-2024-97 (already exists)
+2026-11-13 13:23:50 [INFO] Completed page 4/5
+2026-11-13 13:23:52 [INFO] Fetching list page 5...
+2026-11-13 13:23:52 [INFO] Found 10 items on page 5
+2026-11-13 13:23:52 [INFO] Skipping 인천공항세관-조심-2025-54 (already exists)
+2026-11-13 13:23:52 [INFO] Skipping 관세청-심사-2025-6 (already exists)
+2026-11-13 13:23:52 [INFO] Skipping 관세청-적부심사-2024-58 (already exists)
+2026-11-13 13:23:52 [INFO] Skipping 관세청-심사-2024-10 (already exists)
+2026-11-13 13:23:52 [INFO] Skipping 인천세관-조심-2025-44 (already exists)
+2026-11-13 13:23:52 [INFO] Skipping 인천세관-조심-2025-59 (already exists)
+2026-11-13 13:23:52 [INFO] Skipping 부산세관-조심-2025-64 (already exists)
+2026-11-13 13:23:52 [INFO] Skipping 부산세관-조심-2025-69 (already exists)
+2026-11-13 13:23:52 [INFO] Skipping 군산세관-조심-2025-56 (already exists)
+2026-11-13 13:23:52 [INFO] Skipping 인천공항세관-조심-2025-68 (already exists)
+2026-11-13 13:23:52 [INFO] Completed page 5/5
+2026-11-13 13:23:53 [INFO] Crawling finished.

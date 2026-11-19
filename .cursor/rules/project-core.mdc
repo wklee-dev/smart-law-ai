@@ -1,0 +1,15 @@
+---
+description: smart-law-ai 공통 — DB·메뉴·API·변경 원칙
+alwaysApply: true
+---
+
+# smart-law-ai 공통
+
+- DB: `D:/SQLiteDB/smart_law_ai.db` (OPEN API·FTA·행정규칙 `admin_rule*`·KITA·관세율표 `tariff_*` 등). `TARIFF_SCHEDULE_DB_PATH` 미설정 시 동일
+- 행정규칙(SQLiteDB): `ADMIN_RULES_DB_PATH` 미설정 시 `smart_law_ai.db` (구 `admin_rules.db`와 분리 유지 가능)
+- 메뉴: `app/components/admin-nav-sections.ts` (셸: `admin-shell.tsx`)
+- dev: `npm run dev` (webpack·12GB). 죽으면 `npm run dev:clean` 또는 `npm run dev:loop`
+- API: `app/api/*`, 서버 로직: `app/lib/*-server.ts`
+- Next.js: `node_modules/next/dist/docs/` 참고 (`AGENTS.md`)
+- 변경은 최소 diff, 기존 패턴 따르기
+- 커밋/PR은 사용자 요청 시에만

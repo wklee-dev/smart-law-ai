@@ -1,0 +1,1545 @@
+[
+  {
+    "file": "2025년10월_EU_관세율표.xlsx",
+    "year": "2025",
+    "country_ko": "EU",
+    "code_in_sheet": "EEC",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "한국협정세율",
+      "ERGA OMNES",
+      "All Third Countries (ALLTC)",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev18.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev19.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev20.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev21.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev23.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev24.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev25.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev26.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev27.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev28.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev29.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev30.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev31.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_미국_관세율표_rev32.xlsx",
+    "year": "2025",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2025년_아랍에메리트_관세율표.xlsx",
+    "year": "2025",
+    "country_ko": "아랍에메리트",
+    "code_in_sheet": "ARE",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1"
+    ]
+  },
+  {
+    "file": "2026년04월_미국_관세율표_Rev6.xlsx",
+    "year": "2026",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년04월_일본_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "일본",
+    "code_in_sheet": "JPN",
+    "n_headers": 37,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위 1",
+      "단위 2",
+      "기본세율",
+      "잠정세율",
+      "특혜세율",
+      "WTO협정",
+      "아세안",
+      "싱가폴"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년07월_EU_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "EU",
+    "code_in_sheet": "EEC",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "한국협정세율",
+      "ERGA OMNES",
+      "All Third Countries (ALLTC)",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년07월_미국_관세율표_Rev12.xlsx",
+    "year": "2026",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년07월_영국_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "영국",
+    "code_in_sheet": "GBR",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "한국협정세율",
+      "Third country duty\n(기본세율)",
+      "Non preferential duty under authorised use\n(비특혜 기본관세율)",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_EU_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "EU",
+    "code_in_sheet": "EEC",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "한국협정세율",
+      "ERGA OMNES",
+      "All Third Countries (ALLTC)",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_남아프리카공화국_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "남아프리카공화국",
+    "code_in_sheet": "ZAF",
+    "n_headers": 14,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      "EU/UK(유럽/영국)",
+      "EFTA(유럽자유무역연합)",
+      "SADC(남아프리카 개발 공동체)",
+      "MERCOSUR(메르코수르 남미 공동 시장)",
+      "AfCFTA(아프리카대륙 자유무역지대)",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_노르웨이_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "노르웨이",
+    "code_in_sheet": "NOR",
+    "n_headers": 13,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      "협정세율",
+      "EFTA",
+      "",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_뉴질랜드_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "뉴질랜드",
+    "code_in_sheet": "NZL",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Normal Tariff\n기본세율",
+      "KNZFTA\n한국-뉴질랜드 FTA",
+      "RCEP"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_니카라과_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "니카라과",
+    "code_in_sheet": "NIC",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "협정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_대만_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "대만",
+    "code_in_sheet": "TWN",
+    "n_headers": 16,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "중량단위",
+      "수량단위",
+      "Column I - WTO 국가 및 대만과 상호관계를\n 체결한 국가 또는 지역의 관세율",
+      "Column II - 자유무역협정 체결 국가, \n저개발/개발도상 국가 또는 지역의 관세율",
+      "Column I 과 Column II 에 \n적용되지 않는 국가또는 지역의 관세율",
+      "세금특별조항",
+      "수출입규정\n(수입)",
+      "수출입규정\n(수출)"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_라오스_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "라오스",
+    "code_in_sheet": "LAO",
+    "n_headers": 12,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "협정세율",
+      "APTA",
+      "RCEP",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_러시아_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "러시아",
+    "code_in_sheet": "RUS",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_말레이시아_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "말레이시아",
+    "code_in_sheet": "MYS",
+    "n_headers": 19,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      "소비세율",
+      "부가세율",
+      "관세할당",
+      "수출세율",
+      "과세 1",
+      "과세 2",
+      "과세 3"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_멕시코_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "멕시코",
+    "code_in_sheet": "MEX",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_몽골_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "몽골",
+    "code_in_sheet": "MNG",
+    "n_headers": 9,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "APTA"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_미국_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "미국",
+    "code_in_sheet": "USA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Rate of Duty 1 General\n기본세율",
+      "Rate of Duty 1 Special\n협정세율",
+      "Rate of duty 2\n쿠바, 북한세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_미얀마_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "미얀마",
+    "code_in_sheet": "MYA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      "협정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_방글라데시_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "방글라데시",
+    "code_in_sheet": "BGD",
+    "n_headers": 9,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_베트남_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "베트남",
+    "code_in_sheet": "VNM",
+    "n_headers": 34,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "Normal Import",
+      "VKFTA\n베트남-대한민국",
+      "AKFTA\n아세안-대한민국",
+      "MFN\n특혜세율",
+      "ACFTA\n아세안-중국",
+      "ATIGA\n아세안",
+      "AJCEP\n아세안-일본"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_브라질_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "브라질",
+    "code_in_sheet": "BRA",
+    "n_headers": 9,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_브루나이_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "브루나이",
+    "code_in_sheet": "BRU",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "협정세율",
+      "RCEP",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_사우디아라비아_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "사우디아라비아",
+    "code_in_sheet": "SAU",
+    "n_headers": 9,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1"
+    ]
+  },
+  {
+    "file": "2026년_스위스_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "스위스",
+    "code_in_sheet": "CHE",
+    "n_headers": 55,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "대한민국",
+      "북한",
+      "알바니아",
+      "안도라",
+      "캐나다",
+      "칠레",
+      "중국"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet3",
+      "Sheet1 (2)"
+    ]
+  },
+  {
+    "file": "2026년_싱가포르_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "싱가포르",
+    "code_in_sheet": "SGP",
+    "n_headers": 12,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      "특혜세율",
+      "소비세율",
+      "한-싱가포르\n협정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_아랍에메리트_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "아랍에메리트",
+    "code_in_sheet": "ARE",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      "한-아랍에미리트  FTA",
+      ""
+    ],
+    "sheets": [
+      "Sheet1"
+    ]
+  },
+  {
+    "file": "2026년_아이슬란드_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "아이슬란드",
+    "code_in_sheet": "ISL",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "협정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_엘살바도르_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "엘살바도르",
+    "code_in_sheet": "SLV",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "협정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_영국_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "영국",
+    "code_in_sheet": "GBR",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "한국협정세율",
+      "Third country duty\n(기본세율)",
+      "Non preferential duty under authorised use\n(비특혜 기본관세율)",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_온두라스_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "온두라스",
+    "code_in_sheet": "HND",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "협정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_우즈베키스탄_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "우즈베키스탄",
+    "code_in_sheet": "UZB",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      "잠정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_이스라엘_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "이스라엘",
+    "code_in_sheet": "ISR",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "협정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_인도네시아_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "인도네시아",
+    "code_in_sheet": "IDN",
+    "n_headers": 13,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율\nImport Duty",
+      "아세안-한국 협정세율\nAKFTA Import Duty",
+      "아세안 무역협정\nATIGA",
+      "한-인도네시아-포괄적경제동반자협정\nCEPA",
+      "RCEP협정세율-대한민국\nRCEP_KOREA",
+      ""
+    ],
+    "sheets": [
+      "Sheet1"
+    ]
+  },
+  {
+    "file": "2026년_일본_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "일본",
+    "code_in_sheet": "JPN",
+    "n_headers": 37,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위 1",
+      "단위 2",
+      "기본세율",
+      "잠정세율",
+      "특혜세율",
+      "WTO협정",
+      "아세안",
+      "싱가폴"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_중국_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "중국",
+    "code_in_sheet": "CHN",
+    "n_headers": 42,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "최혜국",
+      "잠정세율",
+      "대한민국",
+      "APTA",
+      "아시아태평양특별",
+      "아세안",
+      "아세안_캄보디아"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_칠레_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "칠레",
+    "code_in_sheet": "CHL",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      "한-칠레 협정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_캄보디아_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "캄보디아",
+    "code_in_sheet": "CAM",
+    "n_headers": 15,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      "AKFTA",
+      "특별세",
+      "부가세",
+      "RCEP",
+      "한-캄보디아 FTA",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_캐나다_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "캐나다",
+    "code_in_sheet": "CAN",
+    "n_headers": 33,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "최혜국",
+      "일반세율",
+      "대한민국\n세율",
+      "오스트레일리아\n 세율",
+      "뉴질랜드\n세율",
+      "독립 국가 공동체\n카리브해 제도 국가 세율",
+      "저개발국가\n 세율",
+      "일반적\n특혜 세율"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_코스타리카_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "코스타리카",
+    "code_in_sheet": "CRI",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "협정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_콜롬비아_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "콜롬비아",
+    "code_in_sheet": "COL",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "콜롬비아-대한민국 협정세율",
+      "최혜국세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_태국_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "태국",
+    "code_in_sheet": "THA",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "아세안-한국\n협정세율",
+      "상한세율",
+      "RECP",
+      ""
+    ],
+    "sheets": [
+      "Sheet1"
+    ]
+  },
+  {
+    "file": "2026년_파나마_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "파나마",
+    "code_in_sheet": "PAN",
+    "n_headers": 10,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "기본세율",
+      "협정세율",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_페루_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "페루",
+    "code_in_sheet": "PER",
+    "n_headers": 18,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "원문품명",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "종가세",
+      "내국소비세",
+      "할증료",
+      "페루-대한민국 협정세율",
+      "부가세",
+      "도시진흥세",
+      "특정법률"
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_필리핀_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "필리핀",
+    "code_in_sheet": "PHL",
+    "n_headers": 12,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "한-아세안 무역협정\nAKFTA",
+      "최혜국\nMFN",
+      "아세안 무역협정\nATIGA",
+      "RCEP 협정세율\nRCEP KOREA",
+      "Korea-Philippines FTA",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  },
+  {
+    "file": "2026년_호주_관세율표.xlsx",
+    "year": "2026",
+    "country_ko": "호주",
+    "code_in_sheet": "AUS",
+    "n_headers": 11,
+    "headers_sample": [
+      "순번",
+      "년도",
+      "국가코드",
+      "세번",
+      "영문품명",
+      "한글품명",
+      "단위",
+      "기본세율",
+      "대한민국\n협정세율",
+      "RCEP",
+      ""
+    ],
+    "sheets": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ]
+  }
+]

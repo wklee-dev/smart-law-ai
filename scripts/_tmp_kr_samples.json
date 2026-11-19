@@ -1,0 +1,819 @@
+{
+  "schema": {
+    "tariff_section": {
+      "columns": [
+        {
+          "name": "year",
+          "type": "INTEGER",
+          "pk": 1,
+          "notnull": 1
+        },
+        {
+          "name": "country_code",
+          "type": "TEXT",
+          "pk": 2,
+          "notnull": 1
+        },
+        {
+          "name": "country_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "section_code",
+          "type": "TEXT",
+          "pk": 3,
+          "notnull": 1
+        },
+        {
+          "name": "section_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "crawled_at",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "record_uuid",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        }
+      ],
+      "count": 176
+    },
+    "tariff_chapter": {
+      "columns": [
+        {
+          "name": "year",
+          "type": "INTEGER",
+          "pk": 1,
+          "notnull": 1
+        },
+        {
+          "name": "country_code",
+          "type": "TEXT",
+          "pk": 2,
+          "notnull": 1
+        },
+        {
+          "name": "country_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "section_code",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "section_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "chapter_code",
+          "type": "TEXT",
+          "pk": 3,
+          "notnull": 1
+        },
+        {
+          "name": "chapter_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "chapter_name_en",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "crawled_at",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "record_uuid",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        }
+      ],
+      "count": 772
+    },
+    "tariff_heading": {
+      "columns": [
+        {
+          "name": "year",
+          "type": "INTEGER",
+          "pk": 1,
+          "notnull": 1
+        },
+        {
+          "name": "country_code",
+          "type": "TEXT",
+          "pk": 2,
+          "notnull": 1
+        },
+        {
+          "name": "country_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "section_code",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "chapter_code",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "heading_code",
+          "type": "TEXT",
+          "pk": 3,
+          "notnull": 1
+        },
+        {
+          "name": "heading_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "heading_name_en",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "crawled_at",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "record_uuid",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        }
+      ],
+      "count": 9773
+    },
+    "tariff_item": {
+      "columns": [
+        {
+          "name": "year",
+          "type": "INTEGER",
+          "pk": 1,
+          "notnull": 1
+        },
+        {
+          "name": "country_code",
+          "type": "TEXT",
+          "pk": 2,
+          "notnull": 1
+        },
+        {
+          "name": "country_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "section_code",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "chapter_code",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "heading_code",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "hs_code",
+          "type": "TEXT",
+          "pk": 3,
+          "notnull": 1
+        },
+        {
+          "name": "hs_code_6",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "item_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "item_name_en",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "basic_rate",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "elastic_rate",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "is_complete",
+          "type": "INTEGER",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "crawled_at",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "record_uuid",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "elastic_codes",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "elastic_rates",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "simple_refund",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "reduction",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "origin",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "refund_crawled",
+          "type": "INTEGER",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "unit_weight",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "unit_qty",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "unit_crawled",
+          "type": "INTEGER",
+          "pk": 0,
+          "notnull": 0
+        }
+      ],
+      "count": 139094
+    },
+    "tariff_item_detail": {
+      "columns": [
+        {
+          "name": "record_uuid",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "year",
+          "type": "INTEGER",
+          "pk": 1,
+          "notnull": 1
+        },
+        {
+          "name": "country_code",
+          "type": "TEXT",
+          "pk": 2,
+          "notnull": 1
+        },
+        {
+          "name": "country_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "hs_code",
+          "type": "TEXT",
+          "pk": 3,
+          "notnull": 1
+        },
+        {
+          "name": "rate_code",
+          "type": "TEXT",
+          "pk": 4,
+          "notnull": 1
+        },
+        {
+          "name": "rate_value",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "rate_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "crawled_at",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        }
+      ],
+      "count": 2731644
+    },
+    "tariff_req_condition": {
+      "columns": [
+        {
+          "name": "record_uuid",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "year",
+          "type": "INTEGER",
+          "pk": 1,
+          "notnull": 1
+        },
+        {
+          "name": "country_code",
+          "type": "TEXT",
+          "pk": 2,
+          "notnull": 1
+        },
+        {
+          "name": "country_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "hs_code",
+          "type": "TEXT",
+          "pk": 3,
+          "notnull": 1
+        },
+        {
+          "name": "req_type",
+          "type": "TEXT",
+          "pk": 4,
+          "notnull": 1
+        },
+        {
+          "name": "req_category",
+          "type": "TEXT",
+          "pk": 5,
+          "notnull": 1
+        },
+        {
+          "name": "req_content",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "crawled_at",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        }
+      ],
+      "count": 557658
+    },
+    "tariff_req_strategic": {
+      "columns": [
+        {
+          "name": "record_uuid",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "year",
+          "type": "INTEGER",
+          "pk": 0,
+          "notnull": 1
+        },
+        {
+          "name": "country_code",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 1
+        },
+        {
+          "name": "country_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "hs_code",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 1
+        },
+        {
+          "name": "cls_no",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "item_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "ctrl_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "model_spec",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "ctrl_detail",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "manufacturer",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "remark",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "crawled_at",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        }
+      ],
+      "count": 14428
+    },
+    "crawl_log": {
+      "columns": [
+        {
+          "name": "crawl_id",
+          "type": "TEXT",
+          "pk": 1,
+          "notnull": 0
+        },
+        {
+          "name": "year",
+          "type": "INTEGER",
+          "pk": 0,
+          "notnull": 1
+        },
+        {
+          "name": "country_code",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 1
+        },
+        {
+          "name": "country_name",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "started_at",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "finished_at",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "last_chapter",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "total_sections",
+          "type": "INTEGER",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "total_chapters",
+          "type": "INTEGER",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "total_headings",
+          "type": "INTEGER",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "total_items",
+          "type": "INTEGER",
+          "pk": 0,
+          "notnull": 0
+        },
+        {
+          "name": "error_message",
+          "type": "TEXT",
+          "pk": 0,
+          "notnull": 0
+        }
+      ],
+      "count": 8
+    }
+  },
+  "samples": {
+    "section": [
+      {
+        "year": 2026,
+        "country_code": "KR",
+        "country_name": "한국",
+        "section_code": "01",
+        "section_name": "제01부 살아 있는 동물과 동물성 생산품",
+        "crawled_at": "2026-05-28 19:32:12",
+        "record_uuid": "4f3fde82-0ffe-4ee4-a317-668e263c928c"
+      },
+      {
+        "year": 2026,
+        "country_code": "KR",
+        "country_name": "한국",
+        "section_code": "02",
+        "section_name": "제02부 식물성 생산품",
+        "crawled_at": "2026-05-28 19:32:12",
+        "record_uuid": "cba5061a-3013-4137-af3a-f2ee704db50b"
+      },
+      {
+        "year": 2026,
+        "country_code": "KR",
+        "country_name": "한국",
+        "section_code": "03",
+        "section_name": "제03부 동물성ㆍ식물성ㆍ미생물성 지방과 기름 및 이들의 분해생산물, 조제한 식용 지방과 동물성ㆍ식물성 왁스",
+        "crawled_at": "2026-05-28 19:32:12",
+        "record_uuid": "0652060a-0cf5-48e7-960d-d1ca9cde1a6c"
+      }
+    ],
+    "chapter": [
+      {
+        "year": 2026,
+        "country_code": "KR",
+        "country_name": "한국",
+        "section_code": "01",
+        "section_name": "제01부 살아 있는 동물과 동물성 생산품",
+        "chapter_code": "01",
+        "chapter_name": "제1류 살아 있는 동물",
+        "chapter_name_en": "Live animals",
+        "crawled_at": "2026-05-28 19:32:12",
+        "record_uuid": "34782afe-90be-4f24-9047-c6d004bbc954"
+      },
+      {
+        "year": 2026,
+        "country_code": "KR",
+        "country_name": "한국",
+        "section_code": "01",
+        "section_name": "제01부 살아 있는 동물과 동물성 생산품",
+        "chapter_code": "02",
+        "chapter_name": "제2류 육과 식용 설육(屑肉)",
+        "chapter_name_en": "Meat and edible meat offal",
+        "crawled_at": "2026-05-28 19:32:12",
+        "record_uuid": "804f5155-f798-4323-96b3-607c18735d89"
+      }
+    ],
+    "heading": [
+      {
+        "year": 2026,
+        "country_code": "KR",
+        "country_name": "한국",
+        "section_code": "01",
+        "chapter_code": "01",
+        "heading_code": "0101",
+        "heading_name": "살아 있는 말ㆍ당나귀ㆍ노새ㆍ버새",
+        "heading_name_en": "Live horses, asses, mules and hinnies.",
+        "crawled_at": "2026-05-28 19:32:12",
+        "record_uuid": "f99577c4-bfd8-4602-8ade-d8e1d5ebc9b9"
+      },
+      {
+        "year": 2026,
+        "country_code": "KR",
+        "country_name": "한국",
+        "section_code": "01",
+        "chapter_code": "01",
+        "heading_code": "0102",
+        "heading_name": "살아 있는 소",
+        "heading_name_en": "Live bovine animals.",
+        "crawled_at": "2026-05-28 19:32:12",
+        "record_uuid": "b369fe63-5523-4d73-8a50-4abc44a98825"
+      }
+    ],
+    "item": [
+      {
+        "year": 2026,
+        "country_code": "KR",
+        "country_name": "한국",
+        "section_code": "01",
+        "chapter_code": "01",
+        "heading_code": "0101",
+        "hs_code": "0101",
+        "hs_code_6": "0101",
+        "item_name": "살아 있는 말ㆍ당나귀ㆍ노새ㆍ버새",
+        "item_name_en": "Live horses, asses, mules and hinnies.",
+        "basic_rate": "",
+        "elastic_rate": "",
+        "is_complete": 0,
+        "crawled_at": "2026-05-28 19:32:12",
+        "record_uuid": "84e3c385-cbf2-41fc-9cc7-50b45bd01d8e",
+        "elastic_codes": "",
+        "elastic_rates": "",
+        "simple_refund": null,
+        "reduction": null,
+        "origin": null,
+        "refund_crawled": 0,
+        "unit_weight": null,
+        "unit_qty": null,
+        "unit_crawled": 0
+      },
+      {
+        "year": 2026,
+        "country_code": "KR",
+        "country_name": "한국",
+        "section_code": "01",
+        "chapter_code": "01",
+        "heading_code": "0101",
+        "hs_code": "01012",
+        "hs_code_6": "01012",
+        "item_name": "말",
+        "item_name_en": "Horses :",
+        "basic_rate": "",
+        "elastic_rate": "",
+        "is_complete": 0,
+        "crawled_at": "2026-05-28 19:32:12",
+        "record_uuid": "ddc3951a-df56-41ae-b7c6-7ee060079aa4",
+        "elastic_codes": "",
+        "elastic_rates": "",
+        "simple_refund": null,
+        "reduction": null,
+        "origin": null,
+        "refund_crawled": 0,
+        "unit_weight": null,
+        "unit_qty": null,
+        "unit_crawled": 0
+      },
+      {
+        "year": 2026,
+        "country_code": "KR",
+        "country_name": "한국",
+        "section_code": "01",
+        "chapter_code": "01",
+        "heading_code": "0101",
+        "hs_code": "010121",
+        "hs_code_6": "010121",
+        "item_name": "번식용",
+        "item_name_en": "Pure-bred breeding animals",
+        "basic_rate": "",
+        "elastic_rate": "",
+        "is_complete": 0,
+        "crawled_at": "2026-05-28 19:32:12",
+        "record_uuid": "825035b9-9e89-40e9-bfe1-eff7107af24c",
+        "elastic_codes": "",
+        "elastic_rates": "",
+        "simple_refund": null,
+        "reduction": null,
+        "origin": null,
+        "refund_crawled": 0,
+        "unit_weight": null,
+        "unit_qty": null,
+        "unit_crawled": 0
+      }
+    ]
+  },
+  "item_coverage": [
+    [
+      "KR",
+      2019,
+      18309
+    ],
+    [
+      "KR",
+      2020,
+      17748
+    ],
+    [
+      "KR",
+      2021,
+      18317
+    ],
+    [
+      "KR",
+      2022,
+      16924
+    ],
+    [
+      "KR",
+      2023,
+      16924
+    ],
+    [
+      "KR",
+      2024,
+      16924
+    ],
+    [
+      "KR",
+      2025,
+      16974
+    ],
+    [
+      "KR",
+      2026,
+      16974
+    ]
+  ]
+}

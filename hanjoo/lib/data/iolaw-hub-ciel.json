@@ -1,0 +1,103 @@
+{
+  "sourceUrl": "https://www.clhs.co.kr/Y2026/iolaw/iolaw.htm",
+  "title": "수출입관련규제 및 수출입요령",
+  "table": {
+    "columns": ["구분", "관련법령", "참조"],
+    "rows": [
+      {
+        "구분": "1. 수출입공고",
+        "구분Href": "/guidelines/imex",
+        "관련법령": ["수출입공고"],
+        "참조": ["HSK별 수출입요령", "법령별 수출입요령"],
+        "참조Href": ["/guidelines/hs-guidance", "/guidelines/law-guidance"],
+        "참조RowSpan": 3
+      },
+      {
+        "구분": "2. 통합공고",
+        "구분Href": "/guidelines/integrated",
+        "관련법령": ["통합공고"],
+        "참조": [],
+        "참조Skip": true
+      },
+      {
+        "구분": "3. 세관장확인",
+        "구분Href": "/guidelines/customs-chief",
+        "관련법령": ["세관장확인고시"],
+        "참조": [],
+        "참조Skip": true
+      },
+      {
+        "구분": "4. 수출입승인의 면제",
+        "구분Href": "/guidelines/approval-exemption",
+        "관련법령": ["대외무역법 제11조", "세관장확인고시 제7조"],
+        "참조": ["수출승인의 면제", "수입승인의 면제"],
+        "참조Href": [
+          "/guidelines/approval-exemption?tab=export",
+          "/guidelines/approval-exemption?tab=import"
+        ]
+      },
+      {
+        "구분": "5. 원산지",
+        "구분Href": "/guidelines/origin?section=general",
+        "관련법령": ["대외무역관리규정 제5장", "원산지제도 운영에 관한 고시"],
+        "참조": [
+          "일반원칙",
+          "원산지증명서",
+          "원산지결정기준",
+          "물품별 적정표시방법",
+          "원산지증명서 간이발급"
+        ],
+        "참조Href": [
+          "/guidelines/origin?section=general",
+          "/guidelines/origin?section=certificate",
+          "/guidelines/origin?section=criteria",
+          "/guidelines/origin?section=marking",
+          "/guidelines/origin?section=easy"
+        ]
+      },
+      {
+        "구분": "6. 남북한교역대상물품",
+        "구분Href": "/guidelines/inter-korean",
+        "관련법령": [
+          "남북교류협력에관한법률 제13조",
+          "반출·반입승인대상품목 및 승인절차에 관한 고시"
+        ],
+        "참조": []
+      },
+      {
+        "구분": "7. 전략물자",
+        "구분Href": "/guidelines/strategic",
+        "관련법령": ["전략물자 수출입고시", "전략물자 수출입통관에 관한 고시"],
+        "참조": []
+      }
+    ]
+  },
+  "summaries": [
+    {
+      "title": "1. 수출입공고",
+      "href": "/guidelines/imex",
+      "badge": "산업통상자원부고시",
+      "lines": [
+        "대외무역법 제11조의 규정에 의하여 물품등의 수출 또는 수입의 제한·금지, 승인, 신고, 한정 및 그 절차 등에 관한 사항을 규정한 고시"
+      ]
+    },
+    {
+      "title": "2. 통합공고",
+      "href": "/guidelines/integrated",
+      "badge": "산업통상자원부고시",
+      "lines": [
+        "대외무역법 제12조의 규정에 의하여 동법 이외의 다른 법령에서 해당물품의 수출입의 요건 및 절차 등을 정하고 있는 경우에 수출입 요건확인 및 통관 업무의 간소화와 무역질서 유지를 위하여 다른 법령이 정한 물품의 수출입의 요건 및 절차에 관한 사항을 조정하고 이를 통합하여 규정한 고시",
+        "적용법령 : 약사법 등 56개 법령 및 기타 특정물품의 수출입절차 또는 요령을 정한 법률 및 국제협약"
+      ]
+    },
+    {
+      "title": "3. 세관장확인고시",
+      "href": "/guidelines/customs-chief",
+      "badge": "관세청고시",
+      "lines": [
+        "수출입을 할 때 법령에서 정하는 바에 따라 허가·승인·표시 또는 그 밖의 조건을 갖출 필요가 있는 물품 중 통관을 할 때 세관장의 확인이 필요한 수출입물품에 대하여 다른 법령에도 불구하고 해당물품, 확인방법, 확인절차 및 그 밖에 필요한 사항을 미리 공고한 고시 (관세법 제226조)",
+        "적용법령 : 마약류관리에관한법률 등 38개 법령 (통합공고에 규정되지 않은 남북교류협력에관한법률 포함)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+
+NCOM 수출 DB 조회
+ncomSearchExpoQry 호출 가이드
+HanjooGatewayAPI  |  문서 버전 1.0  |  응답: XML  |  운영: https://gateway.hjcustoms.co.kr:8444
+1. 개요
+NCOM 수출신고 데이터(expo1 / expo2 / expo3)를 조회하여 유니패스 화물통관진행정보·수입 ncomSearchQry 와 유사한 XML로 반환합니다.
+응답은 부모(expo1 공통) → 자식(expo2 란) → 손자(expo3 행) 계층 구조입니다.
+항목
+내용
+서비스명
+ncom 수출디비 조회 서비스
+URL
+GET /api/ncom/ncomSearchExpoQry
+응답
+application/xml; charset=utf-8
+필요 Scope
+customs.read
+인증
+헤더 X-API-Key
+컬럼 정의
+docs/수출테이블.xlsx (Expo_key / Exlan_key / Expum_key / Expum_lan 제외)
+2. 접속 정보
+운영(외부 호출) URL 기준입니다. ShipmentTracking의 HANJOO_GATEWAY_API_URL / Gateway HANJOO_GATEWAY_PUBLIC_URL 과 동일합니다.
+구분
+Base URL
+비고
+운영 (외부 호출)
+https://gateway.hjcustoms.co.kr:8444
+HTTPS 8444
+로컬 진단 (Gateway PC만)
+http://127.0.0.1:5050
+ListenLocalhost — 외부망 불가
+바로 호출할 전체 URL
+용도
+전체 URL
+운영 Mode B (신고번호)
+https://gateway.hjcustoms.co.kr:8444/api/ncom/ncomSearchExpoQry?singono=4177512345678X
+운영 Mode A (화주통관고유부호+기간)
+https://gateway.hjcustoms.co.kr:8444/api/ncom/ncomSearchExpoQry?expo_trust_tong={부호}&amp;from_dt=20240101&amp;to_dt=20241231
+로컬 진단 Mode B
+http://127.0.0.1:5050/api/ncom/ncomSearchExpoQry?singono=4177512345678X
+헬스 (인증 없음)
+https://gateway.hjcustoms.co.kr:8444/health
+DB 헬스 (API Key 필요)
+https://gateway.hjcustoms.co.kr:8444/health/db
+필수 요청 헤더
+X-API-Key: {발급받은_API_키}Accept: application/xml
+브라우저 주소창만으로는 X-API-Key를 넣을 수 없습니다. Postman, curl, HttpClient 등을 사용하세요.
+3. 인증
+항목
+설명
+헤더
+X-API-Key
+Scope
+customs.read
+Gateway 서버 환경변수(예)
+HANJOO_API_KEY_SHIPMENT_TRACKING
+호출측 환경변수(예)
+HANJOO_GATEWAY_API_KEY
+HTTP
+의미
+401
+API Key 누락 또는 잘못된 키
+403
+키는 유효하나 customs.read 없음
+503
+인증 미구성 / DB 실패
+4. 조회 모드
+Mode A와 Mode B를 동시에 사용하지 마세요.
+4.1 Mode A — 수출화주 통관고유부호 + 수리일자
+파라미터
+필수
+설명
+expo_trust_tong
+Y
+수출화주 통관고유부호 (Expo_trust_tong)
+from_dt
+Y
+수리일자 시작 yyyyMMdd
+to_dt
+Y
+수리일자 종료 yyyyMMdd (포함 &lt;=)
+GET /api/ncom/ncomSearchExpoQry?expo_trust_tong={부호}&amp;from_dt=20240101&amp;to_dt=20241231
+신고번호 prefix가 없으므로 서버는 B1/B3/HQ 테이블을 모두 조회합니다. 취하(Expo_res_result = '취하') 건은 제외됩니다.
+4.2 Mode B — 수출신고번호
+파라미터
+필수
+설명
+singono
+Y
+수출신고번호
+lanno
+N
+란번호 (Exlan_lan)
+heangno
+N
+행번호 (Expum_haeng)
+GET /api/ncom/ncomSearchExpoQry?singono=4177512345678XGET /api/ncom/ncomSearchExpoQry?singono=4177512345678X&amp;lanno=1&amp;heangno=1
+신고번호 앞 5자리로 테이블 suffix 결정 (ResolveExpoTableSuffix): 41775 → B1, 40980 → B3, 그 외 → HQ. 테이블명: expo1_{suffix}, expo2_{suffix}, expo3_{suffix}
+5. 응답 XML 구조
+&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;ncomSearchExpoQryRtnVo&gt;  &lt;ntceInfo/&gt;  &lt;tCnt&gt;1&lt;/tCnt&gt;                      &lt;!-- expo1 건수 --&gt;  &lt;ncomSearchExpoQryVo&gt;               &lt;!-- expo1 --&gt;    &lt;expoSingoNo&gt;...&lt;/expoSingoNo&gt;    &lt;!-- expo1 컬럼 camelCase --&gt;    &lt;ncomSearchExpo2Vo&gt;               &lt;!-- expo2 란 --&gt;      &lt;exlanLan&gt;...&lt;/exlanLan&gt;      &lt;ncomSearchExpo3Vo&gt;             &lt;!-- expo3 행 --&gt;        &lt;expumHaeng&gt;...&lt;/expumHaeng&gt;      &lt;/ncomSearchExpo3Vo&gt;    &lt;/ncomSearchExpo2Vo&gt;  &lt;/ncomSearchExpoQryVo&gt;&lt;/ncomSearchExpoQryRtnVo&gt;
+요소
+설명
+ntceInfo
+안내/오류. 정상 시 빈 요소
+tCnt
+상위(expo1) 건수. 없으면 0
+ncomSearchExpoQryVo
+expo1 부모
+ncomSearchExpo2Vo
+expo2 자식(란)
+ncomSearchExpo3Vo
+expo3 손자(행)
+필드명은 camelCase (예: Expo_singo_no → expoSingoNo). 제외: Expo_key, Exlan_key, Expum_key, Expum_lan. 컬럼 목록·순서는 docs/수출테이블.xlsx 기준.
+조회 결과 없음 (유니패스 무결과 패턴)
+&lt;ncomSearchExpoQryRtnVo&gt;  &lt;ntceInfo/&gt;  &lt;tCnt&gt;0&lt;/tCnt&gt;&lt;/ncomSearchExpoQryRtnVo&gt;
+파라미터 오류(400) 시에도 XML을 반환하며, 메시지는 ntceInfo에 들어갑니다.
+6. HTTP 상태 코드
+코드
+본문
+설명
+200
+XML
+정상 (0건 포함)
+400
+XML
+파라미터 오류
+401 / 403
+JSON
+인증/권한 실패
+500
+JSON
+서버 내부 오류
+503
+JSON
+DB/설정 실패
+7. 호출 예제
+7.1 curl (운영)
+curl -s -H "X-API-Key: YOUR_API_KEY" -H "Accept: application/xml" \  "https://gateway.hjcustoms.co.kr:8444/api/ncom/ncomSearchExpoQry?singono=4177512345678X"
+7.2 PowerShell (운영)
+$apiKey = "YOUR_API_KEY"curl.exe -s `  -H "X-API-Key: $apiKey" `  -H "Accept: application/xml" `  "https://gateway.hjcustoms.co.kr:8444/api/ncom/ncomSearchExpoQry?singono=4177512345678X"
+7.3 C# (HttpClient)
+using var client = new HttpClient { BaseAddress = new Uri("https://gateway.hjcustoms.co.kr:8444") };client.DefaultRequestHeaders.Add("X-API-Key", apiKey);client.DefaultRequestHeaders.Accept.ParseAdd("application/xml");var xml = await client.GetStringAsync("/api/ncom/ncomSearchExpoQry?singono=4177512345678X");
+7.4 JavaScript / TypeScript
+const res = await fetch(  'https://gateway.hjcustoms.co.kr:8444/api/ncom/ncomSearchExpoQry?singono=4177512345678X',  { headers: { 'X-API-Key': apiKey, Accept: 'application/xml' } });const xml = await res.text();
+7.5 Postman
+1) GET  2) URL: https://gateway.hjcustoms.co.kr:8444/api/ncom/ncomSearchExpoQry?singono=4177512345678X  3) Headers: X-API-Key, Accept: application/xml  4) Send
+7.6 로컬 진단
+http://127.0.0.1:5050/api/ncom/ncomSearchExpoQry?singono=4177512345678X
+8. 연동 시 주의사항
+• 외부 연동은 반드시 운영 URL을 사용하세요. 127.0.0.1:5050 은 Gateway PC 진단용입니다.
+• API Key는 소스·프론트엔드에 넣지 말고 서버 환경변수로만 관리하세요.
+• Mode A 기간 조회는 XML이 커질 수 있으므로 타임아웃·메모리를 여유 있게 두세요.
+• 수입 API(ncomSearchQry)와 URL·루트 요소명이 다릅니다. 혼동하지 마세요.
+9. 관련 API
+• 수입 조회 XML: GET /api/ncom/ncomSearchQry (customs.read)
+• 수입 자재 요약 JSON: POST /api/customs/impo/items (customs.read)
+• 거래처 조회 JSON: GET /api/cas/customerMstSearchQry (cas.read)
+10. 문의
+API Key·방화벽·인증서는 HanjooGatewayAPI 운영 담당자에게 요청하세요. 운영 Base URL: https://gateway.hjcustoms.co.kr:8444. 컬럼 상세는 docs/수출테이블.xlsx 를 참고하세요.

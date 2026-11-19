@@ -1,0 +1,152 @@
+{
+  "description": "처리현황 엑셀 「리스트」 시트 E열(매주최신화 대상)=Y 크롤러. 원본 D:\\Crawling\\<dir> 에서 복사해 smart_law_ai 내부에서 실행한다. 치환자: {DB} {PREV_YEAR} {PREV_WEEK} {PREV_YEARWEEK} (직전 ISO 주차)",
+  "crawlers": [
+    {
+      "key": "foreign-cases",
+      "dir": "품목분류_외국사례",
+      "excel": [{ "name": "품목분류 외국사례", "site": "관세법령정보포털" }],
+      "steps": [["customs_foreign_cases_crawler.py", "--week", "{PREV_YEARWEEK}", "--country", "ALL", "--db", "{DB}"]]
+    },
+    {
+      "key": "clip-admin-rule",
+      "dir": "CLIP_행정규칙",
+      "excel": [{ "name": "행정규칙(CLIP)", "site": "관세법령정보포털" }],
+      "steps": [["clip_crawler.py", "--start", "1", "--end", "5", "--db", "{DB}"]]
+    },
+    {
+      "key": "clip-precedent",
+      "dir": "CLIP_판례결정례",
+      "excel": [{ "name": "판례,결정례", "site": "관세법령정보포털" }],
+      "steps": [["clip_precedent.py", "--start", "1", "--end", "5", "--db", "{DB}"]]
+    },
+    {
+      "key": "clip-question",
+      "dir": "CLIP_질의회신",
+      "excel": [{ "name": "질의회신", "site": "관세법령정보포털" }],
+      "steps": [["clip_question_crawler_final.py", "--start", "1", "--end", "5", "--db", "{DB}"]]
+    },
+    {
+      "key": "unipass-analysis",
+      "dir": "unipass_분석진행사항",
+      "excel": [{ "name": "분석진행사항", "site": "유니패스" }],
+      "interactive": "유니패스 공인인증서 로그인 창이 뜹니다",
+      "steps": [["main.py", "--page-range", "1-1"]]
+    },
+    {
+      "key": "unipass-post",
+      "dir": "unipass_전자등기우편발송목록",
+      "excel": [{ "name": "품목분류 회신서", "site": "유니패스" }],
+      "interactive": "유니패스 로그인 브라우저가 뜹니다 (.env 계정)",
+      "env": { "DB_PATH": "{DB}", "DOWNLOAD_DIR": "C:\\SQLiteDB\\downloads\\전자등기우편발송목록" },
+      "steps": [["unipass_post_crawler.py", "--year", "{PREV_YEAR}", "--week", "{PREV_WEEK}", "--db", "{DB}"]]
+    },
+    {
+      "key": "clip-treaty",
+      "dir": "CLIP_조약협정",
+      "excel": [{ "name": "조약협정", "site": "관세법령정보포털" }],
+      "steps": [["clip_treaty_crawler.py", "--start-page", "1", "--end-page", "2", "--db", "{DB}"]]
+    },
+    {
+      "key": "clip-annex",
+      "dir": "CLIP_별표서식",
+      "excel": [{ "name": "별표서식", "site": "관세법령정보포털" }],
+      "steps": [["clip_annex_crawler.py", "--page-size", "10", "--start-page", "1", "--end-page", "5", "--db", "{DB}"]]
+    },
+    {
+      "key": "clip-latest-laws",
+      "dir": "CLIP_최신법령",
+      "excel": [{ "name": "최신법령", "site": "관세법령정보포털" }],
+      "steps": [["crawl_latest_laws.py", "--incremental", "--db", "{DB}"]]
+    },
+    {
+      "key": "opinion-center",
+      "dir": "국민참여입법센터",
+      "excel": [
+        { "name": "입법예고", "site": "국민참여입법센터" },
+        { "name": "행정예고", "site": "국민참여입법센터" }
+      ],
+      "steps": [["run.py", "crawl", "--year", "{PREV_YEAR}", "--week", "{PREV_WEEK}"]]
+    },
+    {
+      "key": "clip-news",
+      "dir": "CLIP_NEWS",
+      "excel": [{ "name": "새소식-행정예고", "site": "관세법령정보포털" }],
+      "steps": [["crawler.py", "--pages", "1", "--db-path", "{DB}"]]
+    },
+    {
+      "key": "law-go-latest",
+      "dir": "국가법령정보포털_최신법령",
+      "excel": [{ "name": "최신법령", "site": "국가법령정보센터" }],
+      "steps": [["crawler.py", "all", "--categories", "scheduled,repealed,temporary,temporary_articles,unconstitutional", "--end-page", "5", "--db", "{DB}"]]
+    },
+    {
+      "key": "tax-tribunal",
+      "dir": "조세심판원_조세심판사례",
+      "excel": [{ "name": "조세심판사례", "site": "조세심판원" }],
+      "steps": [
+        ["run_crawl.py", "list", "--max-pages", "3"],
+        ["run_crawl.py", "detail"]
+      ]
+    },
+    {
+      "key": "tax-tribunal-press",
+      "dir": "조세심판원_보도자료",
+      "excel": [{ "name": "보도자료", "site": "조세심판원" }],
+      "steps": [["run_console.py", "--config", "config.json", "--allow-disallowed", "--pages", "1-2"]]
+    },
+    {
+      "key": "qia-notice",
+      "dir": "농림축산검역본부_공지사항",
+      "excel": [{ "name": "공지사항", "site": "농림축산검역본부" }],
+      "steps": [["crawler.py", "--from-page", "1", "--to-page", "5", "--yes", "--db", "{DB}"]]
+    },
+    {
+      "key": "kcs-admin-notice",
+      "dir": "관세청_행정예고",
+      "excel": [{ "name": "행정예고", "site": "관세청" }],
+      "steps": [["customs_crawler.py", "--from", "1", "--to", "3", "--db-path", "{DB}"]]
+    },
+    {
+      "key": "kotra-us-trade",
+      "dir": "KOTRA_미국통상정책",
+      "excel": [{ "name": "미국통상정책", "site": "KOTRA" }],
+      "steps": [["run.py", "crawl", "--year", "{PREV_YEAR}", "--week", "{PREV_WEEK}", "--delay", "1", "--ignore-robots", "--db", "{DB}"]]
+    },
+    {
+      "key": "kcs-press",
+      "dir": "관세청_보도자료",
+      "excel": [{ "name": "보도자료", "site": "관세청" }],
+      "steps": [["customs_crawler.py", "--from", "1", "--to", "3", "--db", "{DB}"]]
+    },
+    {
+      "key": "mfds-press",
+      "dir": "식약처_보도자료",
+      "excel": [{ "name": "보도자료", "site": "식약처" }],
+      "steps": [["mfds_crawler.py", "--from", "1", "--to", "3", "--db", "{DB}"]]
+    },
+    {
+      "key": "kotra-trade",
+      "dir": "KOTRA_통상규제",
+      "excel": [{ "name": "통상규제", "site": "KOTRA" }],
+      "steps": [["run.py", "crawl", "--year", "{PREV_YEAR}", "--week", "{PREV_WEEK}", "--delay", "1", "--db", "{DB}"]]
+    },
+    {
+      "key": "kctdi-trade",
+      "dir": "관세무역개발원_무역동향",
+      "excel": [{ "name": "무역동향", "site": "한국관세무역개발원" }],
+      "steps": [["run.py", "crawl", "--year", "{PREV_YEAR}", "--week", "{PREV_WEEK}", "--db-path", "{DB}"]]
+    },
+    {
+      "key": "motie-trade-news",
+      "dir": "산업통상부_통상뉴스",
+      "excel": [{ "name": "통상뉴스", "site": "산업통상부 FTA 포털" }],
+      "steps": [["fta_crawler.py", "--from", "1", "--to", "3", "--db", "{DB}"]]
+    },
+    {
+      "key": "gwanbo",
+      "dir": "대한민국_전자관보",
+      "excel": [{ "name": "품목분류", "site": "대한민국 전자관보" }],
+      "steps": [["gwanbo_crawler.py", "--from-page", "1", "--to-page", "5", "--db", "{DB}"]]
+    }
+  ]
+}

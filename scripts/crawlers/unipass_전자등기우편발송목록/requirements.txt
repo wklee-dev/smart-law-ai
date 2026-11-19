@@ -1,0 +1,4 @@
+# 유니패스 전자등기 우편발송 목록 크롤러 의존성
+selenium>=4.20.0
+python-dotenv>=1.0.0
+pdfplumber>=0.11.0

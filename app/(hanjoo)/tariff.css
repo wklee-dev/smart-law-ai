@@ -1,0 +1,405 @@
+/* Tariff UI (1/4–4/4) — scoped under .tariff-ui; imported from layout */
+
+.tariff-ui {
+  min-width: 0;
+  width: 100%;
+}
+
+/* tariff-page-head 제거됨 — SiteChrome Breadcrumb + 단계바/분류 경로로 대체 */
+
+/* Step bar — equal height, blue current */
+.tariff-ui .step-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.tariff-ui .step-bar li {
+  flex: none;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  border: 1px solid #e5e9ef;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  min-height: 44px;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.tariff-ui .step-bar li span,
+.tariff-ui .step-bar li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 8px;
+  color: inherit;
+  text-decoration: none;
+  word-break: keep-all;
+}
+
+.tariff-ui .step-bar li.on {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.28);
+}
+
+.tariff-ui .step-bar li.done {
+  background: #eff6ff;
+  border-color: #dbeafe;
+  color: #1e2f4f;
+}
+
+.tariff-ui .step-bar li.done a:hover {
+  background: #dbeafe;
+  text-decoration: none;
+}
+
+.tariff-ui .crumb {
+  margin-bottom: 10px;
+  color: #64748b;
+  font-size: 12.5px;
+}
+
+.tariff-ui .crumb a {
+  color: #3b82f6;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.tariff-ui .crumb a:hover {
+  text-decoration: underline;
+}
+
+/* Layout cards */
+.tariff-ui .tariff-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 36%) minmax(0, 1fr);
+  gap: 14px;
+  min-height: 70vh;
+  align-items: start;
+}
+
+.tariff-ui .tariff-layout.item-step {
+  grid-template-columns: minmax(300px, 38%) minmax(0, 1fr);
+}
+
+.tariff-ui .tariff-layout.step2 {
+  grid-template-columns: minmax(220px, 28%) minmax(0, 1fr);
+}
+
+@media (max-width: 900px) {
+  .tariff-ui .tariff-layout,
+  .tariff-ui .tariff-layout.item-step,
+  .tariff-ui .tariff-layout.step2,
+  .tariff-ui .tariff-layout.en-hsk {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tariff-ui .panel {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.tariff-ui .panel-hd {
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+/* 좌측 호 목록: globals .tree-list 12.5px 유지 — 확대하지 않음 */
+.tariff-ui .tree-list {
+  max-height: min(72vh, 820px);
+  overflow: auto;
+  font-size: 12.5px;
+  line-height: 1.4;
+  scrollbar-width: thin;
+}
+
+.tariff-ui .hsk-panel .panel-bd.tree-list {
+  padding: 0;
+}
+
+.tariff-ui .tree-item {
+  font-size: 12.5px;
+  line-height: 1.4;
+  padding: 4px 6px;
+}
+
+/* 4/4 HSK 트리 — compact 12px */
+.tariff-ui .hsk-tree {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.tariff-ui .hsk-tree td {
+  border-color: #e5e9ef;
+  padding: 4px 6px;
+  vertical-align: top;
+}
+
+.tariff-ui .hsk-tree td.code {
+  background: #f8fafc;
+  color: #1e2f4f;
+  font-weight: 600;
+}
+
+.tariff-ui .hsk-tree td.name {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.tariff-ui .hsk-tree tr.can:hover td {
+  background: #eff6ff;
+}
+
+.tariff-ui .hsk-tree tr.on td {
+  background: #dbeafe;
+  color: #1e2f4f;
+}
+
+.tariff-ui .hsk-tree tr.on td.code {
+  background: #bfdbfe;
+}
+
+/* Detail header */
+.tariff-ui .detail-title {
+  background: linear-gradient(135deg, #1e2f4f 0%, #2563eb 100%);
+  color: #fff;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  word-break: keep-all;
+  line-height: 1.4;
+}
+
+.tariff-ui .path-line {
+  margin: 0;
+  padding: 5px 10px;
+  background: #f8fafc;
+  border: 1px solid #e5e9ef;
+  border-top: 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+/* 4/4 품목·세율·FTA 표 — compact 12px */
+.tariff-ui .answer-table {
+  border: 1px solid #e5e9ef;
+  border-top: 0;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.tariff-ui .answer-table th,
+.tariff-ui .answer-table td {
+  border-color: #e5e9ef;
+  padding: 4px 8px;
+  vertical-align: top;
+}
+
+.tariff-ui .answer-table th {
+  background: #eff6ff;
+  color: #1e2f4f;
+  font-size: 12px;
+  line-height: 1.35;
+  padding: 6px 8px;
+}
+
+.tariff-ui .answer-table .hs-no {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1e2f4f;
+}
+
+.tariff-ui .answer-table th.sub {
+  background: #f8fafc;
+}
+
+.tariff-ui .answer-table .domestic-tax th,
+.tariff-ui .answer-table .domestic-tax td {
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.tariff-ui .rate-lines {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.tariff-ui .rate-lines li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 6px;
+  padding: 3px 2px;
+  border-bottom-color: #eef2f6;
+  line-height: 1.4;
+}
+
+.tariff-ui .rate-lines b {
+  color: #d35400;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin-left: 0;
+}
+
+.tariff-ui .sheet-scroll {
+  max-height: min(72vh, 820px);
+  border-radius: 0 0 12px 12px;
+  border: 1px solid #e5e9ef;
+  border-top: 0;
+}
+
+/* 3/4 세번 목록 — 좌측 호(12.5px)와 맞춤 */
+.tariff-ui .hs-sheet,
+.tariff-ui .detail-table.hs-sheet {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.tariff-ui .hs-sheet th,
+.tariff-ui .hs-sheet td,
+.tariff-ui .detail-table.hs-sheet th,
+.tariff-ui .detail-table.hs-sheet td {
+  padding: 4px 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  vertical-align: top;
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.tariff-ui .hs-sheet th,
+.tariff-ui .detail-table.hs-sheet th {
+  padding: 6px 6px;
+  line-height: 1.35;
+}
+
+.tariff-ui .hs-sheet td.en,
+.tariff-ui .detail-table.hs-sheet td.en {
+  font-size: 12px;
+  color: #456;
+}
+
+/* 3/4 요건 라벨: 수입 / 수출 */
+.tariff-ui .req-cell {
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
+.tariff-ui .req-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  margin: 0 4px 0 0;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.tariff-ui .req-dot:last-child {
+  margin-right: 0;
+}
+
+.tariff-ui .req-dot.imp {
+  background: #3b82f6;
+}
+
+.tariff-ui .req-dot.exp {
+  background: #059669;
+}
+
+.tariff-ui .req-dot:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+
+.tariff-ui .click-row:hover td {
+  background: #eff6ff;
+}
+
+.tariff-ui .branch-row td {
+  background: #f8fafc;
+}
+
+.tariff-ui .block-title {
+  margin: 12px 0 6px;
+  padding: 6px 10px;
+  background: #eff6ff;
+  border: 1px solid #e5e9ef;
+  border-radius: 8px;
+  color: #1e2f4f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.tariff-ui .req-block .detail-table,
+.tariff-ui .detail-table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.tariff-ui .req-block .detail-table th,
+.tariff-ui .req-block .detail-table td,
+.tariff-ui .detail-table th,
+.tariff-ui .detail-table td {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.tariff-ui .year-side {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  border-color: #e5e9ef;
+}
+
+.tariff-ui .year-side a.on {
+  color: #3b82f6;
+  background: #eff6ff;
+  font-weight: 700;
+}
+
+.tariff-ui .chapter-cell {
+  border-radius: 6px;
+  border-color: #e5e9ef;
+}
+
+.tariff-ui .chapter-cell:hover {
+  outline: 2px solid #3b82f6;
+  outline-offset: 0;
+}

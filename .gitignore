@@ -1,0 +1,68 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.local.example
+!scripts/openlawapi/.env.example
+
+# openlawapi logs
+scripts/openlawapi/log/
+scripts/openlawapi/.env
+
+# 내장 주간 크롤러 — 계정/인증서 정보·실행 산출물
+scripts/crawlers/unipass_분석진행사항/config.json
+scripts/crawlers/unipass_분석진행사항/customs_ids.xlsx
+scripts/crawlers/**/logs/
+scripts/crawlers/**/LOG/
+scripts/crawlers/**/output/
+scripts/crawlers/**/downloads/
+scripts/crawlers/**/__pycache__/
+
+# RPA-03 배포 산출물 · 로그 · 임시 파일
+deploy/rpa-03/dist/
+deploy/rpa-03/logs/
+/logs/
+/tmp-*
+/_tmp*
+/.tmp-*
+/_migrate_*
+
+# supabase CLI (로컬 캐시)
+supabase/.temp/
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

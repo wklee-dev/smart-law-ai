@@ -1,0 +1,416 @@
+국가법령정보센터 사용 가이드 V1.0
+K열 OR 검색 · 일반 대상 기본 70페이지 · 한시·위헌 전페이지
+CSV·가상환경·DB 백업 없음
+1. 처음 한 번만 설치
+1. Python 3.10 이상을 설치합니다. 이미 설치되어 있으면 생략합니다.
+2. ZIP을 C:\LawCrawler처럼 짧은 폴더에 풉니다.
+3. install.bat을 한 번 실행합니다. 가상환경은 만들지 않습니다.
+이후에는 아래에서 원하는 BAT 파일만 실행하면 됩니다.
+2. 수집대상별로 한 번에 받기 — 가장 쉬운 방법
+아래 BAT를 실행하면 엑셀 K열 검색 → 지정한 페이지 범위 조회 → 목록·본문·부칙·별표·첨부파일 저장을 한 번에 처리합니다. 시작페이지를 입력할 필요 없이 항상 1페이지부터 조회합니다.
+받고 싶은 대상
+실행할 파일
+공포법령
+crawl_promulgated.bat
+시행법령
+crawl_effective.bat
+시행예정법령
+crawl_scheduled.bat
+폐지법령
+crawl_repealed.bat
+한시법령
+crawl_temporary.bat
+한시조문
+crawl_temporary_articles.bat
+위헌조문
+crawl_unconstitutional.bat
+위 7개 대상 전부
+collect_all.bat
+예: 시행법령을 받고 싶으면 crawl_effective.bat을 실행하고 완료될 때까지 기다립니다.
+수집대상
+종료페이지를 지정하지 않으면
+--end-page 20을 지정하면
+공포·시행·시행예정·폐지법령
+1~70페이지
+1~20페이지
+한시법령·한시조문·위헌조문
+모든 페이지
+지정값을 무시하고 모든 페이지
+종료페이지만 지정합니다. 실제 검색 결과가 지정한 페이지보다 적으면 마지막 검색페이지에서 먼저 끝납니다. 위 범위는 각 수집대상·각 K열 OR 검색 묶음의 결과 페이지에 적용됩니다. 예외 세 대상은 70페이지를 넘더라도 끝까지 검색합니다.
+“전부”는 조회한 범위에서 K열 검색어 중 하나라도 해당하는 법령 전부입니다. 사이트 전체 자료를 조건 없이 받는다는 뜻은 아닙니다. 검색 URL 길이 때문에 여러 OR 묶음으로 나누더라도, 한 번 실행하면 모든 묶음의 해당 페이지 범위를 처리합니다.
+3. 메뉴를 쓰고 싶으면 run.bat
+메뉴
+하는 일
+1. 목록만 저장
+K열로 검색하여 목록만 DB에 저장합니다. 본문·부칙·별표·첨부파일은 받지 않습니다. CSV도 만들지 않습니다.
+2. 한 번에 모두 수집
+K열로 검색하여 목록·본문·부칙·별표·제공 첨부파일까지 받습니다. Enter를 누르면 기본으로 2번이 선택됩니다.
+3. 저장목록에서 선택 수집
+저장한 목록을 화면에 보여 줍니다. 화면번호를 입력하면 해당 법령의 상세·파일을 받습니다. 전체는 ALL을 입력합니다.
+4. 저장목록 보기
+DB 목록만 화면에 보여 줍니다. 검색과 다운로드는 하지 않습니다.
+1번·2번을 선택하면 수집대상 번호를 묻습니다. 0 또는 Enter는 전체, 1 공포, 2 시행, 3 예정, 4 폐지, 5 한시법령, 6 한시조문, 7 위헌입니다. 여러 대상은 1,2처럼 입력합니다.
+이어서 엑셀 gubun 번호를 묻습니다. 그냥 Enter를 누르면 K열 전체를 사용합니다. 일부 행만 원할 때는 엑셀 A열의 번호를 1-3처럼 입력합니다. A열은 선택번호·연결정보이며, 검색어는 항상 K열입니다.
+그다음 종료페이지 [70]를 묻습니다. Enter는 70, 20을 입력하면 1~20페이지입니다. 한시법령·한시조문·위헌조문만 선택하면 종료페이지를 묻지 않습니다. 일반 대상과 예외 대상을 함께 선택하면 입력한 종료페이지는 일반 대상에만 적용됩니다. 3번·4번 메뉴는 저장목록을 사용하므로 종료페이지를 묻지 않습니다.
+4. 검색 기준은 이것뿐입니다
+K열 셀 전체 값을 검색어로 사용합니다. 이 엑셀의 비어 있지 않은 K열 479행을 읽습니다.
+OR 조건: K열 값 중 하나라도 결과 법령명에 포함되면 수집합니다. 공백·가운뎃점 표기 차이는 맞춰 비교합니다.
+F열 키워드와 AND 조건은 사용하지 않습니다. D열·E열 값으로 K열 검색대상을 제외하지도 않습니다.
+같은 결과가 여러 검색에서 나와도 같은 법령 버전은 한 번만 수집합니다. 같은 법령의 다른 시행일자는 별도 자료로 저장합니다.
+현재 수집화면은 위 최신법령 7개입니다. 행정규칙 이름도 K열 값이면 검색에 사용하지만, 행정규칙 전용 화면의 수집 기능은 이번 프로그램에 없습니다.
+5. 저장되는 곳
+저장물
+위치
+목록·본문·부칙·별표 정보, 파일 경로·크기·상태·해시
+D:\SQLiteDB\smart_law_ai.db
+실제 첨부파일
+D:\SQLiteDB\downloads
+실행 기록
+프로그램 폴더의 logs
+DB에는 llc_v1_으로 시작하는 전용 테이블을 사용합니다. 기존 사용자 테이블은 변경하지 않습니다. 가상환경·DB 백업·CSV 기능은 없습니다. 파일 내부 OCR이나 HWP 변환도 하지 않습니다.
+D드라이브가 없으면 config.json의 db와 downloads를 실제 PC 경로로 바꾸세요.
+6. 완료·오류 메시지
+종료코드 0: 지정한 범위 완료. 기본 70페이지 또는 지정한 종료페이지에서 끝나는 것은 오류가 아닙니다.
+종료코드 1: 설정·DB 등 실행 오류. 화면과 logs에서 원인을 확인합니다.
+종료코드 2: 일부 검색·상세·파일 실패 또는 파일형식 경고. 저장된 자료는 유지됩니다.
+사이트가 HWPX 링크에서 실제 HWP 파일을 보내면 .hwp로 저장하고 경고합니다. 받은 파일은 보존합니다.
+전체 수집은 시간이 걸릴 수 있습니다. 창을 닫지 말고 완료를 기다리세요. DB가 잠기면 해당 DB를 쓰는 다른 프로그램을 닫고 재실행합니다.
+7. 필요할 때만 사용하는 명령
+목적
+명령
+시행법령 1~70페이지(기본)
+py -3 crawler.py all --categories effective
+시행법령 1~20페이지
+py -3 crawler.py all --categories effective --end-page 20
+한시법령 모든 페이지
+py -3 crawler.py all --categories temporary
+공포법령 목록만
+py -3 crawler.py list --categories promulgated
+BAT에서 지정하려면 명령 프롬프트에서 crawl_effective.bat --end-page 20처럼 실행하세요. 전체 대상은 collect_all.bat --end-page 20입니다. 이 경우에도 예외 세 대상은 모든 페이지를 조회합니다.
+첫 페이지만 시험하려면 --end-page 1을 사용합니다(일반 대상에만 적용). 이전 --pages, --max-pages는 --end-page 하나로 통합했습니다. config.json의 기본값은 "end_page": 70이며, 명령에서 지정한 값이 우선합니다.
+테이블은 뒤 부록·SCHEMA.md, 시험 결과는 TEST_RESULTS.md를 참고하세요.
+테이블 상세내역 V1.0
+모든 테이블은 기존 사용자 테이블과 분리된 전용 이름입니다. 원문 데이터 네 테이블에 gubun 열과 인덱스를 둡니다. 삭제 또는 기존 스키마 변경 명령은 없습니다.
+테이블
+저장 내용
+llc_v1_meta
+프로그램 소유 표시·스키마 버전
+llc_v1_runs
+실행 이력 및 최종 결과
+llc_v1_list
+선별 목록과 단계 간 선택 대상
+llc_v1_raw_articles
+본문 조문(raw 역할)
+llc_v1_raw_addendum
+부칙(raw_addendum 역할)
+llc_v1_raw_annex
+별표·서식 목록(raw_annex 역할)
+llc_v1_raw_attachment
+첨부파일 상태·경로(raw_attachment 역할)
+llc_v1_meta
+프로그램 소유 표시·스키마 버전.
+컬럼
+타입
+제약
+설명
+key
+TEXT
+PK1 NOT NULL
+목록 고유 key 또는 설정 식별자
+value
+TEXT
+NOT NULL
+메타 설정값
+인덱스: PK 인덱스만 사용.
+llc_v1_runs
+실행 이력 및 최종 결과.
+컬럼
+타입
+제약
+설명
+run_id
+INTEGER
+PK1 NULL 허용
+실행 이력 식별자(자동 증가 정수)
+stage
+TEXT
+NOT NULL
+list / collect / all
+options_json
+TEXT
+NOT NULL
+실행 옵션 JSON
+status
+TEXT
+NOT NULL
+실행 completed/partial/failed 또는 파일 downloaded/existing/format_mismatch/failed
+stats_json
+TEXT
+NOT NULL
+건수 집계 JSON
+error
+TEXT
+NOT NULL
+실패·형식 경고 사유
+started_at
+TEXT
+NOT NULL
+실행 시작 시각(UTC ISO 8601)
+ended_at
+TEXT
+NOT NULL
+실행 종료 시각(진행 중 빈 문자열)
+인덱스: PK 인덱스만 사용.
+llc_v1_list
+선별 목록과 단계 간 선택 대상.
+컬럼
+타입
+제약
+설명
+key
+TEXT
+PK1 NOT NULL
+목록 고유 key 또는 설정 식별자
+category
+TEXT
+NOT NULL
+공포법령 등 화면 분류
+source_id
+TEXT
+NOT NULL
+공식 법령 식별자 lsiSeq
+effective_date
+TEXT
+NOT NULL
+시행일 또는 폐지일(YYYY-MM-DD/미정/빈값)
+title
+TEXT
+NOT NULL
+법령·조문·부칙·별표 제목
+gubun
+TEXT
+NOT NULL
+엑셀 gubun 정수 목록의 JSON 배열
+source_url
+TEXT
+NOT NULL
+공식 법령 상세 URL
+announce_date
+TEXT
+NOT NULL
+공포일자
+expire_date
+TEXT
+NOT NULL
+실효일자(YYYY-MM-DD/미정/빈값)
+law_type
+TEXT
+NOT NULL
+법률·대통령령 등 법령종류
+announce_no
+TEXT
+NOT NULL
+공포번호
+revision_type
+TEXT
+NOT NULL
+제정·개정·폐지 등 원문 구분
+ministry
+TEXT
+NOT NULL
+소관부처
+article_label
+TEXT
+NOT NULL
+한시/위헌조문의 표시 제목
+page
+INTEGER
+NOT NULL
+수집 당시 검색결과 페이지
+match_status
+TEXT
+NOT NULL
+or_match: K열 값 중 하나 이상 포함
+matched_keywords
+TEXT
+NOT NULL
+일치한 K열 셀 전체 값의 JSON 배열
+data_json
+TEXT
+NOT NULL
+목록 전체 필드 JSON(effective_raw·article_code 등 포함)
+collected_at
+TEXT
+NOT NULL
+마지막 저장 시각(UTC ISO 8601)
+인덱스: llc_v1_list_category_idx (category); llc_v1_list_source_effective_idx (source_id, effective_date).
+llc_v1_raw_articles
+본문 조문(raw 역할).
+컬럼
+타입
+제약
+설명
+item_key
+TEXT
+PK1 NOT NULL
+llc_v1_list.key에 연결되는 목록 key
+part_id
+TEXT
+PK2 NOT NULL
+조문·부칙·별표 또는 파일의 고유 식별자
+title
+TEXT
+NOT NULL
+법령·조문·부칙·별표 제목
+text
+TEXT
+NOT NULL
+정리 텍스트(별표는 목록 제목)
+html
+TEXT
+NOT NULL
+원문 HTML(별표는 목록 HTML)
+gubun
+TEXT
+NOT NULL
+엑셀 gubun 정수 목록의 JSON 배열
+collected_at
+TEXT
+NOT NULL
+마지막 저장 시각(UTC ISO 8601)
+복합 PK: (item_key, part_id). FK: item_key → llc_v1_list.key, ON DELETE RESTRICT.
+인덱스: llc_v1_raw_articles_gubun_idx (gubun).
+llc_v1_raw_addendum
+부칙(raw_addendum 역할).
+컬럼
+타입
+제약
+설명
+item_key
+TEXT
+PK1 NOT NULL
+llc_v1_list.key에 연결되는 목록 key
+part_id
+TEXT
+PK2 NOT NULL
+조문·부칙·별표 또는 파일의 고유 식별자
+title
+TEXT
+NOT NULL
+법령·조문·부칙·별표 제목
+text
+TEXT
+NOT NULL
+정리 텍스트(별표는 목록 제목)
+html
+TEXT
+NOT NULL
+원문 HTML(별표는 목록 HTML)
+gubun
+TEXT
+NOT NULL
+엑셀 gubun 정수 목록의 JSON 배열
+collected_at
+TEXT
+NOT NULL
+마지막 저장 시각(UTC ISO 8601)
+복합 PK: (item_key, part_id). FK: item_key → llc_v1_list.key, ON DELETE RESTRICT.
+인덱스: llc_v1_raw_addendum_gubun_idx (gubun).
+llc_v1_raw_annex
+별표·서식 목록(raw_annex 역할).
+컬럼
+타입
+제약
+설명
+item_key
+TEXT
+PK1 NOT NULL
+llc_v1_list.key에 연결되는 목록 key
+part_id
+TEXT
+PK2 NOT NULL
+조문·부칙·별표 또는 파일의 고유 식별자
+title
+TEXT
+NOT NULL
+법령·조문·부칙·별표 제목
+text
+TEXT
+NOT NULL
+정리 텍스트(별표는 목록 제목)
+html
+TEXT
+NOT NULL
+원문 HTML(별표는 목록 HTML)
+gubun
+TEXT
+NOT NULL
+엑셀 gubun 정수 목록의 JSON 배열
+collected_at
+TEXT
+NOT NULL
+마지막 저장 시각(UTC ISO 8601)
+복합 PK: (item_key, part_id). FK: item_key → llc_v1_list.key, ON DELETE RESTRICT.
+인덱스: llc_v1_raw_annex_gubun_idx (gubun).
+llc_v1_raw_attachment
+첨부파일 상태·경로(raw_attachment 역할).
+컬럼
+타입
+제약
+설명
+item_key
+TEXT
+PK1 NOT NULL
+llc_v1_list.key에 연결되는 목록 key
+part_id
+TEXT
+PK2 NOT NULL
+조문·부칙·별표 또는 파일의 고유 식별자
+annex_id
+TEXT
+NOT NULL
+연결 별표 식별자
+url
+TEXT
+NOT NULL
+다운로드 원본 URL
+display_name
+TEXT
+NOT NULL
+원래 표시 파일명
+local_path
+TEXT
+NOT NULL
+실제 저장 파일경로(실패 시 빈값)
+size
+INTEGER
+NULL 허용
+실제 파일 바이트 수
+sha256
+TEXT
+NOT NULL
+파일 SHA-256 해시
+status
+TEXT
+NOT NULL
+실행 completed/partial/failed 또는 파일 downloaded/existing/format_mismatch/failed
+error
+TEXT
+NOT NULL
+실패·형식 경고 사유
+gubun
+TEXT
+NOT NULL
+엑셀 gubun 정수 목록의 JSON 배열
+collected_at
+TEXT
+NOT NULL
+마지막 저장 시각(UTC ISO 8601)
+복합 PK: (item_key, part_id). FK: item_key → llc_v1_list.key, ON DELETE RESTRICT.
+인덱스: llc_v1_raw_attachment_gubun_idx (gubun).
+gubun 조회 예시
+gubun은 단일 숫자가 아니라 정수 JSON 배열입니다. 복수 엑셀 행이 같은 법령에 연결될 수 있습니다. gubun 열 인덱스는 배열 전체 문자열의 직접 비교에 적용되며, 개별 숫자 검색에는 SQLite JSON1의 json_each를 사용합니다.
+SELECT l.key, l.title, l.gubun
+FROM llc_v1_list AS l
+WHERE EXISTS (SELECT 1 FROM json_each(l.gubun) WHERE value = 1);
+JSON1이 제공되지 않는 구형 SQLite에서는 Python에서 JSON을 읽어 필터링합니다. 원문 상세 조회는 각 raw 테이블의 item_key로 목록과 조인합니다.

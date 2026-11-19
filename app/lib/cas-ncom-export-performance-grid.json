@@ -1,0 +1,919 @@
+{
+  "source": "D:\\HJCustoms\\프로젝트\\01.진행중\\19.HanjooGatewayAPI\\설계\\수출실적조회템플릿.xlsx",
+  "sheet": "공통사항-란-규격",
+  "columns": [
+    {
+      "id": "col-0",
+      "key": "expoKey",
+      "label": "그룹식별부호"
+    },
+    {
+      "id": "col-1",
+      "key": "expoSegwan",
+      "label": "세관"
+    },
+    {
+      "id": "col-2",
+      "key": "expoGwa",
+      "label": "과"
+    },
+    {
+      "id": "col-3",
+      "key": "expoSingoYear",
+      "label": "신고년"
+    },
+    {
+      "id": "col-4",
+      "key": "expoSingoNo",
+      "label": "신고번호",
+      "mono": true
+    },
+    {
+      "id": "col-5",
+      "key": "expoSingoDg",
+      "label": "신고체크디지트"
+    },
+    {
+      "id": "col-6",
+      "key": "expoYear",
+      "label": "제출년도"
+    },
+    {
+      "id": "col-7",
+      "key": "expoJechlno",
+      "label": "제출번호"
+    },
+    {
+      "id": "col-8",
+      "key": "expoChkDg",
+      "label": "체크디지트"
+    },
+    {
+      "id": "col-9",
+      "key": "expoSingoDate",
+      "label": "신고일자",
+      "align": "center"
+    },
+    {
+      "id": "col-10",
+      "key": "expoSingoGbn",
+      "label": "신고구분"
+    },
+    {
+      "id": "col-11",
+      "key": "expoGumsaGbn",
+      "label": "C/S구분"
+    },
+    {
+      "id": "col-12",
+      "key": "expoGuraeGbn",
+      "label": "거래구분"
+    },
+    {
+      "id": "col-13",
+      "key": "expoJong",
+      "label": "수출종류"
+    },
+    {
+      "id": "col-14",
+      "key": "expoGyelje",
+      "label": "결제종류"
+    },
+    {
+      "id": "col-15",
+      "key": "expoSingojaSangho",
+      "label": "신고자 상호"
+    },
+    {
+      "id": "col-16",
+      "key": "expoSuchuljaCode",
+      "label": "수출대행자 코드"
+    },
+    {
+      "id": "col-17",
+      "key": "expoSuchuljaCode",
+      "label": "수출대행자 상호"
+    },
+    {
+      "id": "col-18",
+      "key": "expoSuchuljaBuho",
+      "label": "수출대행자 통관고유부호"
+    },
+    {
+      "id": "col-19",
+      "key": "expoSuchuljaGbn",
+      "label": "수출자구분"
+    },
+    {
+      "id": "col-20",
+      "key": "expoTrustCode",
+      "label": "수출화주코드"
+    },
+    {
+      "id": "col-21",
+      "key": "expoTrustCode",
+      "label": "수출화주상호"
+    },
+    {
+      "id": "col-22",
+      "key": "expoTrustCode",
+      "label": "수출화주주소"
+    },
+    {
+      "id": "col-23",
+      "key": "expoTrustCode",
+      "label": "수출화주대표자명"
+    },
+    {
+      "id": "col-24",
+      "key": "expoWhajuTong",
+      "label": "수출화주통관고유부호"
+    },
+    {
+      "id": "col-25",
+      "key": "expoTrustCode",
+      "label": "수출화주사업번호"
+    },
+    {
+      "id": "col-26",
+      "key": "expoTrustPost",
+      "label": "수출화주소재지"
+    },
+    {
+      "id": "col-27",
+      "key": "expoTrustCode",
+      "label": "수출화주 사업장일련번호"
+    },
+    {
+      "id": "col-28",
+      "key": "expoWhanBuho",
+      "label": "제조자 코드"
+    },
+    {
+      "id": "col-29",
+      "key": "expoWhanBuho",
+      "label": "제조자 상호"
+    },
+    {
+      "id": "col-30",
+      "key": "expoWhanBuho",
+      "label": "제조자 주소"
+    },
+    {
+      "id": "col-31",
+      "key": "expoWhanBuho",
+      "label": "제조자 대표자명"
+    },
+    {
+      "id": "col-32",
+      "key": "expoWhajuTong",
+      "label": "제조자 통관고유부호"
+    },
+    {
+      "id": "col-33",
+      "key": "expoWhajuSaupGbn",
+      "label": "제조자 사업번호 구분"
+    },
+    {
+      "id": "col-34",
+      "key": "expoWhajuSaupGbn",
+      "label": "제조자 사업번호"
+    },
+    {
+      "id": "col-35",
+      "key": "expoWhanBuho",
+      "label": "제조자 사업장일련번호"
+    },
+    {
+      "id": "col-36",
+      "key": "expoGumaejaCode",
+      "label": "해외거래처코드"
+    },
+    {
+      "id": "col-37",
+      "key": "expoGumaejaSangho",
+      "label": "해외거래처상호"
+    },
+    {
+      "id": "col-38",
+      "key": "expoWhanSin",
+      "label": "환급신청인"
+    },
+    {
+      "id": "col-39",
+      "key": "expoJuso",
+      "label": "제조장소"
+    },
+    {
+      "id": "col-40",
+      "key": "expoWhanGigwan",
+      "label": "환급기관명"
+    },
+    {
+      "id": "col-41",
+      "key": "expoMokjukCode",
+      "label": "목적국코드"
+    },
+    {
+      "id": "col-42",
+      "key": "expoMokjukName",
+      "label": "목적국명"
+    },
+    {
+      "id": "col-43",
+      "key": "expoHangguCode",
+      "label": "적재항 코드"
+    },
+    {
+      "id": "col-44",
+      "key": "expoHangguName",
+      "label": "적재항 명"
+    },
+    {
+      "id": "col-45",
+      "key": "expoUnsongType",
+      "label": "운송형태"
+    },
+    {
+      "id": "col-46",
+      "key": "expoUnsongBox",
+      "label": "운송용기"
+    },
+    {
+      "id": "col-47",
+      "key": "expoJejoDate",
+      "label": "제조일자",
+      "align": "center"
+    },
+    {
+      "id": "col-48",
+      "key": "expoPost",
+      "label": "물품소재지 우편번호"
+    },
+    {
+      "id": "col-49",
+      "key": "expoPost",
+      "label": "물품소재지 주소"
+    },
+    {
+      "id": "col-50",
+      "key": "expoLcNo",
+      "label": "LC번호",
+      "mono": true
+    },
+    {
+      "id": "col-51",
+      "key": "expoIvNo",
+      "label": "인보이스 번호",
+      "mono": true
+    },
+    {
+      "id": "col-52",
+      "key": "expoChamjoNo",
+      "label": "무역업체 참조번호"
+    },
+    {
+      "id": "col-53",
+      "key": "expoSaveGbn",
+      "label": "저장구분"
+    },
+    {
+      "id": "col-54",
+      "key": "expoLocalGubun",
+      "label": "로컬구분"
+    },
+    {
+      "id": "col-55",
+      "key": "expoGeyakNo1",
+      "label": "계약번호1"
+    },
+    {
+      "id": "col-56",
+      "key": "expoGeyakNo2",
+      "label": "계약번호2"
+    },
+    {
+      "id": "col-57",
+      "key": "expoJiyekGbn",
+      "label": "지역구분"
+    },
+    {
+      "id": "col-58",
+      "key": "expoLan",
+      "label": "총 란수",
+      "align": "center"
+    },
+    {
+      "id": "col-59",
+      "key": "expoTotalJung",
+      "label": "총중량"
+    },
+    {
+      "id": "col-60",
+      "key": "expoJungDanwi",
+      "label": "중량단위"
+    },
+    {
+      "id": "col-61",
+      "key": "exlanPojangSu",
+      "label": "총 포장수량",
+      "align": "right"
+    },
+    {
+      "id": "col-62",
+      "key": "expoUsdExch",
+      "label": "USD 환율",
+      "align": "right"
+    },
+    {
+      "id": "col-63",
+      "key": "expoTotalWon",
+      "label": "총 FOB 원화",
+      "align": "right"
+    },
+    {
+      "id": "col-64",
+      "key": "expoTotalUsd",
+      "label": "총 FOB 달러",
+      "align": "right"
+    },
+    {
+      "id": "col-65",
+      "key": "expoIndojo",
+      "label": "인도조건"
+    },
+    {
+      "id": "col-66",
+      "key": "expoGyeljeMoney",
+      "label": "결제통화단위"
+    },
+    {
+      "id": "col-67",
+      "key": "expoGyeljeExch",
+      "label": "결제환율"
+    },
+    {
+      "id": "col-68",
+      "key": "expoIndojo",
+      "label": "입력 결제금액"
+    },
+    {
+      "id": "col-69",
+      "key": "expoFreMoney",
+      "label": "운임보험료 자동계산여부"
+    },
+    {
+      "id": "col-70",
+      "key": "expoFreMoney",
+      "label": "운임 통화단위"
+    },
+    {
+      "id": "col-71",
+      "key": "expoFreMoney",
+      "label": "운임 통화 환율"
+    },
+    {
+      "id": "col-72",
+      "key": "expoFreMoney",
+      "label": "입력 운임"
+    },
+    {
+      "id": "col-73",
+      "key": "expoFreCalc",
+      "label": "계산된 운임 원화"
+    },
+    {
+      "id": "col-74",
+      "key": "expoInsMoney",
+      "label": "보험료 통화단위"
+    },
+    {
+      "id": "col-75",
+      "key": "expoInsMoney",
+      "label": "보험료 통화 환율"
+    },
+    {
+      "id": "col-76",
+      "key": "expoInsInput",
+      "label": "입력 보험료"
+    },
+    {
+      "id": "col-77",
+      "key": "expoInsCalc",
+      "label": "계산된 보험료 원화"
+    },
+    {
+      "id": "col-78",
+      "key": "expoEtcMoney",
+      "label": "기타금액 통화단위"
+    },
+    {
+      "id": "col-79",
+      "key": "expoEtcMoney",
+      "label": "기타금액 통화 환율"
+    },
+    {
+      "id": "col-80",
+      "key": "expoEtcInput",
+      "label": "입력 기타금액"
+    },
+    {
+      "id": "col-81",
+      "key": "expoEtcGum",
+      "label": "계산된 기타금 원화"
+    },
+    {
+      "id": "col-82",
+      "key": "expoUnsongCode",
+      "label": "운송인 코드"
+    },
+    {
+      "id": "col-83",
+      "key": "expoUnsongSangho",
+      "label": "운송인 상호"
+    },
+    {
+      "id": "col-84",
+      "key": "expoUnsongDate1",
+      "label": "운송 시작일"
+    },
+    {
+      "id": "col-85",
+      "key": "expoUnsongDate2",
+      "label": "운송 종료일"
+    },
+    {
+      "id": "col-86",
+      "key": "expoResType",
+      "label": "응답형태"
+    },
+    {
+      "id": "col-87",
+      "key": "expoSendGbn",
+      "label": "전송구분"
+    },
+    {
+      "id": "col-88",
+      "key": "expoGijelan",
+      "label": "세관기재란"
+    },
+    {
+      "id": "col-89",
+      "key": "expoOkDate",
+      "label": "수리일",
+      "align": "center"
+    },
+    {
+      "id": "col-90",
+      "key": "expoOkNo",
+      "label": "반입지역"
+    },
+    {
+      "id": "col-91",
+      "key": "expoJunsongResult",
+      "label": "전송결과"
+    },
+    {
+      "id": "col-92",
+      "key": "expoResResult",
+      "label": "수신결과"
+    },
+    {
+      "id": "col-93",
+      "key": "expoDamdangja",
+      "label": "담당자"
+    },
+    {
+      "id": "col-94",
+      "key": "expoJangchiCnt",
+      "label": "장치장 일련번호"
+    },
+    {
+      "id": "col-95",
+      "key": "expoDaesangho",
+      "label": "대행사 코드"
+    },
+    {
+      "id": "col-96",
+      "key": "expoDaesangho",
+      "label": "대행사 상호"
+    },
+    {
+      "id": "col-97",
+      "key": "expoDaesangho",
+      "label": "대행사 사업번호"
+    },
+    {
+      "id": "col-98",
+      "key": "expoImsigaeYn",
+      "label": "임시개청여부"
+    },
+    {
+      "id": "col-99",
+      "key": "expoBansongSayu",
+      "label": "반송사유"
+    },
+    {
+      "id": "col-100",
+      "key": "expoMrnBunhal",
+      "label": "화물관리번호 전송구분"
+    },
+    {
+      "id": "col-101",
+      "key": "expoSunjukDate",
+      "label": "적재의무기한",
+      "align": "center"
+    },
+    {
+      "id": "col-102",
+      "key": "expoTcaSiljuk",
+      "label": "관세사실적"
+    },
+    {
+      "id": "col-103",
+      "key": "expoOldYn",
+      "label": "중고여부"
+    },
+    {
+      "id": "col-104",
+      "key": "expoJunsongResult",
+      "label": "팩스 전송결과"
+    },
+    {
+      "id": "col-105",
+      "key": "expoWhanGan2",
+      "label": "간이환급구분"
+    },
+    {
+      "id": "col-106",
+      "key": "expoIndustry",
+      "label": "산업단지부호"
+    },
+    {
+      "id": "col-107",
+      "key": "expoHowCheck",
+      "label": "검사방법"
+    },
+    {
+      "id": "col-108",
+      "key": "expoPojangDanwi",
+      "label": "포장단위"
+    },
+    {
+      "id": "col-109",
+      "key": "expoSingojaGije",
+      "label": "신고인기재란"
+    },
+    {
+      "id": "col-110",
+      "key": "expoSingojaName",
+      "label": "신고인 이름"
+    },
+    {
+      "id": "col-111",
+      "key": "expoJukipYn",
+      "label": "컨테이너 적입여부"
+    },
+    {
+      "id": "col-112",
+      "key": "forwardCode",
+      "label": "포워드 코드"
+    },
+    {
+      "id": "col-113",
+      "key": "forwardSangho",
+      "label": "포워드 상호"
+    },
+    {
+      "id": "col-114",
+      "key": "expoEngAddress",
+      "label": "영문 물품소재지"
+    },
+    {
+      "id": "col-115",
+      "key": "expoLeaveDay",
+      "label": "출항일"
+    },
+    {
+      "id": "col-116",
+      "key": "expoSouthnorthtradeyn",
+      "label": "남북교역여부"
+    },
+    {
+      "id": "col-117",
+      "key": "expoShipaircomcd",
+      "label": "선사항공사부호"
+    },
+    {
+      "id": "col-118",
+      "key": "expoShipaircomnm",
+      "label": "선사항공사명"
+    },
+    {
+      "id": "col-119",
+      "key": "expoShipairnm",
+      "label": "선편명"
+    },
+    {
+      "id": "col-120",
+      "key": "expoLeaveDay",
+      "label": "출항예정일자"
+    },
+    {
+      "id": "col-121",
+      "key": "expoPreloadareacd",
+      "label": "적재예정보세구역"
+    },
+    {
+      "id": "col-122",
+      "key": "expoJangchiCode",
+      "label": "장치장부호"
+    },
+    {
+      "id": "col-123",
+      "key": "expoBanipNo",
+      "label": "반입번호"
+    },
+    {
+      "id": "col-124",
+      "key": "sendernm",
+      "label": "작성자"
+    },
+    {
+      "id": "col-125",
+      "key": "expoLoadeddt",
+      "label": "선적일자"
+    },
+    {
+      "id": "col-126",
+      "key": "expoMrnNo",
+      "label": "화물관리번호",
+      "mono": true
+    },
+    {
+      "id": "col-127",
+      "key": "expoBlNo",
+      "label": "BL번호",
+      "mono": true
+    },
+    {
+      "id": "col-128",
+      "key": "expoLoadedYn",
+      "label": "선적여부"
+    },
+    {
+      "id": "col-129",
+      "key": "expoSebuho",
+      "label": "선별결과"
+    },
+    {
+      "id": "col-130",
+      "key": "expoPost",
+      "label": "물품소재지주소"
+    },
+    {
+      "id": "col-131",
+      "key": "expoChkDg",
+      "label": "정정차수"
+    },
+    {
+      "id": "col-132",
+      "key": "userNM",
+      "label": "입력자"
+    },
+    {
+      "id": "col-133",
+      "key": "expoDamdangja",
+      "label": "세관담당자"
+    },
+    {
+      "id": "col-134",
+      "key": "exlanLan",
+      "label": "란번호",
+      "align": "center"
+    },
+    {
+      "id": "col-135",
+      "key": "exlanHs",
+      "label": "세번부호",
+      "mono": true
+    },
+    {
+      "id": "col-136",
+      "key": "exlanJepumCode",
+      "label": "송품장부호"
+    },
+    {
+      "id": "col-137",
+      "key": "exlanJung",
+      "label": "란중량"
+    },
+    {
+      "id": "col-138",
+      "key": "exlanJungDanwi",
+      "label": "란중량단위"
+    },
+    {
+      "id": "col-139",
+      "key": "exlanSu",
+      "label": "란수량",
+      "align": "right"
+    },
+    {
+      "id": "col-140",
+      "key": "exlanSuDanwi",
+      "label": "란수량단위"
+    },
+    {
+      "id": "col-141",
+      "key": "exlanPojangSu",
+      "label": "포장수량",
+      "align": "right"
+    },
+    {
+      "id": "col-142",
+      "key": "exlanPojangDanwi",
+      "label": "포장수량단위"
+    },
+    {
+      "id": "col-143",
+      "key": "exlanJungGubun",
+      "label": "순중량"
+    },
+    {
+      "id": "col-144",
+      "key": "exlanEname",
+      "label": "표준품명"
+    },
+    {
+      "id": "col-145",
+      "key": "exlanEgukyk",
+      "label": "거래품명"
+    },
+    {
+      "id": "col-146",
+      "key": "expoIndojo",
+      "label": "결제금액"
+    },
+    {
+      "id": "col-147",
+      "key": "exlanGyeljeFob",
+      "label": "결제fob"
+    },
+    {
+      "id": "col-148",
+      "key": "exlanFobWon",
+      "label": "FOB원화",
+      "align": "right"
+    },
+    {
+      "id": "col-149",
+      "key": "exlanFobUsd",
+      "label": "FOB달러",
+      "align": "right"
+    },
+    {
+      "id": "col-150",
+      "key": "exlanImposingono",
+      "label": "수입신고번호"
+    },
+    {
+      "id": "col-151",
+      "key": "exlanImpolanno",
+      "label": "수입신고번호-란번호"
+    },
+    {
+      "id": "col-152",
+      "key": "exlanAttachYn",
+      "label": "서류첨부여부"
+    },
+    {
+      "id": "col-153",
+      "key": "exlanSangpyo",
+      "label": "상표명"
+    },
+    {
+      "id": "col-154",
+      "key": "exlanWonsanji",
+      "label": "원산지",
+      "align": "right"
+    },
+    {
+      "id": "col-155",
+      "key": "exlanWonsanjiBang",
+      "label": "원산지결정방법",
+      "align": "right"
+    },
+    {
+      "id": "col-156",
+      "key": "exlanWonsanjiPyosi",
+      "label": "원산지표시유무",
+      "align": "right"
+    },
+    {
+      "id": "col-157",
+      "key": "exlanCoissueyn",
+      "label": "자율원산지증명서발급여부"
+    },
+    {
+      "id": "col-158",
+      "key": "exlanAgreeCd",
+      "label": "발급협정코드"
+    },
+    {
+      "id": "col-159",
+      "key": "exlanKosaappno",
+      "label": "철강협회수출승인번호"
+    },
+    {
+      "id": "col-160",
+      "key": "expumLan",
+      "label": "란번호3",
+      "align": "center"
+    },
+    {
+      "id": "col-161",
+      "key": "expumHaeng",
+      "label": "행번호",
+      "align": "center"
+    },
+    {
+      "id": "col-162",
+      "key": "expumJepumCode",
+      "label": "제품코드",
+      "mono": true
+    },
+    {
+      "id": "col-163",
+      "key": "expumSu",
+      "label": "수량",
+      "align": "right"
+    },
+    {
+      "id": "col-164",
+      "key": "expumSuDanwi",
+      "label": "수량단위"
+    },
+    {
+      "id": "col-165",
+      "key": "expumGyeljeGum",
+      "label": "결제금액_1"
+    },
+    {
+      "id": "col-166",
+      "key": "expumDanga",
+      "label": "단가"
+    },
+    {
+      "id": "col-167",
+      "key": "expumPumA",
+      "label": "품명및규격1"
+    },
+    {
+      "id": "col-168",
+      "key": "expumPumB",
+      "label": "품명및규격2"
+    },
+    {
+      "id": "col-169",
+      "key": "expumPumC",
+      "label": "품명및규격3"
+    },
+    {
+      "id": "col-170",
+      "key": "expumPumD",
+      "label": "품명및규격4"
+    },
+    {
+      "id": "col-171",
+      "key": "expumPumE",
+      "label": "품명및규격5"
+    },
+    {
+      "id": "col-172",
+      "key": "expumPumF",
+      "label": "품명및규격6"
+    },
+    {
+      "id": "col-173",
+      "key": "expumPumG",
+      "label": "품명및규격7"
+    },
+    {
+      "id": "col-174",
+      "key": "expumPumH",
+      "label": "품명및규격8"
+    },
+    {
+      "id": "col-175",
+      "key": "expumSungbunA",
+      "label": "성분1"
+    },
+    {
+      "id": "col-176",
+      "key": "expumSungbunB",
+      "label": "성분2"
+    }
+  ],
+  "unresolvedLabels": []
+}

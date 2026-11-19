@@ -1,0 +1,124 @@
+{
+  "run_id": 1,
+  "period_type": "DATE_RANGE",
+  "week": "20261026~20261106",
+  "institution_filters": {
+    "legislation": [
+      "재정경제부",
+      "관세청",
+      "산업통상부",
+      "국토교통부",
+      "해양수산부",
+      "식품의약품안전처",
+      "기후에너지환경부",
+      "농림축산식품부"
+    ],
+    "administrative": [
+      "재정경제부",
+      "산업통상부",
+      "국토교통부",
+      "해양수산부",
+      "기후에너지환경부",
+      "농림축산식품부"
+    ]
+  },
+  "date_range": "2026-10-26 ~ 2026-11-06",
+  "status": "SUCCESS",
+  "counts": {
+    "legislation_listed": 111,
+    "legislation_excluded": 72,
+    "legislation_discovered": 39,
+    "legislation_completed": 1,
+    "attachment_discovered": 4,
+    "attachment_downloaded": 4,
+    "administrative_listed": 41,
+    "administrative_excluded": 26,
+    "administrative_discovered": 15,
+    "administrative_completed": 1
+  },
+  "database": "검증 임시 DB (종료 시 삭제)",
+  "download_root": "검증 임시 다운로드 (종료 시 삭제)",
+  "errors": [],
+  "stored_legislation": [
+    [
+      "89388",
+      "국토교통부",
+      "철도산업발전기본법 시행령 일부개정령안 입법예고"
+    ]
+  ],
+  "stored_administrative": [
+    [
+      "47674",
+      "국토교통부",
+      "소음방지를 위한 층간 바닥충격음 차단 구조기준 일부개정고시안 행정예고"
+    ]
+  ],
+  "list_queries_without_agency_search": [
+    {
+      "stYd": "20261026",
+      "edYd": "20261106",
+      "pageIndex": "1",
+      "blockStartPage": "1",
+      "finishIncludeYn": "Y",
+      "isOgYn": "Y"
+    },
+    {
+      "stYd": "20261026",
+      "edYd": "20261106",
+      "pageIndex": "2",
+      "blockStartPage": "1",
+      "finishIncludeYn": "Y",
+      "isOgYn": "Y"
+    },
+    {
+      "stYd": "20261026",
+      "edYd": "20261106",
+      "pageIndex": "3",
+      "blockStartPage": "1",
+      "finishIncludeYn": "Y",
+      "isOgYn": "Y"
+    },
+    {
+      "stYd": "20261026",
+      "edYd": "20261106",
+      "pageIndex": "4",
+      "blockStartPage": "1",
+      "finishIncludeYn": "Y",
+      "isOgYn": "Y"
+    },
+    {
+      "stYd": "20261026",
+      "edYd": "20261106",
+      "pageIndex": "5",
+      "blockStartPage": "1",
+      "finishIncludeYn": "Y",
+      "isOgYn": "Y"
+    },
+    {
+      "stYd": "20261026",
+      "edYd": "20261106",
+      "pageIndex": "6",
+      "blockStartPage": "1",
+      "finishIncludeYn": "Y",
+      "isOgYn": "Y"
+    },
+    {
+      "stYd": "20261026",
+      "edYd": "20261106",
+      "pageIndex": "1",
+      "blockStartPage": "1"
+    },
+    {
+      "stYd": "20261026",
+      "edYd": "20261106",
+      "pageIndex": "2",
+      "blockStartPage": "1"
+    },
+    {
+      "stYd": "20261026",
+      "edYd": "20261106",
+      "pageIndex": "3",
+      "blockStartPage": "1"
+    }
+  ]
+}

@@ -1,0 +1,513 @@
+{
+  "source": "D:\\Manus\\법령정보및관세율,품목분류사례 처리현황.xlsx",
+  "sheet": "리스트",
+  "columns": [
+    {
+      "key": "category",
+      "label": "구분"
+    },
+    {
+      "key": "progress",
+      "label": "진행사항"
+    },
+    {
+      "key": "name",
+      "label": "대상"
+    },
+    {
+      "key": "extraProgress",
+      "label": "추가진행사항"
+    },
+    {
+      "key": "remarks",
+      "label": "비고"
+    }
+  ],
+  "items": [
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "속견표",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "관세율표",
+      "extraProgress": "2026 ~ 2002 완료",
+      "remarks": ""
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "관세율표(세계)",
+      "extraProgress": "엑셀파일 다운로드 받아 적용함",
+      "remarks": ""
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "HS해설서",
+      "extraProgress": "2022, 2017, 2012, 2007 완료",
+      "remarks": ""
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "품목분류 국내사례",
+      "extraProgress": "2026-44 주차 완료(~11/02)",
+      "remarks": "Y"
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "품목분류 외국사례",
+      "extraProgress": "2026-44 주차 완료(~11/02)",
+      "remarks": "Y"
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "법령정보 공동활용(API)",
+      "extraProgress": "138건 완료",
+      "remarks": ""
+    },
+    {
+      "category": "기존",
+      "progress": "크롤링",
+      "name": "행정규칙",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "행정규칙(CLIP)",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "판례,결정례",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "질의회신",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "유니패스 공인인증서 로그인",
+      "extraProgress": "pip install pyautogui\r\n권한 팝업 처리용 패키지 추가 설치",
+      "remarks": ""
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "분석진행사항",
+      "extraProgress": "2026-09-09 완료",
+      "remarks": ""
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "품목분류 회신서",
+      "extraProgress": "2026-10-31 완료",
+      "remarks": "Y"
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "유니패스 세관장확인",
+      "extraProgress": "엑셀파일",
+      "remarks": ""
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "협정별 원산지결정기준",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "기존",
+      "progress": "완료",
+      "name": "원산지결정기준",
+      "extraProgress": "2026-11-11 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "조약협정",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "별표서식",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "최신법령",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "관세율",
+      "extraProgress": "엑셀파일을 다운로드 받아 저장",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "관세율-종합정보",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "관세감면",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "분할납부",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "관세환급",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "가산세",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "내국세",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "세관장확인사항",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "통합공고",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "수출입공고",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "원산지",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "지식재산권",
+      "extraProgress": "지식재산권_남북한교역_전략물자는 하나의 크롤링 사용",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "남북한교역",
+      "extraProgress": "지식재산권_남북한교역_전략물자는 하나의 크롤링 사용",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "전략물자",
+      "extraProgress": "지식재산권_남북한교역_전략물자는 하나의 크롤링 사용",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "HS별 품명‧규격 수입신고 가이드",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "표준품명/규격코드",
+      "extraProgress": "엑셀파일 업로더",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "대상물품현황",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "담보기준가격",
+      "extraProgress": "매월 1일, 16일 게시한 엑셀파일 업로드",
+      "remarks": "월2회"
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "세계HS개정표",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "품목분류사례",
+      "extraProgress": "5년치 각국별 품목분류사례가 엑셀파일로 정리되 있음",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "HS가이드",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "통계부호",
+      "extraProgress": "엑셀파일",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "전략물자(HS)",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "입법예고",
+      "extraProgress": "26년 45주(11/8)",
+      "remarks": "Y"
+    },
+    {
+      "category": "추가",
+      "progress": "완료",
+      "name": "행정예고",
+      "extraProgress": "26년 45주(11/8)",
+      "remarks": "Y"
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "전략물자 제도개요",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "자율준수무역거래자",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "이중용도",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "",
+      "progress": "",
+      "name": "원산지결정기준",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "협절별세율정보",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "일반자료",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "집행지침",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "CIEL 세율",
+      "extraProgress": "FTA협정관세 제외",
+      "remarks": ""
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "CIEL FTA협정관세",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "원산지결정기준(협정별 약어표)",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "새소식-행정예고",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "최신법령",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "장치장부호",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "2차",
+      "progress": "완료",
+      "name": "조세심판사례",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "3차",
+      "progress": "완료",
+      "name": "보도자료",
+      "extraProgress": "",
+      "remarks": ""
+    },
+    {
+      "category": "3차",
+      "progress": "완료",
+      "name": "공지사항",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "3차",
+      "progress": "완료",
+      "name": "행정예고",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "3차",
+      "progress": "완료",
+      "name": "품목분류",
+      "extraProgress": "2026-11-10 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "4차",
+      "progress": "완료",
+      "name": "보도자료",
+      "extraProgress": "2026-11-16 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "4차",
+      "progress": "완료",
+      "name": "보도자료",
+      "extraProgress": "2026-11-16 최신화",
+      "remarks": "Y"
+    },
+    {
+      "category": "4차",
+      "progress": "완료",
+      "name": "통상규제",
+      "extraProgress": "26년 46주(11/16)",
+      "remarks": "Y"
+    },
+    {
+      "category": "4차",
+      "progress": "완료",
+      "name": "미국통상정책",
+      "extraProgress": "26년 46주(11/16)",
+      "remarks": "Y"
+    },
+    {
+      "category": "4차",
+      "progress": "완료",
+      "name": "무역동향",
+      "extraProgress": "26년 46주(11/16)",
+      "remarks": "Y"
+    },
+    {
+      "category": "4차",
+      "progress": "완료",
+      "name": "통상뉴스",
+      "extraProgress": "26년 46주(11/16)",
+      "remarks": "Y"
+    }
+  ],
+  "syncedAt": "2026-11-19T05:45:36.694Z",
+  "excelModifiedAt": "2026-11-19T04:53:45.833Z"
+}

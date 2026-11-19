@@ -1,0 +1,16 @@
+{
+  "base_url": "https://www.tt.go.kr",
+  "list_path": "/mUser/community/pressList.do",
+  "db_path": "D:\\SQLiteDB\\smart_law_ai.db",
+  "download_root": "C:\\SQLiteDB\\downloads",
+  "category_subdir": ["조세심판원", "보도자료"],
+  "log_dir": "LOG",
+  "backup_before_run": true,
+  "request_interval_seconds": 1.5,
+  "connect_timeout_seconds": 15,
+  "read_timeout_seconds": 60,
+  "max_retries": 3,
+  "max_attachment_bytes": 209715200,
+  "user_agent": "TaxTribunalPressCrawler/1.3 (authorized archival collection)",
+  "verify_ssl": true
+}

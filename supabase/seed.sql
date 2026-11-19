@@ -1,0 +1,1 @@
+-- Optional seed after migrations. Add INSERTs here or leave empty.

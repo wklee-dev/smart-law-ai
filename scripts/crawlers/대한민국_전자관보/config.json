@@ -1,0 +1,21 @@
+{
+  "base_url": "https://gwanbo.go.kr",
+  "search_endpoint": "/SearchRestApi.jsp",
+  "pdf_endpoint": "/user/common/ofcttCntntDownload.do",
+  "pdf_endpoint_alt": "/user/common/ofcttDownload.do",
+  "primary_keyword": "품목분류 변경고시",
+  "fallback_keyword": "품목분류",
+  "target_category_name": "고시",
+  "target_category_order": 10,
+  "title_filter_keyword": "품목분류",
+  "include_pejijaejeong": true,
+  "db_path": "D:\\SQLiteDB\\smart_law_ai.db",
+  "download_dir": "C:\\SQLiteDB\\downloads\\대한민국 전자관보",
+  "log_dir": "logs",
+  "list_size": 10,
+  "request_delay": 2.0,
+  "timeout": 60,
+  "max_retries": 5,
+  "skip_existing": true,
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+}

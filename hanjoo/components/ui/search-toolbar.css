@@ -1,0 +1,181 @@
+/**
+ * 공통 검색조건 툴바
+ * - chrome: 기존 .search-bar (SiteChrome) — 클래스만 유지, 스타일은 globals
+ * - panel: 업무 화면 검색 카드
+ * - compact: HS비교 등 좁은 바
+ */
+
+.sl-search-toolbar--panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px 12px;
+  margin: 0;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid var(--ciel-line, #e5e9ef);
+  border-radius: 10px;
+  box-shadow: var(--ciel-shadow-sm, 0 1px 2px rgba(15, 23, 42, 0.04));
+}
+
+.sl-search-toolbar--panel label {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.sl-search-toolbar--panel input,
+.sl-search-toolbar--panel select {
+  min-width: 160px;
+  height: 32px;
+  margin: 0;
+  border: 1px solid var(--ciel-line, #e5e9ef);
+  border-radius: 6px;
+  padding: 0 10px;
+  background: #fff;
+  color: var(--ciel-text, #1e293b);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+.sl-search-toolbar--panel input:focus,
+.sl-search-toolbar--panel select:focus {
+  outline: none;
+  border-color: var(--ciel-on, #30528c);
+  box-shadow: 0 0 0 3px rgba(var(--ciel-on-rgb, 48, 82, 140), 0.18);
+}
+
+.sl-search-toolbar--panel .sl-ui-btn {
+  flex-shrink: 0;
+}
+
+.sl-search-toolbar--panel .sl-ui-btn + .sl-ui-btn {
+  margin-inline-start: 0;
+}
+
+.sl-search-toolbar--panel .sl-search-date-range {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sl-search-toolbar--panel .sl-search-date-range input[type="date"] {
+  min-width: 0;
+  width: 9.5rem;
+}
+
+.sl-search-toolbar--panel .sl-search-date-range em {
+  font-style: normal;
+  color: #64748b;
+}
+
+.sl-search-toolbar--panel label.guide-check,
+.sl-search-toolbar--panel label.case-check {
+  flex-direction: row;
+  align-items: center;
+  align-self: flex-end;
+  gap: 6px;
+  height: 32px;
+  white-space: nowrap;
+}
+
+.sl-search-toolbar--panel label.guide-check input[type="checkbox"],
+.sl-search-toolbar--panel label.case-check input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  min-width: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Compact — HS 비교 등 */
+.sl-search-toolbar--compact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 10px;
+  background: #fff;
+  border-bottom: 1px solid var(--ciel-line, #e5e9ef);
+}
+
+.sl-search-toolbar--compact label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.sl-search-toolbar--compact input,
+.sl-search-toolbar--compact select {
+  height: 32px;
+  border: 1px solid var(--ciel-line, #e5e9ef);
+  border-radius: 6px;
+  padding: 0 8px;
+  background: #fff;
+  color: var(--ciel-text, #1e293b);
+  font: inherit;
+  font-size: 13px;
+}
+
+.sl-search-toolbar--compact input:focus,
+.sl-search-toolbar--compact select:focus {
+  outline: none;
+  border-color: var(--ciel-on, #30528c);
+  box-shadow: 0 0 0 3px rgba(var(--ciel-on-rgb, 48, 82, 140), 0.18);
+}
+
+/* 카드 내부 필터바 — 기존 .stat-tools 정렬 유지, compact 카드 보더 억제 */
+.sl-search-toolbar--compact.stat-tools {
+  justify-content: flex-end;
+  padding: 0 0 8px;
+  background: transparent;
+  border: 0;
+  border-bottom: 0;
+  box-shadow: none;
+}
+
+/* FTA portal lookup — 기존 .fta-lookup 정렬·폭 유지, compact 외곽 억제 */
+.sl-search-toolbar--compact.fta-lookup {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 0;
+  box-shadow: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.sl-search-toolbar--compact.fta-lookup > span:not(.sl-ui-btn__label) {
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .sl-search-toolbar--panel {
+    align-items: stretch;
+  }
+
+  .sl-search-toolbar--panel label {
+    flex: 1 1 100%;
+  }
+
+  .sl-search-toolbar--panel input,
+  .sl-search-toolbar--panel select {
+    min-width: 0;
+    width: 100%;
+  }
+}

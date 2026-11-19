@@ -1,0 +1,1250 @@
+{
+  "source": "D:\\HJCustoms\\프로젝트\\01.진행중\\19.HanjooGatewayAPI\\설계\\수입실적조회템플릿.xlsx",
+  "sheet": "수입실적",
+  "columns": [
+    {
+      "key": "impoTcano",
+      "label": "그룹식별부호"
+    },
+    {
+      "key": "impoSingoNo",
+      "label": "신고번호",
+      "mono": true
+    },
+    {
+      "key": "impoKey",
+      "label": "관리번호"
+    },
+    {
+      "key": "impoSingojaSangho",
+      "label": "신고자상호"
+    },
+    {
+      "key": "impoSingojaName",
+      "label": "신고인대표자명"
+    },
+    {
+      "key": "impoSingojaTel",
+      "label": "신고인전화번호"
+    },
+    {
+      "key": "impoSingojaEmail",
+      "label": "신고인전자메일"
+    },
+    {
+      "key": "impoSuipjaCode",
+      "label": "수입자코드"
+    },
+    {
+      "key": "impoSuipjaSangho",
+      "label": "수입자상호"
+    },
+    {
+      "key": "impoSuipjaTong",
+      "label": "수입자통관고유부호"
+    },
+    {
+      "key": "impoSuipjaGubun",
+      "label": "수입자구분"
+    },
+    {
+      "key": "impoNapseCode",
+      "label": "납세자코드"
+    },
+    {
+      "key": "impoNapseSangho",
+      "label": "납세자상호"
+    },
+    {
+      "key": "impoNapseName",
+      "label": "납세자대표자명"
+    },
+    {
+      "key": "impoNapsePost",
+      "label": "납세자우편번호"
+    },
+    {
+      "key": "impoNapseJuso",
+      "label": "납세자주소"
+    },
+    {
+      "key": "impoNapseTong",
+      "label": "납세자통관고유부호"
+    },
+    {
+      "key": "impoNapseSaupGubun",
+      "label": "납세자사업번호구분"
+    },
+    {
+      "key": "impoNapseSaup",
+      "label": "납세자사업번호"
+    },
+    {
+      "key": "impoNapsecomno",
+      "label": "납세자사업장일련번호"
+    },
+    {
+      "key": "impoNapseTel",
+      "label": "납세자전화번호"
+    },
+    {
+      "key": "impoNapseEmail",
+      "label": "납세자전자메일"
+    },
+    {
+      "key": "impoForwarderCode",
+      "label": "운송주선인코드"
+    },
+    {
+      "key": "impoForwarderSangho",
+      "label": "운송주선인상호"
+    },
+    {
+      "key": "impoGonggub",
+      "label": "무역거래처코드"
+    },
+    {
+      "key": "impoGonggubSangho",
+      "label": "무역거래처상호"
+    },
+    {
+      "key": "impoGonggubBuho",
+      "label": "무역거래처국가코드"
+    },
+    {
+      "key": "impoSegwan",
+      "label": "신고세관"
+    },
+    {
+      "key": "impoGwa",
+      "label": "신고과"
+    },
+    {
+      "key": "impoSingoNo",
+      "label": "수입신고번호",
+      "mono": true
+    },
+    {
+      "key": "impoPlan",
+      "label": "통관계획"
+    },
+    {
+      "key": "impoSingoGubun",
+      "label": "신고구분"
+    },
+    {
+      "key": "impoSingoDate",
+      "label": "신고일자",
+      "align": "center"
+    },
+    {
+      "key": "impoGeleGubun",
+      "label": "거래구분"
+    },
+    {
+      "key": "impoJonglu",
+      "label": "수입종류"
+    },
+    {
+      "key": "impoWonsanjiYn",
+      "label": "원산지증명유무",
+      "align": "right"
+    },
+    {
+      "key": "impoGakykYn",
+      "label": "가격신고서유무"
+    },
+    {
+      "key": "impoGyelje",
+      "label": "결제방법"
+    },
+    {
+      "key": "impoIphangDate",
+      "label": "입항일자",
+      "align": "center"
+    },
+    {
+      "key": "impoHangguCode",
+      "label": "도착항코드"
+    },
+    {
+      "key": "impoHangguName",
+      "label": "도착항항구명"
+    },
+    {
+      "key": "impoHangguGubun",
+      "label": "도착항항구,공항구분"
+    },
+    {
+      "key": "impoShipName",
+      "label": "선기명"
+    },
+    {
+      "key": "impoMblNo",
+      "label": "MasterB/L번호",
+      "mono": true
+    },
+    {
+      "key": "impoUnsuGigwan",
+      "label": "운수기관"
+    },
+    {
+      "key": "impoUnsuName",
+      "label": "운수기관명"
+    },
+    {
+      "key": "impoSungiCode",
+      "label": "선기코드"
+    },
+    {
+      "key": "impoSungiName",
+      "label": "선기명_1"
+    },
+    {
+      "key": "impoUnsongType",
+      "label": "운송형태"
+    },
+    {
+      "key": "impoUnsongBox",
+      "label": "운송용기"
+    },
+    {
+      "key": "impoJukchlCode",
+      "label": "적출국코드"
+    },
+    {
+      "key": "impoJukchlName",
+      "label": "적출국가명"
+    },
+    {
+      "key": "impoBlNo",
+      "label": "B/L번호",
+      "mono": true
+    },
+    {
+      "key": "impoBlGubun",
+      "label": "B/L구분"
+    },
+    {
+      "key": "impoBanipDate",
+      "label": "반입일자",
+      "align": "center"
+    },
+    {
+      "key": "impoJangchBuho",
+      "label": "장치장부호"
+    },
+    {
+      "key": "impoJangchName",
+      "label": "장치장명"
+    },
+    {
+      "key": "impoJangchJangso",
+      "label": "장치장소"
+    },
+    {
+      "key": "impoJangchGwa",
+      "label": "장치장과"
+    },
+    {
+      "key": "impoMrnNo",
+      "label": "화물관리번호",
+      "mono": true
+    },
+    {
+      "key": "impoLan",
+      "label": "총란수",
+      "align": "center"
+    },
+    {
+      "key": "impoJingsuType",
+      "label": "징수형태"
+    },
+    {
+      "key": "impoNapbuDate1",
+      "label": "고지서납부기한1"
+    },
+    {
+      "key": "impoNapbuDate2",
+      "label": "고지서납부기한2"
+    },
+    {
+      "key": "impoNapbuNo",
+      "label": "납부번호"
+    },
+    {
+      "key": "impoDamdangNo",
+      "label": "세관담당자부호"
+    },
+    {
+      "key": "impoDamdangName",
+      "label": "세관담당자이름"
+    },
+    {
+      "key": "impoIndoJogun",
+      "label": "인도조건"
+    },
+    {
+      "key": "impoGyeljeMoney",
+      "label": "결제통화단위"
+    },
+    {
+      "key": "impoGyeljeInput",
+      "label": "입력결제금액"
+    },
+    {
+      "key": "impoUsdExch",
+      "label": "USD환율",
+      "align": "right"
+    },
+    {
+      "key": "impoExchYul",
+      "label": "결제통화단위환율"
+    },
+    {
+      "key": "impoInsYn",
+      "label": "보험료분할여부"
+    },
+    {
+      "key": "impoInsTotal",
+      "label": "보험료총금액"
+    },
+    {
+      "key": "impoInsSingo",
+      "label": "보험료분할신고금액"
+    },
+    {
+      "key": "impoFreMoney",
+      "label": "운임통화단위"
+    },
+    {
+      "key": "impoFreExch",
+      "label": "운임통화단위환율"
+    },
+    {
+      "key": "impoFre",
+      "label": "입력운임"
+    },
+    {
+      "key": "impoFreWon",
+      "label": "계산된운임원화",
+      "align": "right"
+    },
+    {
+      "key": "impoInsInput",
+      "label": "입력보험료"
+    },
+    {
+      "key": "impoInsLast",
+      "label": "계산된보험료원화"
+    },
+    {
+      "key": "impoPlusYulGubun",
+      "label": "가산금구분"
+    },
+    {
+      "key": "impoPlusYul",
+      "label": "가산율"
+    },
+    {
+      "key": "impoPlusMoney",
+      "label": "가산금통화단위"
+    },
+    {
+      "key": "impoPlusExch",
+      "label": "가산금통화단위환율"
+    },
+    {
+      "key": "impoPlus",
+      "label": "입력가산금"
+    },
+    {
+      "key": "impoPlusWon",
+      "label": "공통사항계산된가산금원화",
+      "align": "right"
+    },
+    {
+      "key": "impoPlusTotal",
+      "label": "전체계산된가산금원화"
+    },
+    {
+      "key": "impoMinusYulGubun",
+      "label": "공제금구분"
+    },
+    {
+      "key": "impoMinusYul",
+      "label": "공제율"
+    },
+    {
+      "key": "impoMinusMoney",
+      "label": "공제금통화단위"
+    },
+    {
+      "key": "impoMinusExch",
+      "label": "공제금통화단위환율"
+    },
+    {
+      "key": "impoMinus",
+      "label": "입력공제금"
+    },
+    {
+      "key": "impoMinusWon",
+      "label": "공통사항계산된공제금원화",
+      "align": "right"
+    },
+    {
+      "key": "impoMinusTotal",
+      "label": "전체계산된공제금원화"
+    },
+    {
+      "key": "impoChargeMoney",
+      "label": "기타금통화단위"
+    },
+    {
+      "key": "impoChargeExch",
+      "label": "기타금통화단위환율"
+    },
+    {
+      "key": "impoCharge",
+      "label": "입력기타금액"
+    },
+    {
+      "key": "impoChargeWon",
+      "label": "계산된기타금원화",
+      "align": "right"
+    },
+    {
+      "key": "impoPojangSu",
+      "label": "총포장수량",
+      "align": "right"
+    },
+    {
+      "key": "impoPojangDanwi",
+      "label": "포장수량단위"
+    },
+    {
+      "key": "impoTotalJung",
+      "label": "총중량"
+    },
+    {
+      "key": "impoJungDanwi",
+      "label": "중량단위"
+    },
+    {
+      "key": "impoCost",
+      "label": "란결제금액합계"
+    },
+    {
+      "key": "impoGamjunggaBf",
+      "label": "감정가"
+    },
+    {
+      "key": "impoCifTotalWon",
+      "label": "Cif원화",
+      "align": "right"
+    },
+    {
+      "key": "impoCifTotalUsd",
+      "label": "Cif달러",
+      "align": "right"
+    },
+    {
+      "key": "impoGwanTax",
+      "label": "관세",
+      "align": "right"
+    },
+    {
+      "key": "imlanNegukGubun",
+      "label": "개소세"
+    },
+    {
+      "key": "impoOilTax",
+      "label": "교통세",
+      "align": "right"
+    },
+    {
+      "key": "impoJuTax",
+      "label": "주세",
+      "align": "right"
+    },
+    {
+      "key": "impoNegukTax",
+      "label": "내국세",
+      "align": "right"
+    },
+    {
+      "key": "impoEduTax",
+      "label": "교육세",
+      "align": "right"
+    },
+    {
+      "key": "impoNongTax",
+      "label": "농특세",
+      "align": "right"
+    },
+    {
+      "key": "impoVatGwapyo",
+      "label": "부가세총과표"
+    },
+    {
+      "key": "impoGwaseVatGwapyo",
+      "label": "부가세과세과표"
+    },
+    {
+      "key": "impoMyunseVatGwapyo",
+      "label": "부가세면세과표"
+    },
+    {
+      "key": "impoVatTax",
+      "label": "부가세",
+      "align": "right"
+    },
+    {
+      "key": "impoGasanTax",
+      "label": "신고지연가산세",
+      "align": "right"
+    },
+    {
+      "key": "impoGitaTax",
+      "label": "기타세액",
+      "align": "right"
+    },
+    {
+      "key": "impoTotalTax",
+      "label": "총세액",
+      "align": "right"
+    },
+    {
+      "key": "impoTeuksong",
+      "label": "특송업체코드"
+    },
+    {
+      "key": "impoTeuksongName",
+      "label": "특송업체명"
+    },
+    {
+      "key": "impoChamjoNo",
+      "label": "무역업체참조번호"
+    },
+    {
+      "key": "impoGije",
+      "label": "세관기재란"
+    },
+    {
+      "key": "impoOkDate",
+      "label": "수리일자",
+      "align": "center"
+    },
+    {
+      "key": "impoJubsuDate",
+      "label": "접수일시",
+      "align": "center"
+    },
+    {
+      "key": "impoBlType",
+      "label": "남북교역여부"
+    },
+    {
+      "key": "impoCall",
+      "label": "응답형태"
+    },
+    {
+      "key": "impoSendGubun",
+      "label": "전송구분"
+    },
+    {
+      "key": "impoGasanIlsu",
+      "label": "가산일수"
+    },
+    {
+      "key": "impoGasangumMyunje",
+      "label": "가산금면제여부"
+    },
+    {
+      "key": "impoSendResult",
+      "label": "전송결과"
+    },
+    {
+      "key": "impoReceiveResult",
+      "label": "수신결과"
+    },
+    {
+      "key": "impoDamdangja",
+      "label": "담당자"
+    },
+    {
+      "key": "impoJangchiCnt",
+      "label": "장치장일련번호"
+    },
+    {
+      "key": "impoDaecode",
+      "label": "대행사코드"
+    },
+    {
+      "key": "impoDaesangho",
+      "label": "대행사상호"
+    },
+    {
+      "key": "impoBlSayuCode",
+      "label": "B/L분할사유코드"
+    },
+    {
+      "key": "impoBlSayu",
+      "label": "기타사유"
+    },
+    {
+      "key": "impoMisingoTax",
+      "label": "미신고가산세",
+      "align": "right"
+    },
+    {
+      "key": "impoMisingoTaxYn",
+      "label": "미신고가산제적용여부"
+    },
+    {
+      "key": "impoFileNo1",
+      "label": "파일번호1",
+      "mono": true
+    },
+    {
+      "key": "impoFileNo2",
+      "label": "파일번호2",
+      "mono": true
+    },
+    {
+      "key": "impoCs",
+      "label": "C/S검사구분"
+    },
+    {
+      "key": "impoFtaObj",
+      "label": "FTA대상"
+    },
+    {
+      "key": "impoUsesingbn",
+      "label": "사용신고구분"
+    },
+    {
+      "key": "impoUsesindt",
+      "label": "사용신고일자"
+    },
+    {
+      "key": "usernm",
+      "label": "작성자"
+    },
+    {
+      "key": "impoJungChasu",
+      "label": "정정차수"
+    },
+    {
+      "key": "attachimageyn",
+      "label": "첨부"
+    },
+    {
+      "key": "impoBanchul",
+      "label": "반출"
+    },
+    {
+      "key": "adddttime",
+      "label": "입력일시"
+    },
+    {
+      "key": "editdttime",
+      "label": "수정일시"
+    },
+    {
+      "key": "impoUseSinDt",
+      "label": "확정신고기한",
+      "align": "center"
+    },
+    {
+      "key": "impoShipper",
+      "label": "해외공급자코드"
+    },
+    {
+      "key": "impoShipperSangho",
+      "label": "해외공급자상호"
+    },
+    {
+      "key": "impoShipperBuho",
+      "label": "해외공급자국가코드"
+    },
+    {
+      "key": "impoInlandFre",
+      "label": "공통가산금2"
+    },
+    {
+      "key": "impoRate",
+      "label": "공통가산금2_환율"
+    },
+    {
+      "key": "imlanPlusMoney",
+      "label": "공통가산금2_통화단위"
+    },
+    {
+      "key": "impoInlandFreWon",
+      "label": "공통사항계산된가산금2원화",
+      "align": "right"
+    },
+    {
+      "key": "attachimageyn",
+      "label": "첨부서류"
+    },
+    {
+      "key": "userNM",
+      "label": "입력자"
+    },
+    {
+      "key": "impoNapbuDate1",
+      "label": "납부일자"
+    },
+    {
+      "key": "imlanPlusYulGubun",
+      "label": "란가산금구분"
+    },
+    {
+      "key": "imlanPlusYul",
+      "label": "란가산율"
+    },
+    {
+      "key": "imlanPlus",
+      "label": "란입력가산금"
+    },
+    {
+      "key": "imlanTeukGijun1",
+      "label": "특수세액계산근거"
+    },
+    {
+      "key": "imlanJechlLan",
+      "label": "란번호",
+      "align": "center"
+    },
+    {
+      "key": "imlanHs",
+      "label": "세번부호",
+      "mono": true
+    },
+    {
+      "key": "imlanSeyulGubun",
+      "label": "세율구분"
+    },
+    {
+      "key": "imlanSeyulPrn",
+      "label": "세율설명"
+    },
+    {
+      "key": "imlanPopum",
+      "label": "표준품명"
+    },
+    {
+      "key": "imlanGuraePum",
+      "label": "거래품명"
+    },
+    {
+      "key": "imlanModelCode",
+      "label": "상표코드"
+    },
+    {
+      "key": "imlanModel",
+      "label": "상표명"
+    },
+    {
+      "key": "imlanGwanGije1",
+      "label": "관세사기재1_01"
+    },
+    {
+      "key": "imlanGwanGije2",
+      "label": "관세사기재1_02"
+    },
+    {
+      "key": "imlanGwanGije3",
+      "label": "관세사기재1_03"
+    },
+    {
+      "key": "imlanGwanGije4",
+      "label": "관세사기재1_04"
+    },
+    {
+      "key": "imlanGije1",
+      "label": "관세사기재2_01"
+    },
+    {
+      "key": "imlanGije2",
+      "label": "관세사기재2_02"
+    },
+    {
+      "key": "imlanGije3",
+      "label": "관세사기재2_03"
+    },
+    {
+      "key": "imlanGije4",
+      "label": "관세사기재2_04"
+    },
+    {
+      "key": "imlanGije5",
+      "label": "관세사기재2_05"
+    },
+    {
+      "key": "imlanGije6",
+      "label": "관세사기재2_06"
+    },
+    {
+      "key": "imlanGije7",
+      "label": "관세사기재2_07"
+    },
+    {
+      "key": "imlanGije8",
+      "label": "관세사기재2_08"
+    },
+    {
+      "key": "imlanGije9",
+      "label": "관세사기재2_09"
+    },
+    {
+      "key": "imlanGije10",
+      "label": "관세사기재2_10"
+    },
+    {
+      "key": "imlanAttachi",
+      "label": "서류첨부여부"
+    },
+    {
+      "key": "imlanGukykCnt",
+      "label": "총규격수"
+    },
+    {
+      "key": "imlanYogunCnt",
+      "label": "요건확인서류수"
+    },
+    {
+      "key": "imlanCost",
+      "label": "란결제금액"
+    },
+    {
+      "key": "imlanFreWon",
+      "label": "란운임",
+      "align": "right"
+    },
+    {
+      "key": "imlanInsWon",
+      "label": "란보험",
+      "align": "right"
+    },
+    {
+      "key": "imlanPlusWon",
+      "label": "가산비용원화",
+      "align": "right"
+    },
+    {
+      "key": "imlanMinusWon",
+      "label": "공제비용원화",
+      "align": "right"
+    },
+    {
+      "key": "imlanChargeWon",
+      "label": "기타금액",
+      "align": "right"
+    },
+    {
+      "key": "imlanGwanGamGubun",
+      "label": "관세감면구분"
+    },
+    {
+      "key": "imlanGwanGamBuho",
+      "label": "관세감면분납부호"
+    },
+    {
+      "key": "imlanGwanBunnapCnt",
+      "label": "관세분납횟수"
+    },
+    {
+      "key": "imlanGwanGyengYul",
+      "label": "관세감면율"
+    },
+    {
+      "key": "impoGwanTax",
+      "label": "관세율종가",
+      "align": "right"
+    },
+    {
+      "key": "impoGwanTax",
+      "label": "관세율종량",
+      "align": "right"
+    },
+    {
+      "key": "imlanGwanSeyulc",
+      "label": "관세실행세율"
+    },
+    {
+      "key": "imlanMyunGwan",
+      "label": "면세관세"
+    },
+    {
+      "key": "imlanGyengGwan",
+      "label": "경감관세"
+    },
+    {
+      "key": "impoGwanTax",
+      "label": "실제관세액",
+      "align": "right"
+    },
+    {
+      "key": "imlanNegukGubun",
+      "label": "내국세구분"
+    },
+    {
+      "key": "imlanNegukCode",
+      "label": "내국세부호"
+    },
+    {
+      "key": "imlanMyunNeguk",
+      "label": "내국세면세부호"
+    },
+    {
+      "key": "imlanNegukSeyul",
+      "label": "내국세율"
+    },
+    {
+      "key": "imlanNegukJong",
+      "label": "내국종량세율"
+    },
+    {
+      "key": "imlanNegukGwapyo",
+      "label": "내국세과표"
+    },
+    {
+      "key": "imlanNegukTax",
+      "label": "내국세_1",
+      "align": "right"
+    },
+    {
+      "key": "imlanMyunNeguk",
+      "label": "내국세면세"
+    },
+    {
+      "key": "imlanEduYn",
+      "label": "교육세구분"
+    },
+    {
+      "key": "imlanEduSeyul",
+      "label": "교육세율"
+    },
+    {
+      "key": "imlanMyunEdu",
+      "label": "교육세면세"
+    },
+    {
+      "key": "imlanEduTax",
+      "label": "교육세_1",
+      "align": "right"
+    },
+    {
+      "key": "imlanNongGubun",
+      "label": "농특세구분"
+    },
+    {
+      "key": "imlanGwapyoNong1",
+      "label": "농특세과표"
+    },
+    {
+      "key": "imlanSeyulNong1",
+      "label": "농특세세율"
+    },
+    {
+      "key": "imlanNongTax",
+      "label": "농특세_1",
+      "align": "right"
+    },
+    {
+      "key": "imlanVatGubun",
+      "label": "부가세구분"
+    },
+    {
+      "key": "imlanVatGamBuho",
+      "label": "부가세감면부호"
+    },
+    {
+      "key": "impoVatTax",
+      "label": "부가세경감율",
+      "align": "right"
+    },
+    {
+      "key": "imlanTotGwapyo",
+      "label": "부가세과세과표합"
+    },
+    {
+      "key": "imlanGwapyoVat",
+      "label": "부가세과표"
+    },
+    {
+      "key": "imlanMyunGwapyo",
+      "label": "부가세면세과표_1"
+    },
+    {
+      "key": "impoVatTax",
+      "label": "면세부가세",
+      "align": "right"
+    },
+    {
+      "key": "imlanVatTax",
+      "label": "부가세_1",
+      "align": "right"
+    },
+    {
+      "key": "impoCifTotalWon",
+      "label": "과세가격원화",
+      "align": "right"
+    },
+    {
+      "key": "imlanCifUsd",
+      "label": "과세가격달러",
+      "align": "right"
+    },
+    {
+      "key": "imlanTotalTax",
+      "label": "란총세액",
+      "align": "right"
+    },
+    {
+      "key": "imlanJung",
+      "label": "순중량"
+    },
+    {
+      "key": "imlanJungDanwi",
+      "label": "순중량단위"
+    },
+    {
+      "key": "imlanSu",
+      "label": "수량",
+      "align": "right"
+    },
+    {
+      "key": "imlanSuDanwi",
+      "label": "수량단위"
+    },
+    {
+      "key": "imlanMulryang",
+      "label": "환급물량"
+    },
+    {
+      "key": "imlanMulryangDanwi",
+      "label": "환급물량단위"
+    },
+    {
+      "key": "imlanWonsanjiCode",
+      "label": "원산지코드",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiName",
+      "label": "원산지이름",
+      "align": "right"
+    },
+    {
+      "key": "imlanCs",
+      "label": "특송업체CS"
+    },
+    {
+      "key": "imlanCsGumsa1",
+      "label": "CS검사"
+    },
+    {
+      "key": "imlanWonsanjiMark",
+      "label": "원산지표시유무",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiBang",
+      "label": "원산지표시방법",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiType",
+      "label": "원산지표시형태",
+      "align": "right"
+    },
+    {
+      "key": "imlanOexemptsayucd",
+      "label": "원산지표시면제사유"
+    },
+    {
+      "key": "imlanWonsanjiNo",
+      "label": "원산지증명서발급번호",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiDate",
+      "label": "원산지증명서발급일자",
+      "align": "center"
+    },
+    {
+      "key": "imlanWonsanjiCntry",
+      "label": "원산지증명서발급국가",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiGigwan",
+      "label": "원산지증명서발급기관",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiBase",
+      "label": "원산지증명서원산지기준",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiIssueLoc",
+      "label": "원산지증명서발급지역",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiIssueClr",
+      "label": "원산지증명서발급담당자",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiDcsnBase",
+      "label": "원산지표시결정방법",
+      "align": "right"
+    },
+    {
+      "key": "imlanGoodsofficedocno",
+      "label": "용도세율전용물품확인공문번호"
+    },
+    {
+      "key": "imlanWonsanjiDivYn",
+      "label": "원산지증명서발행번호분할여부",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiTotQty",
+      "label": "원산지증명서전체수량",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiUseQty",
+      "label": "원산지증명서사용수량",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiTotWght",
+      "label": "원산지증명서전체중량",
+      "align": "right"
+    },
+    {
+      "key": "imlanWonsanjiUseWght",
+      "label": "원산지증명서사용중량",
+      "align": "right"
+    },
+    {
+      "key": "imlanFtaObj",
+      "label": "FTA대상_1"
+    },
+    {
+      "key": "imlanJumyuncd",
+      "label": "주세면세부호"
+    },
+    {
+      "key": "imlanJepumjajaegbn",
+      "label": "제품원료구분"
+    },
+    {
+      "key": "imlanJepumlanno",
+      "label": "제품란번호"
+    },
+    {
+      "key": "imlanCsGumsa2",
+      "label": "수입검사필요란여부"
+    },
+    {
+      "key": "imlanGwanGele",
+      "label": "관세사기재란-거래관계"
+    },
+    {
+      "key": "imlanGwanHs",
+      "label": "관세사기재란-품명규격세번"
+    },
+    {
+      "key": "imlanGwanGumsa",
+      "label": "관세사기재란-검사의견"
+    },
+    {
+      "key": "imlanElasticcd",
+      "label": "탄력구분"
+    },
+    {
+      "key": "imlanElasticSeyul",
+      "label": "탄력실행세율"
+    },
+    {
+      "key": "imlanStdgoodscode",
+      "label": "표준품명코드"
+    },
+    {
+      "key": "impoSingoNo",
+      "label": "즉시반출신고번호",
+      "mono": true
+    },
+    {
+      "key": "impumLan",
+      "label": "란번호2",
+      "align": "center"
+    },
+    {
+      "key": "impumHeang",
+      "label": "행번호",
+      "align": "center"
+    },
+    {
+      "key": "impumJajaeCode",
+      "label": "자재코드",
+      "mono": true
+    },
+    {
+      "key": "impumGukyk1",
+      "label": "규격1"
+    },
+    {
+      "key": "impumGukyk2",
+      "label": "규격2"
+    },
+    {
+      "key": "impumGukyk3",
+      "label": "규격3"
+    },
+    {
+      "key": "impumSungbun1",
+      "label": "성분1"
+    },
+    {
+      "key": "impumSungbun2",
+      "label": "성분2"
+    },
+    {
+      "key": "impumSungbun3",
+      "label": "성분3"
+    },
+    {
+      "key": "impumSu",
+      "label": "수량_1",
+      "align": "right"
+    },
+    {
+      "key": "impumSuDanwi",
+      "label": "수량단위_1"
+    },
+    {
+      "key": "impumDanga",
+      "label": "단가"
+    },
+    {
+      "key": "impumAmt",
+      "label": "금액",
+      "align": "right"
+    },
+    {
+      "key": "c31",
+      "label": "공사번호"
+    }
+  ],
+  "unresolvedLabels": []
+}

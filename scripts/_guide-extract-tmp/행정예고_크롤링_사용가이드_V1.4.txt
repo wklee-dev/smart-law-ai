@@ -1,0 +1,595 @@
+관세법령정보포털
+행정예고 크롤링 사용가이드
+버전 V1.4 · 작성일 2026-10-15 · 대상: Windows / Python 3.10 이상
+1. 프로그램 기능과 지침 반영
+관세법령정보포털의 ‘새소식 → 행정예고’ 목록, 상세 본문, 첨부파일을 수집합니다. 제목, 담당부서, 작성일자와 원문 URL을 저장하고, 상세 본문은 HTML과 일반 텍스트를 함께 보관합니다. 첨부 문서 내부의 텍스트 추출/OCR은 이번 프로그램 범위에 포함하지 않습니다.
+첨부 지침
+구현 내용
+파이썬 크롤링 프로그램
+crawler.py, requests 기반 공개 HTTP 수집. 별도 브라우저/드라이버 불필요
+워드 가이드, V1.0 시작
+이 문서의 DOCX 파일, 테이블 상세 및 표 형식 실행방법 포함
+기존 데이터가 있는 DB
+clip_admin_ 접두사 전용 테이블 5개 추가. 기존 테이블 수정/삭제/덮어쓰기 없음
+기본 DB
+D:\SQLiteDB\smart_law_ai.db
+기본 첨부 경로
+D:\SQLiteDB\downloads\행정예고\게시글ID\
+영문 압축/배치파일
+customs_admin_notice_crawler_v1.4_no_venv.zip 및 영문 BAT 파일명·본문
+이후 최신값 수집
+첫 실행 전량 수집, 이후 목록 전체를 대조해 신규·목록 정보 변경 게시글만 상세 갱신
+조건 없이 전체 수집
+작성일, 유형, 제정, 개정, 폐지, 폐지제정 등에 따른 제외 조건 없음
+‘최신값’은 최신 게시글 1건만 수집한다는 의미가 아니라 마지막 실행 이후 새로 등록되거나 목록 정보가 바뀐 모든 항목을 반영한다는 의미로 구현했습니다. 같은 날짜의 복수 게시글이나 과거 날짜로 뒤늦게 등록된 게시글도 고유 ID로 탐지합니다.
+기존 DB 파일 자체는 제공되지 않았으므로 기존 테이블 구조와의 직접 매핑은 하지 않았습니다. 전용 테이블만 추가하며, 같은 이름의 테이블/인덱스 정의가 V1.0과 다르면 덮어쓰지 않고 중단합니다.
+2. 배포 파일 구성
+파일
+역할
+crawler.py
+수집, 증분 비교, 첨부 저장, 오류/복구 로직
+config.json
+운영 경로와 요청 설정
+schema.sql
+전용 테이블 5개와 인덱스 4개 정의
+requirements.txt
+필수 라이브러리 목록
+setup.bat
+설치된 Python 확인, 사용자 영역에 라이브러리 설치. 가상환경 생성 없음
+find_python.bat
+py -3 또는 python으로 일반 Python 실행기를 찾아 공통 사용
+run.bat
+파라미터를 크롤러에 전달. 페이지 미지정이면 전체. 입력 대기/종료 대기 없음
+run_full.bat
+모든 기존 게시글 상세를 다시 확인
+test.bat
+오프라인 자동 테스트. pytest를 추가 설치
+test_live.bat
+별도 시험 DB에서 목록 전체와 상세 3건 표본 수집
+tests/
+자동 테스트 및 실제 상세 HTML 표본
+README.md
+빠른 시작 안내
+행정예고_크롤링_사용가이드_V1.4.docx
+워드 사용가이드
+이 배포본은 Python 소스 실행 패키지이며 Windows .exe 바이너리가 아닙니다. 운영 DB나 수집된 첨부파일은 압축파일에 포함하지 않습니다.
+3. 설치와 실행방법
+Windows 10/11에서 Python 3.10 이상을 먼저 설치합니다. 설치 시 ‘Add Python to PATH’를 선택하거나 Python Launcher(py)를 설치합니다. 관리자 권한은 필수가 아니며, DB/첨부 폴더에 대한 쓰기 권한과 HTTPS 인터넷 접속이 필요합니다. 운영 DB는 지침에서 지정한 D:\SQLiteDB\smart_law_ai.db를 사용합니다. 다른 위치로 옮기거나 경로를 임의로 변경하지 마세요.
+ZIP 파일은 ‘모두 압축 풀기’로 일반 폴더에 해제합니다. ZIP 내부에서 BAT를 바로 실행하지 마세요. 경로가 지나치게 길지 않은 C:\Tools\customs_admin_notice_crawler 등의 폴더를 권장합니다.
+순서/목적
+실행방법
+결과/주의사항
+1. 최초 설치
+setup.bat 더블클릭
+일반 Python의 사용자 영역에 requests, beautifulsoup4 설치. 가상환경 불필요
+2. 경로 확인
+config.json을 메모장으로 열어 확인
+기존 DB 경로와 downloads 경로 확인. JSON의 역슬래시는 두 번 작성
+3. 선택: 시험 수집
+test_live.bat 더블클릭
+프로그램 폴더의 test_output에 시험 DB/첨부 저장. 운영 DB 미사용
+4. 운영 수집
+명령 프롬프트에서 run.bat 또는 run.bat --pages 2
+파라미터 없음이면 전체, --pages 지정이면 해당 범위. 입력란 없음
+5. 이후 신규 수집
+같은 명령 재실행
+전체/선택 범위에서 신규/목록 변경 항목만 상세 갱신. 성공 파일 재사용
+6. 기존 본문 재확인
+run_full.bat 실행
+기존 게시글 전체 상세를 재확인. 같은 첨부파일은 재다운로드하지 않음
+7. 파일 무결성 확인+복구
+명령 프롬프트에서 run.bat --verify-files
+SHA256 불일치/누락 파일을 pending으로 표시 후 재다운로드
+8. 오프라인 검증
+test.bat 더블클릭
+자동 테스트 실행. 실제 사이트 접속 불필요
+9. 종료/중단
+실행 창에서 Ctrl+C
+종료코드 130. 저장 완료된 자료는 유지되고 다음 실행에서 복구
+직접 Python 실행 목적
+명령
+전체 범위 직접 실행
+py -3 crawler.py
+단일 페이지
+py -3 crawler.py --pages 2
+연속 범위
+py -3 crawler.py --pages 2-4
+여러 페이지
+py -3 crawler.py --pages 1,3,5-7
+사이트 기본 10건 기준 2페이지
+py -3 crawler.py --pages 2 --page-size 10
+선택 범위 본문까지 재확인
+py -3 crawler.py --pages 2-4 --full
+명시적 빈 페이지 파라미터 (전체)
+py -3 crawler.py --pages ""
+전체 상세 재확인
+py -3 crawler.py --full
+설정파일 지정
+py -3 crawler.py --config config.json
+별도 표본 시험
+py -3 crawler.py --db-path "test_output\test.db" --download-root "test_output\downloads" --max-notices 3
+파일 해시 확인
+py -3 crawler.py --verify-files
+버전 확인
+py -3 crawler.py --version
+BAT 파일은 영문 본문으로 작성되어 있습니다. 파이썬의 일부 오류 메시지와 로그에 수집한 한글 제목이 표시됩니다. BAT에는 UTF-8 콘솔 설정이 포함되어 있습니다.
+3.1 페이지는 실행 파라미터로만 지정
+V1.4는 실행 중 페이지를 묻지 않습니다. run.bat 뒤에 --pages 파라미터를 처음부터 전달합니다. 파라미터가 없으면 곧바로 전체 페이지 범위를 수집합니다. --pages에 빈 문자열을 전달해도 전체입니다. 구버전 config.json에 pages 값이 있어도 페이지 파라미터를 생략하면 전체를 수집하도록 해당 설정값은 사용하지 않습니다.
+목적
+명령
+전체 페이지
+run.bat
+2페이지만
+run.bat --pages 2
+2~4페이지
+run.bat --pages 2-4
+1, 3, 5~7페이지
+run.bat --pages 1,3,5-7
+포털 기본 10건 표시와 맞춤
+run.bat --pages 2 --page-size 10
+선택 범위 본문까지 재확인
+run.bat --pages 2-4 --full
+전체 본문 재확인
+run_full.bat
+Python 직접 실행도 동일합니다. py -3 crawler.py는 전체, py -3 crawler.py --pages 2는 2페이지입니다. --pages 없이 다른 파라미터만 전달해도 전체 범위입니다. 예를 들어 run.bat --verify-files는 전체 범위의 무결성을 확인하고 수집합니다.
+페이지 번호는 작성일 내림차순, 페이지당 건수 기준입니다. 기존 기본값 page_size=100은 바꾸지 않았습니다. 따라서 기본 2페이지는 목록 101~200번째 게시글입니다. 포털의 10건 표시 화면에 맞추려면 --page-size 10을 쓰거나 config.json의 page_size를 10으로 설정합니다. 10건 기준 2페이지는 11~20번째입니다.
+잘못된 형식, 0/음수/역방향 범위, 존재하지 않는 페이지는 오류로 중단합니다. 잘못된 파라미터를 전체로 임의 전환하지 않습니다. 선택 범위 밖 상세/첨부는 다운로드하지 않으며, 범위 확인용 1페이지의 목록 요청만 수행할 수 있습니다.
+선택 페이지 성공은 종료코드 0이며 실행 이력에 selected/selected_full과 pages/page_size를 기록합니다. 선택 페이지 실행을 ‘초기 전체 수집 완료’로 기록하지 않습니다. 다음 전체 실행에서는 이미 성공한 자료를 재사용하면서 나머지를 수집합니다. 페이지 번호는 새 글 추가에 따라 이동하므로 정기적인 전체 범위 증분 확인을 권장합니다.
+3.2 시작·진행 표시
+run.bat는 Python 탐지 전에 영문 시작 안내를 표시합니다. Python 찾기/필수 라이브러리 확인/크롤러 시작 단계와 실제 Python 경로를 표시합니다. 크롤러는 DB 준비, 부서 코드 조회, 목록 요청, 상세/첨부 진행을 표시하며 출력 지연을 줄이기 위해 비버퍼 출력(-u)을 사용합니다. 모든 BAT 파일에서 pause를 제거했습니다. 정상 완료와 오류 모두 키 입력 대기 없이 종료코드를 반환합니다. 더블클릭으로 실행하면 종료 후 창이 닫힐 수 있으므로 진행과 결과를 계속 보려면 이미 열린 명령 프롬프트에서 실행하세요. 로그 파일은 기존처럼 logs에 남습니다.
+V1.4는 실행 전 DB 백업을 하지 않습니다. 지침에 없는 백업 함수·호출·설정을 제거했으며, 구버전 config.json에 backup_before_run=true가 남아 있어도 해당 키를 무시합니다. 백업 폴더나 DB 복제 파일을 생성하지 않습니다. 기존 버전에서 만들어진 파일을 자동 삭제하거나 기존 DB/첨부 위치를 변경하지도 않습니다.
+3.3 가상환경 없는 설치 방식
+V1.4도 가상환경 폴더를 만들거나 활성화하지 않습니다. 설치된 일반 Python을 직접 사용하며 setup.bat는 선택된 Python의 pip에 --user 옵션을 적용해 현재 Windows 사용자 영역에 라이브러리만 설치합니다. 라이브러리 설치는 최초 한 번 필요하며 Python 3.10 이상은 PC에 설치되어 있어야 합니다. .exe 방식이나 무설치 Python 내장 방식은 아닙니다.
+직접 명령으로 설치하려면 py -3 -m pip install --user -r requirements.txt를 실행하고, py -3 crawler.py로 시작합니다. py가 없는 PC에서는 모든 명령의 py -3를 python으로 바꾸세요. 배치파일은 이 선택을 자동으로 처리합니다. Python이 여러 개 설치되어 있다면 설치와 실행에 같은 실행기를 사용해야 합니다.
+--user 설치 라이브러리는 같은 사용자의 해당 Python에서 사용하는 다른 프로그램과 공유될 수 있습니다. 별도 환경 격리는 하지 않습니다. 조직 정책으로 사용자 라이브러리가 차단되었거나 사용자 사이트가 비활성화된 경우, 일반 Python의 설치 정책을 확인해야 합니다. 이미 활성화한 Python 가상환경 안의 실행기만 발견되는 경우에는 일반 명령 프롬프트에서 재실행하도록 안내하고 중단합니다.
+기존 V1.0을 사용했다면 기존 DB/첨부폴더/config.json 경로를 그대로 사용할 수 있습니다. 테이블 정의와 schema_version=1.0은 유지하므로 자료를 다시 만들 필요가 없습니다. V1.4 폴더에서 setup.bat와 run.bat를 실행하면 됩니다. 기존 가상환경 폴더를 자동으로 삭제하거나 변경하지 않습니다.
+4. 기본 설정 상세
+설정 키
+기본값
+설명
+db_path
+D:\SQLiteDB\smart_law_ai.db
+기존 SQLite DB. 없으면 새로 생성
+download_root
+D:\SQLiteDB\downloads
+첨부파일 기본 저장 폴더
+category
+행정예고
+화면명 하위폴더. 파일 저장 경로의 첫 하위폴더
+page_size
+100
+목록 페이지당 건수. 10/20/30/50/100. 포털 기본 10건 화면과 맞추려면 10
+pages
+빈 문자열
+구버전 호환용 키. 설정값을 사용하지 않음. 페이지는 --pages로만 지정하며 미지정은 전체
+delay_seconds
+0.5
+요청 시작 간 최소 대기. 서버가 느릴 때 1~2로 높이는 것을 권장
+timeout_seconds
+60
+읽기 타임아웃. 연결 타임아웃은 15초
+retry_count
+3
+GET/POST 실패 재시도 횟수. 429/5xx에 지수 백오프 적용
+log_dir
+logs
+상대경로이면 프로그램 폴더 기준 로그 폴더
+config.json은 UTF-8 JSON 형식입니다. Windows 경로는 "D:\\SQLiteDB\\smart_law_ai.db"처럼 역슬래시를 두 번 적습니다. 명령줄 경로는 일반 Windows 경로와 동일하게 역슬래시를 한 번 적습니다. 운영 DB 경로와 첨부 저장 루트는 지침의 지정 위치를 유지하세요. 별도 시험 실행은 운영 DB에 연결하지 않는 테스트입니다.
+운영 실행 대상은 지정 D: 경로를 사용하는 Windows 환경입니다. BAT는 Windows 전용입니다. 이 환경의 자동 테스트는 운영 DB가 아닌 별도의 임시 DB로 수행했습니다.
+5. 전량·증분 수집과 첨부 저장 규칙
+페이지를 지정하지 않은 최초 실행에서는 검색 조건을 비운 목록 API의 모든 페이지를 수집합니다. 페이지 지정 시에는 선택한 페이지의 건수만 검증합니다. 사이트가 반환한 총 건수와 고유 게시글 ID 수를 비교해 목록 누락을 검증한 뒤 상세 수집을 시작합니다. 진행 중 전체 건수가 바뀌거나 페이지에 중복 ID가 나타나면 성공 처리하지 않고 재실행을 안내합니다.
+후속 전체 범위 실행에서는 목록 전체를 확인합니다. 페이지 지정 시에는 선택한 범위의 목록만 대조합니다. 고유 게시글 ID가 신규이거나, 제목/작성일/부서/공고 정보 등 목록 메타데이터의 해시가 바뀌거나, 이전 상세 수집이 실패한 경우에만 상세를 다시 가져옵니다. 갱신은 동일 ID에 대한 UPDATE이며 중복 행을 만들지 않습니다. 최초 수집 중 중단된 뒤 재실행하면 이미 성공한 상세는 재사용하고 미처리 항목부터 이어받습니다.
+기존 게시글의 본문만 바뀌고 목록 정보는 그대로인 경우 기본 증분 실행만으로는 감지하지 못합니다. 이러한 변경까지 확인할 때는 run_full.bat 또는 --full을 실행하세요. 같은 file_id의 서버 파일 바이트가 교체되었는지는 기본 실행이나 --full에서 원격 재다운로드로 확인하지 않습니다. --verify-files는 로컬 저장 파일의 무결성을 확인하는 기능입니다.
+저장 항목
+규칙
+기본 폴더
+D:\SQLiteDB\downloads\행정예고\
+게시글 구분
+게시글ID별 하위폴더. 제목이 같아도 충돌하지 않음
+파일명
+파일ID_정리된원본파일명
+파일명 문자
+Windows 금지문자/예약어를 치환하고 긴 이름을 축약
+원본 파일명
+변경 없이 original_name에 저장
+DB 저장 경로
+local_path에 실제 절대경로, relative_path에 다운로드 루트 기준 경로
+다운로드 검증
+HTTP 상태, attachment 헤더, HTML/JSON 오류 응답, 빈 파일, 크기 확인
+완성 파일 저장
+.part 임시파일에 저장한 뒤 원자적으로 완성 파일명으로 교체
+기존 성공 파일
+파일 존재와 크기가 일치하면 재사용
+실패/누락 파일
+전체 범위는 기존 전체 복구 정책 유지. 페이지 지정 시 선택 게시글의 파일만 복구
+첨부 삭제/교체
+--full/변경 상세 수집 시 is_current=0으로 이력 유지. 기존 파일 삭제 안 함
+첨부 다운로드 루트를 나중에 변경하더라도 기존 성공 파일이 존재하면 기존 local_path를 계속 사용합니다. 기존 파일 전체를 새 폴더로 자동 이동하지는 않습니다.
+6. SQLite 전용 테이블 상세
+모든 시각 필드는 UTC 기준 ISO 8601 문자열(예: 2026-10-15T03:00:00+00:00)입니다. written_date는 사이트 작성일을 YYYY-MM-DD로 정규화하며 사이트에 날짜가 없으면 빈 문자열입니다. 기본값이 별도로 표시되지 않은 필드는 NULL을 허용하지 않습니다.
+6.1 clip_admin_notices — 게시글 최신 상태
+컬럼
+자료형
+제약/기본값
+내용
+notice_id
+TEXT
+PK
+원문 jdafCgePbanMtNo, 게시글 고유 식별자
+title
+TEXT
+NOT NULL
+상세 제목
+department_code
+TEXT
+기본 ''
+원문 makeDvsnCd
+department_name
+TEXT
+기본 ''
+DVSN_CD 공통코드로 매핑한 담당부서
+written_date
+TEXT
+기본 ''
+작성일, YYYY-MM-DD
+publication_year
+TEXT
+기본 ''
+원문 pbanYy
+publication_number
+TEXT
+기본 ''
+원문 pbanNo. 원문 공백이면 공백 유지
+notice_type_code
+TEXT
+기본 ''
+원문 jdafCgePbanTpcd. 미확인 의미를 임의 해석하지 않음
+source_url
+TEXT
+NOT NULL
+고유 ID가 포함된 상세 원문 URL
+content_html
+TEXT
+기본 ''
+상세 ‘내용’ 셀의 내부 HTML. 본문 표 구조 보존
+content_text
+TEXT
+기본 ''
+내용의 일반 텍스트. 블록/행 줄바꿈, 표 셀 탭 구분
+list_hash
+TEXT
+기본 ''
+정규화한 목록 메타데이터 SHA256
+content_hash
+TEXT
+기본 ''
+상세 제목·본문 HTML·첨부 목록 SHA256
+raw_list_json
+TEXT
+기본 '{}'
+원문 목록 행 JSON. 추가 필드 원형 보존
+detail_status
+TEXT
+pending/ok/failed
+상세 수집 상태
+first_crawled_at
+TEXT
+NOT NULL
+이 크롤러에 처음 등록된 시각
+last_crawled_at
+TEXT
+NOT NULL
+마지막 상세 저장 시각. 초기 pending 행은 등록 시각
+last_seen_at
+TEXT
+NOT NULL
+목록에서 마지막으로 확인한 시각
+6.2 clip_admin_attachments — 첨부파일 및 저장 상태
+컬럼
+자료형
+제약/기본값
+내용
+attachment_pk
+INTEGER
+PK, 자동증가
+내부 파일 행 식별자
+notice_id
+TEXT
+FK, NOT NULL
+clip_admin_notices.notice_id 참조
+file_id
+TEXT
+NOT NULL
+원문 data-attchfileid
+original_name
+TEXT
+NOT NULL
+원본 표시 파일명
+download_url
+TEXT
+NOT NULL
+실제 다운로드 URL
+local_path
+TEXT
+기본 ''
+다운로드된 파일 절대경로
+relative_path
+TEXT
+기본 ''
+다운로드 루트 기준 상대경로, / 구분
+file_size
+INTEGER
+기본 0
+실제 저장 바이트 수
+sha256
+TEXT
+기본 ''
+저장 파일 SHA256
+content_type
+TEXT
+기본 ''
+서버의 Content-Type. 확장자와 다를 수 있음
+download_status
+TEXT
+pending/ok/failed
+파일 다운로드 상태
+is_current
+INTEGER
+0/1, 기본 1
+마지막 상세에서 확인된 첨부이면 1, 과거 첨부면 0
+downloaded_at
+TEXT
+NULL 허용
+마지막 다운로드 성공 시각
+last_seen_at
+TEXT
+NOT NULL
+상세에서 첨부를 마지막으로 확인한 시각
+error_message
+TEXT
+기본 ''
+마지막 다운로드 오류. 성공 시 초기화
+(notice_id, file_id) 조합이 UNIQUE입니다. 한 게시글의 동일 첨부 ID가 중복 등록되지 않으며 게시글 1개에 첨부 여러 개가 연결됩니다. is_current는 마지막으로 수집한 상세 기준이며 사이트의 실시간 상태를 의미하지 않습니다.
+6.3 clip_admin_crawl_runs — 실행 이력과 집계
+컬럼
+자료형
+제약/기본값
+내용
+run_id
+INTEGER
+PK, 자동증가
+실행 식별자
+started_at
+TEXT
+NOT NULL
+실행 시작 시각
+finished_at
+TEXT
+NULL 허용
+종료 시각. 실행/강제종료 상태면 NULL 가능
+requested_mode
+TEXT
+NOT NULL
+auto 또는 full
+effective_mode
+TEXT
+NOT NULL
+initial/incremental/full/selected/selected_full
+status
+TEXT
+NOT NULL
+running/completed/partial/completed_with_errors/failed/interrupted
+total_on_site
+INTEGER
+기본 0
+시작 목록의 사이트 전체 건수
+list_pages
+INTEGER
+기본 0
+요청한 목록 페이지 수. 선택 범위 밖의 확인용 1페이지 요청도 포함
+seen_count
+INTEGER
+기본 0
+확인한 고유 목록 항목 수
+new_count
+INTEGER
+기본 0
+신규 ID의 상세 저장 성공 수
+updated_count
+INTEGER
+기본 0
+기존 ID의 내용/메타데이터 변경 저장 수
+skipped_count
+INTEGER
+기본 0
+변경 없음으로 상세 생략 또는 --full 재확인 후 동일한 수
+downloaded_count
+INTEGER
+기본 0
+이 실행에서 실제 파일 다운로드 성공 수
+error_count
+INTEGER
+기본 0
+상세/파일/실행 단계 오류 발생 수
+backup_path
+TEXT
+기본 ''
+구버전 DB 구조 호환용. V1.4 새 실행은 빈 문자열. 백업 미실행
+message
+TEXT
+기본 ''
+pages/page_size/test_limit_applied JSON 또는 실패 안내
+6.4 clip_admin_crawl_state — 전용 상태값
+컬럼
+자료형
+제약
+내용
+state_key
+TEXT
+PK
+상태 키
+state_value
+TEXT
+NOT NULL
+상태 값
+updated_at
+TEXT
+NOT NULL
+상태 변경 UTC 시각
+사용하는 키
+값/의미
+schema_version
+1.0
+initial_complete
+전체 실행이 오류 없이 완료되면 1. 제한 표본 실행은 완료로 처리하지 않음
+last_success_at
+마지막 오류 없는 전체 실행의 완료 시각
+6.5 clip_admin_crawl_errors — 오류 이력
+컬럼
+자료형
+제약
+내용
+error_id
+INTEGER
+PK, 자동증가
+오류 식별자
+run_id
+INTEGER
+FK, NOT NULL
+clip_admin_crawl_runs.run_id
+notice_id
+TEXT
+NULL 허용
+오류 게시글 ID
+file_id
+TEXT
+NULL 허용
+오류 첨부 ID
+stage
+TEXT
+NOT NULL
+detail/attachment/run
+error_message
+TEXT
+NOT NULL
+오류 상세
+occurred_at
+TEXT
+NOT NULL
+오류 발생 UTC 시각
+6.6 인덱스와 데이터 보존
+인덱스
+대상 컬럼
+용도
+clip_admin_idx_written_date
+notices.written_date DESC
+최신 작성일 조회
+clip_admin_idx_department
+notices.department_code
+담당부서 조회
+clip_admin_idx_attachment_status
+attachments.download_status, is_current
+파일 상태 확인
+clip_admin_idx_errors_run
+errors.run_id
+실행별 오류 조회
+게시글에는 ID별 최신 상태만 저장합니다. 상세 내용 변경 전의 본문 버전을 별도 테이블에 누적하지 않습니다. 원문에서 사라진 기존 게시글/첨부파일은 삭제하지 않습니다. 기존 DB의 다른 테이블이나 SQLite journal mode는 변경하지 않으며 foreign_keys는 현재 연결에만 활성화합니다.
+7. 저장 결과 확인 SQL
+DB Browser for SQLite 등에서 아래 쿼리를 사용할 수 있습니다. 단순 조회만 수행하며 기존 데이터를 수정하지 않습니다.
+최신 게시글:
+SELECT notice_id, title, department_name, written_date, detail_status
+FROM clip_admin_notices
+ORDER BY written_date DESC, notice_id DESC
+LIMIT 20;
+현재 첨부파일:
+SELECT n.title, a.original_name, a.local_path, a.download_status,
+       a.file_size, a.sha256
+FROM clip_admin_notices n
+JOIN clip_admin_attachments a ON n.notice_id = a.notice_id
+WHERE a.is_current = 1
+ORDER BY n.written_date DESC;
+전체 저장 현황:
+SELECT detail_status, COUNT(*) AS cnt
+FROM clip_admin_notices GROUP BY detail_status;
+SELECT download_status, COUNT(*) AS cnt
+FROM clip_admin_attachments WHERE is_current = 1
+GROUP BY download_status;
+SELECT * FROM clip_admin_crawl_runs ORDER BY run_id DESC LIMIT 10;
+SELECT * FROM clip_admin_crawl_errors ORDER BY error_id DESC LIMIT 30;
+8. 운영 주의
+자동 DB 백업 없음:
+ DB를 다른 파일로 복제하거나 backups 폴더를 생성하지 않습니다. backup_before_run 설정은 새 배포본에서 제거했고 구버전 설정에 남아 있으면 무시합니다. 프로그램이 사용자의 기존 백업 파일을 삭제하거나 복원하는 작업도 하지 않습니다.
+기존 DB 경로 유지:
+ D:\SQLiteDB\smart_law_ai.db에 clip_admin_ 전용 테이블을 구분하여 사용합니다. 다른 테이블의 데이터를 수정하거나 삭제하지 않으며, 기존 DB 파일을 다른 위치로 이동/교체하지 않습니다. 기존 스키마를 변경하지 않기 위해 실행 이력의 backup_path 컬럼은 호환용으로만 남기고 새 실행에서는 빈 값을 저장합니다.
+상황
+조치
+D: 드라이브 없음/쓰기 권한 없음
+지정된 D:\SQLiteDB\smart_law_ai.db 경로의 드라이브/접근 권한 확인. 운영 DB를 임의 위치로 변경하지 않음
+Python 명령을 찾지 못함
+Python 3.10 이상 및 Launcher/PATH 설치 후 setup.bat 재실행
+ModuleNotFoundError
+setup.bat 재실행. 설치와 실행에 동일한 일반 Python을 사용
+database is locked
+DB 편집기의 미완료 트랜잭션을 종료하고 크롤러를 재실행
+같은 DB 크롤러가 이미 실행 중
+기존 크롤러 종료 후 재실행. .clip_admin.lock 파일은 남아 있어도 OS 잠금은 종료 시 해제
+동명 테이블 정의가 다름
+임의로 삭제하지 말고 테이블 충돌을 확인. 별도 시험 DB에서 실행 가능
+429/5xx/타임아웃
+재시도 후 실패는 로그/DB에 남음. 요청 간격 증가 후 재실행
+첨부파일 제공 중단
+게시글은 보존, 파일은 failed로 표시. 다음 실행에서 다시 시도
+상세/목록 구조 변경
+잘못된 응답을 정상으로 저장하지 않고 오류 처리. 원문 구조에 맞춰 파서 수정 필요
+전체 실행 중 사이트 게시글 수 변화
+failed 처리. 다시 실행하여 전체 목록을 재검증
+수집 중 강제 창 닫기/전원 종료
+저장 완료 자료 유지. 다음 실행에서 미처리/실패 자료 재시도. 과거 run은 running으로 남을 수 있음
+--max-notices 사용
+상세 수집 제한 시험 옵션. 제한이 적용되면 partial, 최초 완료 상태 미설정
+종료코드
+의미
+0
+요청한 전체/선택 페이지 범위가 오류 없이 완료
+1
+설정/DB/목록 등 전체 실행 실패
+2
+표본 제한으로 부분 수집 또는 개별 상세/첨부 오류 포함
+130
+Ctrl+C로 중단
+여러 프로그램이 기존 DB에 동시 쓰기를 수행하면 일시적인 잠금이 발생할 수 있습니다. 이 크롤러끼리는 OS 파일 잠금으로 중복 실행을 방지하지만 다른 DB 프로그램까지 잠그지는 않습니다. 최초 전량 실행은 게시글/첨부 개수와 네트워크 속도에 따라 시간이 길어질 수 있습니다. 로그인/인증 우회, 비공개 데이터 수집, 과도한 병렬 요청은 수행하지 않습니다.
+9. 검증 결과 및 확인 범위
+2026-10-15 Sandbox에서 Python 문법 검사와 V1.4 오프라인 자동 테스트 81개가 모두 통과했습니다. 테스트는 기존 테이블 보존, 스키마 충돌 중단, 날짜/폐지제정 비필터링, 신규/동일 날짜/소급 등록, 중복 방지, 변경 갱신, 첨부 실패/누락/해시 복구, 표본 제한, 실제 상세 HTML 등을 확인했습니다.
+V1.0에서 수행한 실사이트 목록 854건·상세 3건·첨부 10개 확인 결과는 그대로 참조합니다. 이번 V1.4에서는 자동 백업 구현 제거, 구버전 백업 설정의 미적용, 기존 데이터 보존, 백업 파일/폴더 미생성 및 기존 실행 규칙 유지를 확인했습니다. 기존 DB 연결의 backup 메서드가 호출되면 실패하도록 구성한 테스트에서도 정상 완료했습니다. 실사이트 수집은 다시 수행하지 않았으며 V1.2의 2페이지 표본(선택 목록 10건, 상세 1건, 첨부 3개) 확인 결과를 참조합니다. 상세 확인 범위는 배포본의 검증결과.md에 기록합니다. 운영 DB D:\SQLiteDB\smart_law_ai.db는 이 환경에 제공되지 않아 직접 실행하지 않았습니다. Windows BAT 실행은 이 Linux 환경에서 직접 검증하지 못했으며, Windows용 py/python 탐지·일반 Python 직접 실행·오류코드 전달 로직을 포함했습니다.
+전체 목록 검증과 상세/첨부 표본 검증을 구분하며, 실제 전체 게시글·첨부 전량 다운로드가 완료된 데이터셋을 배포하는 것은 아닙니다. 사용자의 PC에서 run.bat를 파라미터 없이 실행하면 입력 대기 없이 전체 범위를 수집합니다. 기존 성공 자료는 증분 규칙에 따라 재사용합니다.
+10. 공식 원문 및 버전 이력
+구분
+URL/내용
+공식 포털
+https://unipass.customs.go.kr/clip/index.do
+행정예고 화면
+https://unipass.customs.go.kr/clip/convcfnct/admnrulmkplpnot/openULS0502001Q.do
+목록 API
+https://unipass.customs.go.kr/clip/convcfnct/admnrulmkplpnot/retrieveAdmnRulMkplPnotLst.do
+상세 화면
+https://unipass.customs.go.kr/clip/convcfnct/admnrulmkplpnot/openULS0502002Q.do?jdafCgePbanMtNo=게시글ID
+첨부 다운로드
+https://unipass.customs.go.kr/clip/framework/filedownload/kcs4gDownload.do?attchFileId=첨부ID
+버전
+날짜
+변경사항
+V1.0
+2026-10-15
+최초 배포. 전량/증분 수집, 전용 DB 설계, 첨부 저장, 오류복구, 워드 가이드
+V1.1
+2026-10-15
+가상환경 생성/사용 제거. 일반 Python 직접 실행 및 --user 라이브러리 설치. DB 스키마 V1.0 유지
+V1.2
+2026-10-15
+페이지 번호/범위 지정, 빈 입력 전체, 시작/대기 단계 표시. 가상환경 없음·DB 스키마·기존 증분 규칙 유지
+V1.3
+2026-10-15
+페이지 대화형 입력 제거. --pages 파라미터만 사용하며 미지정은 전체. 모든 BAT의 pause 제거. 그 외 수집/DB/진행 표시 유지
+V1.4
+2026-10-15
+지침에 없는 자동 DB 백업 함수/호출/설정 제거. 지정 DB 경로·기존 스키마·파라미터 실행·pause 없음 유지

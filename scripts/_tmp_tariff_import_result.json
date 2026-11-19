@@ -1,0 +1,93 @@
+[
+  {
+    "file": "2026년_미국_관세율표.xlsx",
+    "year": 2026,
+    "country_code": "US",
+    "country_name": "미국",
+    "items": 29675,
+    "details": 59603,
+    "chapters": 98,
+    "headings": 1262,
+    "sections": 22,
+    "dry_run": false,
+    "ok": true
+  },
+  {
+    "file": "2025년_미국_관세율표_rev19.xlsx",
+    "year": 202508,
+    "country_code": "US",
+    "country_name": "미국",
+    "items": 30090,
+    "details": 59855,
+    "chapters": 98,
+    "headings": 1264,
+    "sections": 22,
+    "dry_run": false,
+    "ok": true
+  },
+  {
+    "file": "2025년_미국_관세율표_rev23.xlsx",
+    "year": 202509,
+    "country_code": "US",
+    "country_name": "미국",
+    "items": 30103,
+    "details": 59894,
+    "chapters": 98,
+    "headings": 1264,
+    "sections": 22,
+    "dry_run": false,
+    "ok": true
+  },
+  {
+    "file": "2025년_미국_관세율표_rev31.xlsx",
+    "year": 202510,
+    "country_code": "US",
+    "country_name": "미국",
+    "items": 30141,
+    "details": 59998,
+    "chapters": 98,
+    "headings": 1264,
+    "sections": 22,
+    "dry_run": false,
+    "ok": true
+  },
+  {
+    "file": "2025년_미국_관세율표_rev32.xlsx",
+    "year": 202512,
+    "country_code": "US",
+    "country_name": "미국",
+    "items": 30151,
+    "details": 60078,
+    "chapters": 98,
+    "headings": 1264,
+    "sections": 22,
+    "dry_run": false,
+    "ok": true
+  },
+  {
+    "file": "2026년04월_미국_관세율표_Rev6.xlsx",
+    "year": 202604,
+    "country_code": "US",
+    "country_name": "미국",
+    "items": 29583,
+    "details": 59624,
+    "chapters": 98,
+    "headings": 1262,
+    "sections": 22,
+    "dry_run": false,
+    "ok": true
+  },
+  {
+    "file": "2026년07월_미국_관세율표_Rev12.xlsx",
+    "year": 202607,
+    "country_code": "US",
+    "country_name": "미국",
+    "items": 29734,
+    "details": 59923,
+    "chapters": 98,
+    "headings": 1262,
+    "sections": 22,
+    "dry_run": false,
+    "ok": true
+  }
+]

@@ -1,0 +1,406 @@
+
+관세율표 DB 테이블 구조 상세 설명
+DB는 관세율표의 계층 구조를 그대로 반영하여 5개 테이블 + 1개 뷰로 구성되어 있습니다.
+전체 계층 구조
+Plain Text
+crawl_log (크롤링 이력)
+    │
+tariff_section  (부, 部)           예: 제01부 살아 있는 동물과 동물성 생산품
+    └── tariff_chapter  (류, 類)   예: 제01류 살아 있는 동물
+            └── tariff_heading  (호, 號)   예: 0101호 살아 있는 말·당나귀·노새·버새
+                    └── tariff_item  (세번, 細番)   예: 0101211000 농가 사육용 (기본세율 0%)
+1. crawl_log — 크롤링 이력 테이블
+크롤링 실행 기록을 관리합니다. 이어받기(resume) 기능과 중복 실행 방지에 활용됩니다.
+컬럼
+타입
+설명
+id
+INTEGER PK
+자동 증가 기본키
+crawl_id
+TEXT UNIQUE
+크롤링 실행 고유 UUID
+year
+INTEGER
+크롤링 연도 (예: 2026)
+country_code
+TEXT
+국가 코드 (예: KR)
+country_name
+TEXT
+국가명 (예: 한국)
+status
+TEXT
+상태: running / completed / failed
+total_sections
+INTEGER
+수집된 부(部) 수
+total_chapters
+INTEGER
+수집된 류(類) 수
+total_headings
+INTEGER
+수집된 호(號) 수
+total_items
+INTEGER
+수집된 세번 수
+started_at
+TEXT
+크롤링 시작 시각
+finished_at
+TEXT
+크롤링 완료 시각 (실패 시 NULL)
+error_message
+TEXT
+오류 메시지 (정상 완료 시 NULL)
+created_at
+TEXT
+레코드 생성 시각
+실제 데이터 예시:
+year
+country
+status
+부
+류
+호
+세번
+시작
+완료
+2026
+KR
+completed
+17
+97
+1,164
+15,781
+2026-04-27 22:35
+2026-04-27 23:21
+2025
+KR
+completed
+17
+97
+1,198
+17,292
+2026-04-27 23:44
+2026-04-28 00:36
+2. tariff_section — 부(部, Section) 테이블
+HS 코드 분류 체계의 최상위 단계입니다. 2026년 기준 한국은 21개 부 중 실제 데이터가 있는 17개 부가 수집됩니다.
+컬럼
+타입
+설명
+id
+INTEGER PK
+자동 증가 기본키
+record_uuid
+TEXT UNIQUE
+벡터DB 이관용 고유 UUID
+year
+INTEGER
+연도
+country_code
+TEXT
+국가 코드
+country_name
+TEXT
+국가명
+section_code
+TEXT
+부 번호 (예: 01, 02 … 21)
+section_name
+TEXT
+부 명칭 한글 (예: 살아 있는 동물과 동물성 생산품)
+section_name_en
+TEXT
+부 명칭 영문
+note_text
+TEXT
+주(注) 텍스트
+embed_text
+TEXT
+임베딩 대상 통합 텍스트
+meta_json
+TEXT
+추가 속성 JSON
+source_url
+TEXT
+원본 URL
+crawled_at
+TEXT
+크롤링 시각
+created_at / updated_at
+TEXT
+생성/수정 시각
+UNIQUE 제약: (year, country_code, section_code)
+실제 데이터 예시:
+Plain Text
+section_code : 01
+section_name : 살아 있는 동물과 동물성 생산품
+embed_text   : 2026년 한국 | 제01부 | 살아 있는 동물과 동물성 생산품
+3. tariff_chapter — 류(類, Chapter) 테이블
+부(部) 아래의 두 번째 계층입니다. 한국 기준 97개 류 (제77류는 결번)가 있습니다.
+컬럼
+타입
+설명
+id
+INTEGER PK
+자동 증가 기본키
+record_uuid
+TEXT UNIQUE
+벡터DB 이관용 고유 UUID
+year / country_code / country_name
+—
+연도·국가 정보
+section_code
+TEXT
+상위 부 번호 (외래키 역할)
+chapter_code
+TEXT
+류 번호 (예: 01 ~ 97)
+chapter_name
+TEXT
+류 명칭 한글
+chapter_name_en
+TEXT
+류 명칭 영문
+note_text
+TEXT
+주(注) 텍스트
+embed_text
+TEXT
+임베딩 대상 통합 텍스트
+meta_json
+TEXT
+추가 속성 JSON
+UNIQUE 제약: (year, country_code, chapter_code)
+실제 데이터 예시:
+Plain Text
+chapter_code : 01
+chapter_name : 제1류 살아 있는 동물
+embed_text   : 2026년 한국 | 제01부 | 제01류 | 제1류 살아 있는 동물
+4. tariff_heading — 호(號, Heading) 테이블
+류(類) 아래의 세 번째 계층입니다. 4자리 HS 코드 단위이며, 2026년 기준 1,176개 호가 있습니다.
+컬럼
+타입
+설명
+id
+INTEGER PK
+자동 증가 기본키
+record_uuid
+TEXT UNIQUE
+벡터DB 이관용 고유 UUID
+section_code / chapter_code
+TEXT
+상위 부·류 번호
+heading_code
+TEXT
+호 코드 4자리 (예: 0101)
+heading_name
+TEXT
+호 명칭 한글
+heading_name_en
+TEXT
+호 명칭 영문
+note_text
+TEXT
+주(注) 텍스트
+embed_text
+TEXT
+임베딩 대상 통합 텍스트
+UNIQUE 제약: (year, country_code, heading_code)
+실제 데이터 예시:
+Plain Text
+heading_code    : 0101
+heading_name    : 살아 있는 말ㆍ당나귀ㆍ노새ㆍ버새
+heading_name_en : Live horses, asses, mules and hinnies.
+embed_text      : 2026년 한국 | 제01류 | 0101호 | 살아 있는 말ㆍ당나귀ㆍ노새ㆍ버새 | Live horses...
+5. tariff_item — 세번(細番, Item) 테이블 ★ 핵심 테이블
+가장 중요한 테이블로, 실제 세율 정보가 담겨 있습니다. hs_code는 4자리~10자리까지 계층적으로 저장됩니다.
+컬럼
+타입
+설명
+id
+INTEGER PK
+자동 증가 기본키
+record_uuid
+TEXT UNIQUE
+벡터DB 이관용 고유 UUID
+year / country_code / country_name
+—
+연도·국가 정보
+section_code / chapter_code / heading_code
+TEXT
+상위 계층 코드
+hs_code
+TEXT
+HS 코드 (4~10자리, 계층 포함)
+hs_code_6
+TEXT
+국제 표준 6자리 HS 코드 (10자리 세번에만 존재)
+item_name
+TEXT
+품목명 한글
+item_name_en
+TEXT
+품목명 영문
+unit
+TEXT
+단위
+basic_rate
+TEXT
+기본세율 (예: 8%, 0%)
+wto_rate
+TEXT
+WTO 협정세율
+fta_rate
+TEXT
+FTA 협정세율 (JSON 형태로 협정별 세율 포함)
+temp_rate
+TEXT
+탄력세율
+vat_rate
+TEXT
+부가가치세율
+special_rate
+TEXT
+특별세율
+individual_rate
+TEXT
+개별소비세율
+import_notice
+TEXT
+수입 시 유의사항
+export_notice
+TEXT
+수출 시 유의사항
+stat_code
+TEXT
+통계부호
+embed_text
+TEXT
+임베딩 대상 텍스트 (벡터DB 업로드용)
+raw_data
+TEXT
+원본 크롤링 데이터 JSON 배열
+meta_json
+TEXT
+추가 메타데이터 (elastic_rate, is_complete_item 등)
+source_url
+TEXT
+원본 URL
+crawled_at / created_at / updated_at
+TEXT
+시각 정보
+UNIQUE 제약: (year, country_code, hs_code)
+hs_code 길이별 의미 (2026년 기준):
+자릿수
+건수
+의미
+4자리
+1,176건
+호(號) 수준 — 세율 없는 분류 헤더
+5~9자리
+4,288건
+소호(小號) 중간 분류 — 세율 없는 분류 헤더
+10자리
+10,997건
+최종 세번 — 실제 세율이 부여된 과세 단위
+실제 데이터 예시 (10자리 세번):
+Plain Text
+hs_code      : 0101211000
+hs_code_6    : 010121
+item_name    : 농가 사육용
+item_name_en : For farm breeding
+basic_rate   : 0%
+embed_text   : 2026년 한국 | 0101211000 | 농가 사육용 | For farm breeding | 기본세율:0%
+meta_json    : {"elastic_rate": "", "is_complete_item": true}
+raw_data     : ["0101", "21", "1000", "농가 사육용", "For farm breeding", "0%", "", ""]
+6. v_embed_targets — 벡터DB 이관용 통합 뷰
+4개 테이블(section, chapter, heading, item)의 레코드를 하나의 통일된 스키마로 합쳐서 조회하는 뷰입니다. 벡터DB 업로드 시 이 뷰를 기준으로 임베딩을 생성합니다.
+컬럼
+설명
+record_uuid
+고유 UUID (벡터DB의 포인트 ID로 사용)
+record_type
+section / chapter / heading / item
+year / country_code / country_name
+연도·국가
+code
+해당 레코드의 코드 (section_code / chapter_code / heading_code / hs_code)
+chapter_code / heading_code / hs_code
+계층 코드
+name_ko / name_en
+한글/영문 명칭
+embed_text
+임베딩 대상 텍스트
+meta_json
+메타데이터 JSON
+2026년 기준 레코드 수:
+record_type
+건수
+item
+16,461건
+heading
+1,176건
+chapter
+93건
+section
+17건
+합계
+17,747건
+인덱스 구성
+성능 최적화를 위해 각 테이블에 복합 인덱스가 설정되어 있습니다.
+인덱스명
+대상 테이블
+컬럼
+idx_item_year_country
+tariff_item
+(year, country_code)
+idx_item_hs_code
+tariff_item
+(year, country_code, hs_code)
+idx_item_hs6
+tariff_item
+(year, country_code, hs_code_6)
+idx_item_heading
+tariff_item
+(year, country_code, heading_code)
+idx_item_chapter
+tariff_item
+(year, country_code, chapter_code)
+idx_heading_*
+tariff_heading
+year/country/chapter 기준
+idx_chapter_*
+tariff_chapter
+year/country/section 기준
+주요 조회 쿼리 예시
+SQL
+-- 특정 HS 코드 세율 조회
+SELECT hs_code, item_name, basic_rate, fta_rate
+FROM tariff_item
+WHERE year = 2026 AND hs_code = '0101211000';
+
+-- 2025 vs 2026 세율 비교
+SELECT a.hs_code, a.item_name,
+       a.basic_rate AS rate_2025,
+       b.basic_rate AS rate_2026
+FROM tariff_item a
+JOIN tariff_item b ON a.hs_code = b.hs_code AND a.country_code = b.country_code
+WHERE a.year = 2025 AND b.year = 2026
+  AND a.basic_rate != b.basic_rate;
+
+-- 품목명으로 검색
+SELECT year, hs_code, item_name, basic_rate
+FROM tariff_item
+WHERE item_name LIKE '%말%' AND length(hs_code) = 10
+ORDER BY year, hs_code;
+
+-- 벡터DB 임베딩 대상 전체 조회
+SELECT record_uuid, record_type, embed_text
+FROM v_embed_targets
+WHERE year = 2026;
+추가로 궁금한 점이 있으시면 말씀해 주세요.
+작업 완료
+이 결과는 어땠나요?
+

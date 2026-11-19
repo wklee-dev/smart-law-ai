@@ -1,0 +1,183 @@
+/* Common Button — scoped under .sl-ui-btn (does not alter legacy .sl-btn)
+ * Selectors use button.sl-ui-btn.* so page rules like `.fta-lookup span`
+ * (0,1,1) cannot override label/icon color. Loaded last from root layout.
+ */
+
+button.sl-ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: var(--ciel-radius-sm, 6px);
+  border: 1px solid transparent;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  vertical-align: middle;
+  transition:
+    background-color 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
+}
+
+button.sl-ui-btn + button.sl-ui-btn {
+  margin-inline-start: 6px;
+}
+
+button.sl-ui-btn.sl-ui-btn--small {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+  gap: 5px;
+}
+
+button.sl-ui-btn.sl-ui-btn--medium {
+  height: 32px;
+}
+
+button.sl-ui-btn.sl-ui-btn--large {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+button.sl-ui-btn.sl-ui-btn--icon-only {
+  width: 32px;
+  padding: 0;
+}
+
+button.sl-ui-btn.sl-ui-btn--small.sl-ui-btn--icon-only {
+  width: 28px;
+}
+
+button.sl-ui-btn.sl-ui-btn--large.sl-ui-btn--icon-only {
+  width: 36px;
+}
+
+button.sl-ui-btn .sl-ui-btn__label {
+  display: inline-block;
+  color: inherit;
+}
+
+button.sl-ui-btn .sl-action-icon {
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.sl-action-icon-spin {
+  animation: sl-ui-btn-spin 0.7s linear infinite;
+}
+
+@keyframes sl-ui-btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Variants — navy primary (--sl-action-primary / --ciel-on) */
+button.sl-ui-btn.sl-ui-btn--primary {
+  background: var(--sl-action-primary, var(--ciel-on, #30528c));
+  color: var(--sl-action-primary-text, #fff);
+  border-color: var(--sl-action-primary, var(--ciel-on, #30528c));
+  box-shadow: 0 1px 3px rgba(var(--ciel-on-rgb, 48, 82, 140), 0.28);
+}
+
+button.sl-ui-btn.sl-ui-btn--primary:hover:not(:disabled) {
+  background: var(--sl-action-primary-hover, #254573);
+  border-color: var(--sl-action-primary-hover, #254573);
+  color: var(--sl-action-primary-text, #fff);
+  filter: none;
+}
+
+button.sl-ui-btn.sl-ui-btn--primary:active:not(:disabled) {
+  background: var(--sl-action-primary-active, #1d365a);
+  border-color: var(--sl-action-primary-active, #1d365a);
+  color: var(--sl-action-primary-text, #fff);
+}
+
+button.sl-ui-btn.sl-ui-btn--primary:focus-visible {
+  color: var(--sl-action-primary-text, #fff);
+}
+
+button.sl-ui-btn.sl-ui-btn--primary .sl-ui-btn__label,
+button.sl-ui-btn.sl-ui-btn--primary .sl-action-icon {
+  color: var(--sl-action-primary-text, #fff);
+}
+
+button.sl-ui-btn.sl-ui-btn--secondary {
+  background: #eef2f7;
+  color: var(--ciel-text, #1e293b);
+  border-color: #d8dee8;
+}
+
+button.sl-ui-btn.sl-ui-btn--secondary:hover:not(:disabled) {
+  background: #e2e8f0;
+}
+
+button.sl-ui-btn.sl-ui-btn--outline {
+  background: #fff;
+  color: var(--ciel-blue, #1e2f4f);
+  border-color: var(--ciel-line, #e5e9ef);
+}
+
+button.sl-ui-btn.sl-ui-btn--outline:hover:not(:disabled) {
+  background: var(--ciel-accent-soft, #e2e8f0);
+  border-color: rgba(var(--ciel-on-rgb, 48, 82, 140), 0.4);
+  color: var(--sl-action-primary, var(--ciel-on, #30528c));
+}
+
+button.sl-ui-btn.sl-ui-btn--danger {
+  background: #dc2626;
+  color: #fff;
+  border-color: #dc2626;
+}
+
+button.sl-ui-btn.sl-ui-btn--danger:hover:not(:disabled) {
+  filter: brightness(1.05);
+  color: #fff;
+}
+
+button.sl-ui-btn.sl-ui-btn--danger .sl-ui-btn__label,
+button.sl-ui-btn.sl-ui-btn--danger .sl-action-icon {
+  color: #fff;
+}
+
+button.sl-ui-btn.sl-ui-btn--ghost {
+  background: transparent;
+  color: var(--ciel-text, #1e293b);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+button.sl-ui-btn.sl-ui-btn--ghost:hover:not(:disabled) {
+  background: rgba(15, 23, 42, 0.06);
+}
+
+button.sl-ui-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(var(--ciel-on-rgb, 48, 82, 140), 0.55);
+}
+
+button.sl-ui-btn.sl-ui-btn--danger:focus-visible {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(220, 38, 38, 0.45);
+}
+
+button.sl-ui-btn:disabled,
+button.sl-ui-btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: none;
+  pointer-events: none;
+}
+
+button.sl-ui-btn.sl-ui-btn--loading {
+  cursor: wait;
+}

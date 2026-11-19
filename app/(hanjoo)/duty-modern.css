@@ -1,0 +1,505 @@
+/* Scoped: .duty-priority-ui / .duty-kinds-ui / .duty-dumping-ui — other duty codes unchanged */
+
+.duty-modern-ui {
+  --dm-navy: #1e2f4f;
+  --dm-accent: #3b82f6;
+  --dm-line: #e5e9ef;
+  --dm-muted: #64748b;
+  --dm-head: #eef2f7;
+  min-width: 0;
+  width: 100%;
+}
+
+/* PageHeader compact — page-header.css */
+
+.duty-modern-ui .sl-card {
+  background: #fff;
+  border: 1px solid var(--dm-line);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.duty-modern-ui .sl-card-hd {
+  padding: 11px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dm-navy);
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  border-bottom: 1px solid var(--dm-line);
+}
+
+.duty-modern-ui .sl-card-bd {
+  padding: 0;
+}
+
+.duty-modern-ui .duty-modern-err {
+  margin: 12px 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  font-size: 13px;
+}
+
+.duty-modern-ui .duty-modern-loading {
+  margin: 0;
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--dm-muted);
+  font-size: 13px;
+}
+
+.duty-modern-ui .table-scroll {
+  overflow: auto;
+  width: 100%;
+  max-height: min(72vh, 860px);
+}
+
+.duty-modern-ui .answer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.duty-modern-ui .answer-table th {
+  padding: 8px;
+  background: var(--dm-head);
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 1px solid var(--dm-line);
+  white-space: nowrap;
+}
+
+.duty-modern-ui .answer-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--dm-line);
+  vertical-align: top;
+  color: #1a233a;
+  background: #fff;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.duty-modern-ui .answer-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.duty-modern-ui .answer-table tbody tr:hover td {
+  background: #f8fafc;
+}
+
+.duty-modern-ui .answer-table td.wrap {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.duty-modern-ui .answer-table td.center {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* —— Priority —— */
+.duty-priority-ui .answer-table.duty-priority {
+  table-layout: fixed;
+}
+
+.duty-priority-ui .answer-table.duty-priority th:nth-child(1),
+.duty-priority-ui .answer-table.duty-priority td:nth-child(1) {
+  width: 10%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.duty-priority-ui .answer-table.duty-priority th:nth-child(2),
+.duty-priority-ui .answer-table.duty-priority td:nth-child(2) {
+  width: 48%;
+}
+
+.duty-priority-ui .answer-table.duty-priority th:nth-child(3),
+.duty-priority-ui .answer-table.duty-priority td:nth-child(3) {
+  width: 42%;
+}
+
+.duty-priority-ui .duty-rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.duty-priority-ui .duty-notes-card .sl-card-bd {
+  padding: 12px 16px 14px;
+}
+
+.duty-priority-ui .duty-notes-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.duty-priority-ui .duty-notes-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 10px;
+  align-items: start;
+  padding: 10px 12px;
+  border: 1px solid var(--dm-line);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.duty-priority-ui .duty-notes-list .duty-note-hd {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dm-navy);
+  align-self: center;
+}
+
+.duty-priority-ui .duty-notes-list .duty-note-text {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #1a233a;
+}
+
+.duty-priority-ui .duty-notes-list .duty-note-idx {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* —— Kinds —— */
+.duty-kinds-ui .answer-table.duty-kinds {
+  table-layout: fixed;
+  min-width: 880px;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds col.kind-g {
+  width: 11%;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds col.kind-n {
+  width: 18%;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds col.kind-d {
+  width: 26%;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds col.kind-c {
+  width: 16%;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds col.kind-s {
+  width: 8%;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds col.kind-l {
+  width: 21%;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds td.kind-group {
+  text-align: center;
+  vertical-align: middle;
+  background: #eff6ff !important;
+  color: var(--dm-navy);
+  font-weight: 700;
+  font-size: 12.5px;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  border-right: 1px solid #dbeafe;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds td.kind-symbol {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  font-size: 12.5px;
+  color: var(--dm-navy);
+}
+
+.duty-kinds-ui .answer-table.duty-kinds td.kind-law {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  color: #1e3a5f;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds td.duty-missing {
+  background: #fff1f0 !important;
+  color: #9b2c2c;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds .case-link {
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds .case-link:hover {
+  text-decoration: underline;
+}
+
+.duty-kinds-ui .answer-table.duty-kinds .case-link:focus-visible {
+  outline: 2px solid var(--dm-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* —— Dumping law document viewer —— */
+.duty-dumping-ui .duty-dumping-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.duty-dumping-ui .duty-dumping-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.duty-dumping-ui .duty-dumping-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--dm-line);
+  color: #334155;
+  font-size: 12px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.duty-dumping-ui .duty-law-layout {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 14px;
+}
+
+.duty-dumping-ui .duty-law-toc {
+  background: #fff;
+  border: 1px solid var(--dm-line);
+  border-radius: 8px;
+  overflow: hidden;
+  position: sticky;
+  top: 8px;
+}
+
+.duty-dumping-ui .duty-law-toc-hd {
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dm-navy);
+  background: #eff6ff;
+  border-bottom: 1px solid var(--dm-line);
+}
+
+.duty-dumping-ui .duty-law-toc-list {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  max-height: min(60vh, 520px);
+  overflow: auto;
+}
+
+.duty-dumping-ui .duty-law-toc-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+
+.duty-dumping-ui .duty-law-toc-list button:hover {
+  background: #f1f5f9;
+}
+
+.duty-dumping-ui .duty-law-toc-list button.on {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.duty-dumping-ui .duty-law-toc-list button:focus-visible {
+  outline: 2px solid var(--dm-accent);
+  outline-offset: 1px;
+}
+
+.duty-dumping-ui .duty-law-toc-link {
+  display: block;
+  padding: 10px 12px;
+  border-top: 1px solid var(--dm-line);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.duty-dumping-ui .duty-law-toc-link:hover {
+  text-decoration: underline;
+}
+
+.duty-dumping-ui .duty-law-doc {
+  background: #fff;
+  border: 1px solid var(--dm-line);
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.duty-dumping-ui .duty-law-doc-hd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--dm-line);
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+.duty-dumping-ui .duty-law-doc-hd strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dm-navy);
+}
+
+.duty-dumping-ui .duty-law-meta {
+  font-size: 12px;
+  color: var(--dm-muted);
+}
+
+.duty-dumping-ui .duty-law-doc-bd {
+  padding: 4px 0 8px;
+}
+
+.duty-dumping-ui .duty-law-article {
+  padding: 14px 18px 16px;
+  border-bottom: 1px solid var(--dm-line);
+  scroll-margin-top: 12px;
+}
+
+.duty-dumping-ui .duty-law-article:last-child {
+  border-bottom: 0;
+}
+
+.duty-dumping-ui .duty-law-article-hd {
+  margin: 0 0 10px;
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #1d4ed8;
+  word-break: keep-all;
+}
+
+.duty-dumping-ui .duty-law-article-body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  color: #1a233a;
+}
+
+.duty-dumping-ui .table-scroll {
+  margin-top: 4px;
+  background: #fff;
+  border: 1px solid var(--dm-line);
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.duty-dumping-ui .answer-table {
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.duty-dumping-ui .answer-table th {
+  padding: 8px;
+  background: var(--dm-head);
+  font-size: 12px;
+  color: #475569;
+}
+
+.duty-dumping-ui .answer-table td {
+  padding: 6px 8px;
+}
+
+.duty-dumping-ui .case-pager {
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .duty-modern-ui .table-scroll {
+    max-height: none;
+  }
+
+  .duty-dumping-ui .duty-law-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .duty-dumping-ui .duty-law-toc {
+    position: static;
+  }
+
+  .duty-dumping-ui .duty-law-toc-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: none;
+  }
+
+  .duty-dumping-ui .duty-law-toc-list button {
+    width: auto;
+  }
+}

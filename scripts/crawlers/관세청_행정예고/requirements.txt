@@ -1,0 +1,7 @@
+# 관세청 행정예고 크롤러 필수 라이브러리
+# 가상환경 없이도 아래 명령어로 즉시 설치 가능합니다:
+#   pip install -r requirements.txt
+requests>=2.28.0
+beautifulsoup4>=4.11.0
+lxml>=4.9.0
+urllib3>=2.0.0

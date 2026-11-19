@@ -1,0 +1,452 @@
+/* /rates/fta — scoped under .fta-rates-ui */
+
+.fta-rates-ui {
+  --fta-navy: #1e2f4f;
+  --fta-accent: #3b82f6;
+  --fta-line: #e5e9ef;
+  --fta-muted: #64748b;
+  --fta-head: #eef2f7;
+  min-width: 0;
+  width: 100%;
+}
+
+/* PageHeader compact — page-header.css 가 우선, 탭 간격만 축소 */
+.fta-rates-ui > .case-tabs,
+.fta-rates-ui .fta-list-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.fta-rates-ui > .case-tabs button,
+.fta-rates-ui .fta-list-tabs button {
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  background: #fff;
+  color: #1e3a5f;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fta-rates-ui > .case-tabs button.on,
+.fta-rates-ui .fta-list-tabs button.on {
+  background: var(--fta-accent);
+  border-color: var(--fta-accent);
+  color: #fff;
+}
+
+.fta-rates-ui > .case-tabs button:focus-visible,
+.fta-rates-ui .fta-list-tabs button:focus-visible {
+  outline: 2px solid var(--fta-accent);
+  outline-offset: 2px;
+}
+
+/* Agreement list table */
+.fta-rates-ui .fta-detail-page {
+  background: #fff;
+  border: 1px solid var(--fta-line);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+}
+
+.fta-rates-ui .fta-agree-wrap {
+  overflow: auto;
+  max-height: min(72vh, 860px);
+}
+
+.fta-rates-ui .fta-agree {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.fta-rates-ui .fta-agree th {
+  padding: 8px;
+  background: var(--fta-head);
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--fta-line);
+  white-space: nowrap;
+}
+
+.fta-rates-ui .fta-agree td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--fta-line);
+  vertical-align: top;
+  word-break: break-word;
+}
+
+.fta-rates-ui .fta-pick {
+  border: 0;
+  background: transparent;
+  color: #1d4ed8;
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+
+.fta-rates-ui .fta-pick:hover {
+  text-decoration: underline;
+}
+
+.fta-rates-ui .fta-pick:focus-visible {
+  outline: 2px solid var(--fta-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Detail: pane bar + lookup */
+.fta-rates-ui .fta-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fta-rates-ui .fta-pane-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid var(--fta-line);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.fta-rates-ui .fta-pane-bar .case-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+
+.fta-rates-ui .fta-pane-bar .case-tabs button {
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  background: #fff;
+  color: #1e3a5f;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fta-rates-ui .fta-pane-bar .case-tabs button.on {
+  background: var(--fta-accent);
+  border-color: var(--fta-accent);
+  color: #fff;
+}
+
+.fta-rates-ui .fta-pane-bar .case-tabs button:focus-visible {
+  outline: 2px solid var(--fta-accent);
+  outline-offset: 2px;
+}
+
+.fta-rates-ui .fta-lookup-host {
+  min-width: min(100%, 420px);
+  flex: 1 1 280px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fta-rates-ui .fta-lookup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.fta-rates-ui .fta-lookup select,
+.fta-rates-ui .fta-lookup input {
+  height: 32px;
+  border: 1px solid #d8dee6;
+  border-radius: 8px;
+  background: #fff;
+  padding: 0 10px;
+  font: inherit;
+  font-size: 13px;
+  color: #1a233a;
+}
+
+.fta-rates-ui .fta-lookup select {
+  min-width: 160px;
+  max-width: 240px;
+}
+
+.fta-rates-ui .fta-lookup input {
+  width: 120px;
+}
+
+/* HSK 라벨만(직계). 버튼 내부 .sl-ui-btn__label 은 제외 */
+.fta-rates-ui .fta-lookup > span:not(.sl-ui-btn__label) {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--fta-navy);
+}
+
+.fta-rates-ui .fta-lookup button[type="submit"]:not(.sl-ui-btn) {
+  height: 34px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--fta-navy);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.fta-rates-ui .fta-lookup button[type="submit"]:not(.sl-ui-btn):hover {
+  background: #162438;
+}
+
+.fta-rates-ui .fta-lookup button[type="submit"]:not(.sl-ui-btn):focus-visible {
+  outline: 2px solid var(--fta-accent);
+  outline-offset: 2px;
+}
+
+.fta-rates-ui .fta-lookup-clear:not(.sl-ui-btn) {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--fta-navy);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Duty pane cards */
+.fta-rates-ui .fta-duty-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fta-rates-ui .fta-duty-pane > .fta-card {
+  background: #fff;
+  border: 1px solid var(--fta-line);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+  margin: 0;
+}
+
+.fta-rates-ui .fta-duty-pane > .fta-card > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 14px;
+  margin: 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  border-bottom: 1px solid var(--fta-line);
+}
+
+.fta-rates-ui .fta-duty-pane > .fta-card > header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--fta-navy);
+}
+
+.fta-rates-ui .fta-duty-pane > .fta-card > header .basis {
+  font-size: 12px;
+  color: var(--fta-muted);
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-laws,
+.fta-rates-ui .fta-duty-pane .fta-bullets {
+  margin: 0;
+  padding: 10px 14px 14px;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-laws li {
+  border-color: var(--fta-line);
+  padding: 8px 0;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-laws a {
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-laws a:hover {
+  text-decoration: underline;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-laws a:focus-visible {
+  outline: 2px solid var(--fta-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-laws.pairs > li > span {
+  color: var(--fta-muted);
+  font-weight: 600;
+  font-size: 12.5px;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-laws.pairs > li > em {
+  color: #1a233a;
+  font-style: normal;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-bullets li {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #1a233a;
+  word-break: break-word;
+}
+
+.fta-rates-ui .fta-duty-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.fta-rates-ui .fta-duty-grid > .fta-card {
+  min-width: 0;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-mini {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-mini th {
+  padding: 6px 8px;
+  background: var(--fta-head);
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid var(--fta-line);
+}
+
+.fta-rates-ui .fta-duty-pane .fta-mini td {
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--fta-line);
+  vertical-align: top;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  color: #1a233a;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-mini tr:last-child td {
+  border-bottom: 0;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-mini td.code {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  color: var(--fta-navy);
+  white-space: nowrap;
+}
+
+.fta-rates-ui .fta-duty-pane .fta-mini.fta-rate-result {
+  margin: 0 14px 10px;
+  width: calc(100% - 28px);
+}
+
+.fta-rates-ui .fta-duty-pane .fta-foot {
+  margin: 0 14px 12px;
+  font-size: 12.5px;
+  color: var(--fta-muted);
+  line-height: 1.45;
+}
+
+.fta-rates-ui .fta-duty-pane > .fta-card > .muted {
+  margin: 12px 14px;
+}
+
+/* Origin pane: visual shell only — do not restyle article body content heavily */
+.fta-rates-ui .fta-origin-pane > .fta-card {
+  background: #fff;
+  border: 1px solid var(--fta-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fta-rates-ui .fta-origin-pane > .fta-card > header {
+  padding: 11px 14px;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  border-bottom: 1px solid var(--fta-line);
+}
+
+.fta-rates-ui .fta-origin-pane > .fta-card > header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--fta-navy);
+}
+
+/* General principle cards on list view */
+.fta-rates-ui .fta-principle .fta-card {
+  border-radius: 12px;
+  border-color: var(--fta-line);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.fta-rates-ui .case-err {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .fta-rates-ui .fta-duty-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fta-rates-ui .fta-pane-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fta-rates-ui .fta-lookup-host {
+    justify-content: stretch;
+  }
+
+  .fta-rates-ui .fta-lookup {
+    justify-content: flex-start;
+  }
+}

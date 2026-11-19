@@ -1,0 +1,278 @@
+{
+  "version": "1.0",
+  "overall_status": "READY_WITH_WARNINGS",
+  "started_at": "2026-08-05T10:56:04.447980+00:00",
+  "finished_at": "2026-08-05T10:56:48.872401+00:00",
+  "total_elapsed_seconds": 44.4244,
+  "pass_count": 8,
+  "warn_count": 1,
+  "fail_count": 0,
+  "skip_count": 1,
+  "checks": [
+    {
+      "check_id": "ENV-001",
+      "name": "환경변수 검증",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "elapsed_seconds": 0.0,
+      "message": "필수 환경변수와 운영 값이 검증되었습니다.",
+      "details": {
+        "presence": {
+          "GEMINI_API_KEY": "SET",
+          "GEMINI_GENERATION_MODEL": "SET",
+          "EMBEDDING_MODEL": "SET",
+          "EMBEDDING_OUTPUT_DIMENSIONALITY": "SET",
+          "RAG_API_BASE_URL": "SET",
+          "DEBUG": "SET",
+          "LOG_LEVEL": "SET",
+          "MAX_QUERY_LENGTH": "SET",
+          "REQUEST_TIMEOUT_SECONDS": "SET"
+        },
+        "boolean_env": {
+          "ENABLE_CITATION": "true",
+          "ENABLE_RANKING": "true",
+          "ENABLE_KEYWORD_SEARCH": "true",
+          "ENABLE_HYBRID_SEARCH": "true"
+        },
+        "embedding_dimension": 768,
+        "max_query_length": 2000,
+        "request_timeout_seconds": 60,
+        "missing_keys": [],
+        "failures": [],
+        "warnings": [],
+        "recommended": {
+          "DEBUG": "false",
+          "LOG_LEVEL": "INFO"
+        }
+      }
+    },
+    {
+      "check_id": "PY-001",
+      "name": "Python 런타임 검증",
+      "status": "WARN",
+      "severity": "CRITICAL",
+      "elapsed_seconds": 0.1523,
+      "message": "프로젝트 표준 Python 3.12와 버전이 다릅니다.",
+      "details": {
+        "python_major": 3,
+        "python_minor": 14,
+        "platform_system": "Windows",
+        "platform_machine": "AMD64",
+        "imports": {
+          "google.genai": "OK",
+          "fastapi": "OK",
+          "pydantic": "OK",
+          "dotenv": "OK"
+        }
+      }
+    },
+    {
+      "check_id": "DB-001",
+      "name": "DB 불변 검증",
+      "status": "SKIP",
+      "severity": "CRITICAL",
+      "elapsed_seconds": 0.0,
+      "message": "Repository에 읽기 전용 운영 검증 메서드가 없어 DB 수동 검증이 필요합니다.",
+      "details": {
+        "manual_sql_required": true,
+        "expected": {
+          "total_chunks": 740,
+          "embedded_chunks": 740,
+          "keyword_chunks": 740,
+          "duplicate_count": 0
+        },
+        "available_public_methods": [
+          "get_admin_rule_batch_statistics"
+        ],
+        "missing_verification_methods": [
+          "keyword_cardinality_count",
+          "duplicate_source_pk_count",
+          "article_chunk_invariant_report"
+        ],
+        "manual_checks": [
+          "admin_rule ARTICLE smartlaw_chunk count = 740",
+          "embedding IS NOT NULL count = 740",
+          "keywords cardinality > 0 count = 740",
+          "duplicate source_pk count = 0"
+        ]
+      }
+    },
+    {
+      "check_id": "EMB-001",
+      "name": "Query Embedding 검증",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "elapsed_seconds": 1.5717,
+      "message": "Query Embedding 차원·수치 검증을 통과했습니다.",
+      "details": {
+        "is_sequence": true,
+        "length": 768,
+        "expected_dimension": 768,
+        "norm_is_nonzero": true
+      }
+    },
+    {
+      "check_id": "SEARCH-001",
+      "name": "Search·Ranking 파이프라인 검증",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "elapsed_seconds": 2.1525,
+      "message": "Hybrid Search·Ranking 파이프라인이 검증되었습니다.",
+      "details": {
+        "result_count": 10,
+        "law_name_match": true,
+        "title_or_header_match": true,
+        "top_ids": [
+          30,
+          12,
+          20,
+          27,
+          11
+        ],
+        "top_source_pks": [
+          36,
+          15,
+          24,
+          33,
+          13
+        ]
+      }
+    },
+    {
+      "check_id": "CTX-001",
+      "name": "Context·Prompt 검증",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "elapsed_seconds": 2.2043,
+      "message": "Context·Prompt 구조가 검증되었습니다.",
+      "details": {
+        "context_count": 5,
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        "sources_count": 5,
+        "total_context_chars": 4609,
+        "system_prompt_chars": 1822,
+        "user_prompt_chars": 5319,
+        "combined_prompt_chars": 7193
+      }
+    },
+    {
+      "check_id": "RAG-001",
+      "name": "실제 RAG 응답 검증",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "elapsed_seconds": 11.9454,
+      "message": "실제 RAG Chat 응답이 검증되었습니다.",
+      "details": {
+        "elapsed_seconds": 10.8666,
+        "answer_chars": 2050,
+        "answer_preview_chars": 300,
+        "answer_preview": "사후관리 대상 물품을 지정된 용도 외의 다른 용도로 사용하려는 경우, 세관장에게 승인 신청을 해야 합니다. [S2]\n\n**1. 승인 신청 대상 및 절차**\n*   사후관리물품을 해당 용도 외의 다른 용도에 사용하거나, 해당 용도 또는 다른 용도에 사용하기 위해 양도·양수·임대하려는 자는 세관장에게 승인 신청을 하고 그 승인을 받아야 합니다. [S2]\n*   신청 시에는 별지 제2호서식의 용도외 사용(양도ㆍ양수ㆍ임대) 등 승인신청서와 다음 각 호의 서류를 첨부해야 합니다. [S2]\n    *   양도ㆍ양수ㆍ임대차 계약서 사본 (같은 ",
+        "context_count": 5,
+        "citation_status": "VALID",
+        "cited_source_count": 2,
+        "unused_source_count": 3,
+        "provider": "gemini",
+        "model": "gemini-2.5-flash",
+        "prompt_token_count": 4270,
+        "candidate_token_count": 1249
+      }
+    },
+    {
+      "check_id": "CIT-001",
+      "name": "Citation 안정성 검증",
+      "status": "PASS",
+      "severity": "WARNING",
+      "elapsed_seconds": 12.3636,
+      "message": "Citation 상태가 VALID입니다.",
+      "details": {
+        "runs": 1,
+        "valid_count": 1,
+        "results": [
+          {
+            "run": 1,
+            "status": "VALID",
+            "is_valid": true,
+            "valid_citation_count": 2,
+            "invalid_citation_count": 0,
+            "cited_source_count": 2
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "SEC-001",
+      "name": "응답 보안 계약 검증",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "elapsed_seconds": 14.0204,
+      "message": "최종 결과 보안 계약을 통과했습니다.",
+      "details": {
+        "json_bytes": 3992,
+        "key_count": 45,
+        "forbidden_hits": []
+      }
+    },
+    {
+      "check_id": "API-001",
+      "name": "오류 매핑 계약 검증",
+      "status": "PASS",
+      "severity": "CRITICAL",
+      "elapsed_seconds": 0.0141,
+      "message": "요청 검증·오류 매핑 계약이 확인되었습니다.",
+      "details": {
+        "cases": [
+          {
+            "case_id": "missing_query",
+            "raised": true,
+            "error_count": 1,
+            "api_error_contains_full_query": false
+          },
+          {
+            "case_id": "empty_query",
+            "raised": true,
+            "error_count": 1,
+            "api_error_contains_full_query": false
+          },
+          {
+            "case_id": "blank_query",
+            "raised": true,
+            "error_count": 1,
+            "api_error_contains_full_query": false
+          },
+          {
+            "case_id": "too_long_query",
+            "raised": true,
+            "error_count": 1,
+            "api_error_contains_full_query": false
+          },
+          {
+            "case_id": "match_count_zero",
+            "raised": true,
+            "error_count": 1,
+            "api_error_contains_full_query": false
+          },
+          {
+            "case_id": "match_count_bool",
+            "raised": true,
+            "error_count": 1,
+            "api_error_contains_full_query": false
+          },
+          {
+            "case_id": "extra_field",
+            "raised": true,
+            "error_count": 1,
+            "api_error_contains_full_query": false
+          }
+        ],
+        "error_response_schema_ok": true,
+        "failures": []
+      }
+    }
+  ]
+}

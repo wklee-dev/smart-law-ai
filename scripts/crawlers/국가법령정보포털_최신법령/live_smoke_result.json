@@ -1,0 +1,53 @@
+{
+  "categories": {
+    "promulgated": {
+      "items": 50,
+      "total_pages": 2031,
+      "selected": 1
+    },
+    "effective": {
+      "items": 50,
+      "total_pages": 113,
+      "selected": 1
+    },
+    "scheduled": {
+      "items": 50,
+      "total_pages": 16,
+      "selected": 11
+    },
+    "repealed": {
+      "items": 50,
+      "total_pages": 117,
+      "selected": 1
+    },
+    "temporary": {
+      "items": 50,
+      "total_pages": 2,
+      "selected": 17
+    },
+    "temporary_articles": {
+      "items": 50,
+      "total_pages": 9,
+      "selected": 3
+    },
+    "unconstitutional": {
+      "items": 41,
+      "total_pages": 1,
+      "selected": 2
+    }
+  },
+  "selected_total": 36,
+  "detail": {
+    "title": "전기사업법 시행규칙",
+    "source_id": "291405",
+    "articles": 84,
+    "addenda": 54,
+    "annexes": 84,
+    "available_files": 252,
+    "downloaded_test_files": 1,
+    "bytes": 66653,
+    "sha256": "69fa8a0c217851bf54ce2cafa855e371f5f21fccea50109555416f0fa6aed2ef",
+    "repeat_status": "existing"
+  },
+  "stored_list_items": 37
+}

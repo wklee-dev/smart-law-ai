@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 64" role="img" aria-label="HANJOO">
+  <g fill="#365b65">
+    <rect x="16" y="22" width="7" height="20" rx="3.5"/>
+    <rect x="27" y="13" width="7" height="38" rx="3.5"/>
+    <rect x="38" y="6" width="7" height="52" rx="3.5"/>
+    <rect x="49" y="13" width="7" height="38" rx="3.5"/>
+    <rect x="60" y="22" width="7" height="20" rx="3.5"/>
+    <text
+      x="78"
+      y="43"
+      font-family="Arial Black, Arial, Helvetica, Malgun Gothic, sans-serif"
+      font-size="26"
+      font-weight="800"
+      letter-spacing="0.5"
+    >HANJOO</text>
+  </g>
+</svg>

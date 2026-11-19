@@ -1,0 +1,293 @@
+
+CAS 수출품목마스터 조회
+expMasterSearchQry 호출 가이드 (Cursor 연동용)
+HanjooGatewayAPI  |  문서 버전 1.1  |  응답: XML  |  인증: CAS Bearer만  |  운영: https://gateway.hjcustoms.co.kr:8444
+0. Cursor에서 이 문서로 프로그램 만들기
+다른 PC의 Cursor에서 아래 순서만 따르면 됩니다.
+단계
+할 일
+1
+이 파일(CAS_수출품목마스터_API_Guide V1.1.docx)을 Cursor 채팅에 @첨부
+2
+부록 A 「요청문 템플릿」 전체를 복사해 Cursor에 붙여넣기
+3
+Gateway URL·.env(CAS_GATEWAY_BASE_URL) 확인
+4
+CAS 로그인 → custCd로 조회 테스트
+비밀번호·token은 Cursor 대화에 넣지 마세요.
+1. 개요
+CAS DB 수출품목마스터(EXP_MST_CD_MNG)를 조회합니다. 거래처코드만으로 전체 조회하거나, 품목마스터코드를 추가해 조회합니다.
+인증: CAS ID/PW 로그인 후 Bearer만 허용 (X-API-Key 불가). 호출 시 GATEWAY_API_AUDIT_LOG에 전 항목이 기록됩니다.
+항목
+내용
+URL
+GET /api/cas/expMasterSearchQry
+응답
+application/xml
+인증
+Authorization: Bearer {token}
+테이블
+dbo.EXP_MST_CD_MNG
+2. Base URL · .env
+환경
+Base URL
+비고
+운영
+https://gateway.hjcustoms.co.kr:8444
+외부 연동
+로컬
+http://127.0.0.1:5050
+Gateway PC만
+호출 앱 .env / Vercel (필수)
+CAS_GATEWAY_BASE_URL=https://gateway.hjcustoms.co.kr:8444# 로컬 Gateway: CAS_GATEWAY_BASE_URL=http://127.0.0.1:5050
+Vercel은 Environment Variables 등록 후 Redeploy.
+3. 인증 (필수)
+POST {Base}/api/auth/loginContent-Type: application/json{{"userId":"CAS아이디","password":"비밀번호"}}
+Authorization: Bearer {token}Accept: application/xml
+401 → 재로그인. API Key로 호출하면 401.
+4. 조회 요청
+파라미터
+필수
+설명
+custCd
+Y
+거래처코드
+mstCd
+N
+품목마스터코드. 없으면 해당 거래처 전체
+GET {Base}/api/cas/expMasterSearchQry?custCd=0736GET {Base}/api/cas/expMasterSearchQry?custCd=0736&amp;mstCd=품목코드
+5. 응답 XML
+&lt;expMasterSearchQryRtnVo&gt;  &lt;ntceInfo/&gt;  &lt;tCnt&gt;1&lt;/tCnt&gt;  &lt;expMasterSearchQryVo&gt;    &lt;custCd&gt;0736&lt;/custCd&gt;    &lt;mstCd&gt;...&lt;/mstCd&gt;    &lt;!-- 값 있는 항목만 --&gt;  &lt;/expMasterSearchQryVo&gt;&lt;/expMasterSearchQryRtnVo&gt;
+값이 없는 컬럼은 XML 요소를 출력하지 않습니다.
+5.1 응답 항목 (XML 요소명)
+DB 컬럼
+XML 요소
+항목명(국문)
+CUST_CD
+custCd
+거래처코드
+MST_CD
+mstCd
+품목마스터코드
+CSTM_UNIQ
+cstmUniq
+거래처 통관고유부호
+L_CL
+lCl
+대분류
+M_CL
+mCl
+중분류
+S_CL
+sCl
+소분류
+ERP_CD
+erpCd
+ERP CD
+ERP
+erp
+ERP Description
+MDL_STDRD_1
+mdlStdrd1
+모델규격1
+MDL_STDRD_2
+mdlStdrd2
+모델규격2
+MDL_STDRD_3
+mdlStdrd3
+모델규격3
+MDL_STDRD_4
+mdlStdrd4
+모델규격4
+MDL_STDRD_5
+mdlStdrd5
+모델규격5
+MDL_STDRD_6
+mdlStdrd6
+모델규격6
+MDL_STDRD_7
+mdlStdrd7
+모델규격7
+MDL_STDRD_8
+mdlStdrd8
+모델규격8
+IGDT_1
+igdt1
+성분1
+IGDT_2
+igdt2
+성분2
+TDMK_NM
+tdmkNm
+상표명
+QNTY_UNT
+qntyUnt
+수량단위
+FACTOR
+factor
+FACTOR
+PUR_WHT
+purWht
+순중량
+HSCODE
+hscode
+HSCODE
+STDRD_GODS_CD
+stdrdGodsCd
+표준품명코드
+STDRD_GODS_NM
+stdrdGodsNm
+표준품명
+DL_GODS_NM
+dlGodsNm
+거래품명
+ORG
+org
+원산지
+ORG_EXPR_SET_CD
+orgExprSetCd
+원산지표시설정
+ORG_EXPR_OBJ
+orgExprObj
+원산지표시대상
+STRATEGIC_MST_YN
+strategicMstYn
+전략물자대상여부
+SET_TP_CD
+setTpCd
+설정유형
+SET_NO
+setNo
+설정번호
+SET_DT
+setDt
+설정일
+STRATEGIC_ATC_FILE_CD
+strategicAtcFileCd
+전략물자첨부관리
+RER_EASE_MST_YN
+rerEaseMstYn
+환급간이환급대상여부
+MAKE_YN
+makeYn
+제조여부
+PR_ERR_SCP
+prErrScp
+가격오차범위
+PSTP_YN
+pstpYn
+사전판정대상여부
+PSTP_REASON_CD
+pstpReasonCd
+사전판정사유코드
+PSTP_ETC_REASON
+pstpEtcReason
+사전판정기타사유
+SORT_RSN_CD
+sortRsnCd
+분류사유코드번호
+SORT_RSN
+sortRsn
+분류사유내용
+EXNT_PIC
+exntPic
+검사자
+EXNTR
+exntr
+EXNTR
+EXNT_RSLT
+exntRslt
+검사결과
+WORK_DT
+workDt
+작업일자
+RQMNT_MNG_SEQ
+rqmntMngSeq
+요건인가번호
+RQMNT_EXCEPT_RESON
+rqmntExceptReson
+요건제외사유
+RQMNT_EXCEPT_RESON_CD
+rqmntExceptResonCd
+요건제외사유코드
+KEYWORD
+keyword
+키워드
+CATEGORY_CD
+categoryCd
+카테고리코드
+SET_BASIS
+setBasis
+설정근거
+DEL_YN
+delYn
+삭제여부
+REG_DT
+regDt
+등록일시
+REG_MAN
+regMan
+등록자
+UPD_DT
+updDt
+수정일시
+UPD_MAN
+updMan
+수정자
+STRATEGIC_GUBUN
+strategicGubun
+전략물자구분
+MST_CD_YN
+mstCdYn
+수입품목코드표기여부
+SAME_MST_CD_YN
+sameMstCdYn
+동일코드대상여부
+SEYUL_GUBUN
+seyulGubun
+세율구분
+EXNT_ATC_FILE
+exntAtcFile
+검사관련첨부파일경로
+PR_ERR_SCP_MINUS
+prErrScpMinus
+가격오차범위2
+MAYAG_MST_YN
+mayagMstYn
+마약류여부
+CNTRL_NO
+cntrlNo
+관리번호
+MOKJUK_CHK_YN
+mokjukChkYn
+목적국 체크 여부
+EXPIRE_MON
+expireMon
+환급유효개월
+6. 오류
+HTTP
+의미
+400
+custCd 누락 등 — XML ntceInfo
+401
+Bearer 없음/만료
+503
+DB/설정 오류
+7. 호출 예제
+TOKEN=$(curl -s -X POST -H "Content-Type: application/json" \  -d '{"userId":"CAS아이디","password":"비밀번호"}' \  "https://gateway.hjcustoms.co.kr:8444/api/auth/login" | jq -r .token)curl -s -H "Authorization: Bearer $TOKEN" -H "Accept: application/xml" \  "https://gateway.hjcustoms.co.kr:8444/api/cas/expMasterSearchQry?custCd=0736"
+8. 감사 로그
+호출마다 GATEWAY_API_AUDIT_LOG에 기록됩니다. interface_fields에는 설계 항목 전체(약 67개)가 남습니다.
+부록 A. Cursor 요청문 템플릿
+아래를 그대로 복사해 Cursor에 붙여넣으세요.
+첨부 가이드(CAS_수출품목마스터_API_Guide V1.1.docx)를 참고하여 수출품목마스터 조회 연동 프로그램을 만들어 주세요.## Gateway- 운영: https://gateway.hjcustoms.co.kr:8444- 로컬: http://127.0.0.1:5050- 호출 앱 .env (필수): CAS_GATEWAY_BASE_URL=https://gateway.hjcustoms.co.kr:8444## 필수 규칙1) CAS 로그인만 사용. API Key(X-API-Key) 사용 금지.2) POST /api/auth/login → token 저장 → Authorization: Bearer {token}3) 조회: GET /api/cas/expMasterSearchQry?custCd=거래처코드   선택: &amp;mstCd=품목마스터코드4) 응답은 XML만. 루트: expMasterSearchQryRtnVo / 행: expMasterSearchQryVo5) 필드명은 camelCase. DB 값이 없으면 XML 요소 없음.6) 401이면 자동 재로그인.7) CAS 비밀번호·token을 소스/README에 평문 저장하지 말 것.## 사용자 UI- [로그인] CAS userId / password- 조회: 거래처코드(custCd) 필수, 품목코드(mstCd) 선택- [조회] → 결과 그리드 (가이드 5.1 XML 요소명 기준)## API 호출1) POST /api/auth/login  Body: { "userId":"...","password":"..." }2) GET /api/cas/expMasterSearchQry?custCd=0736   Header: Authorization: Bearer {token}, Accept: application/xml3) XML 파싱: tCnt, expMasterSearchQryVo 반복## 산출물- 실행 가능한 프로그램- README (URL, 로그인·조회 방법)- .env.example (CAS_GATEWAY_BASE_URL만, 비밀값 제외)
+부록 B. 주의
+• API Key 사용 금지. CAS 로그인만.
+• CAS_GATEWAY_BASE_URL 미설정 시 로그인 실패.
+• 비밀번호·token을 가이드/대화에 올리지 말 것.
+부록 C. 개정 이력
+버전
+내용
+1.0
+최초 작성 — expMasterSearchQry Cursor 연동 가이드
+1.1
+문서 버전업. Cursor 연동·감사로그·빈 값 생략 규칙 재확인

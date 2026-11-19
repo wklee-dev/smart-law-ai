@@ -1,0 +1,73 @@
+/**
+ * Phase B — 상세/안내 카드 표면 통일
+ * SectionCard(.sl-card) · panel · case-detail · fta-card 헤더 간격
+ * 데이터 필드 삭제 금지 — 프레젠테이션만
+ */
+
+.panel,
+.sl-card {
+  border-radius: 10px;
+}
+
+.panel-hd,
+.sl-card-hd {
+  font-size: 14px;
+  padding: 10px 14px;
+}
+
+.panel-bd,
+.sl-card-bd {
+  padding: 12px 14px;
+}
+
+/* 사례/판례 상세 블록 → 카드 톤 */
+.case-detail {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--ciel-line, #e5e9ef);
+  border-radius: 10px;
+  border-top: 1px solid var(--ciel-line, #e5e9ef);
+  background: #fff;
+  box-shadow: var(--ciel-shadow-sm, 0 1px 2px rgba(15, 23, 42, 0.04));
+}
+
+.case-detail h3,
+.case-detail h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.case-detail .pre {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #334155;
+}
+
+/* FTA 결과 카드 — 이미 fta-rates에 있을 수 있음, 헤더만 보강 */
+.fta-card > header,
+.fta-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.fta-card > header h3,
+.fta-card header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* pairs / meta */
+.pairs li,
+.fta-laws.pairs li {
+  gap: 8px 12px;
+}
+
+.sl-info-card {
+  border-radius: 10px;
+}

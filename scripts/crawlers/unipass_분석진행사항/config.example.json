@@ -1,0 +1,24 @@
+{
+  "accounts": [
+    {
+      "account_id": "계정1",
+      "login_id": "유니패스_아이디",
+      "login_pw": "유니패스_비밀번호",
+      "company_name": "회사명",
+      "certificate": {
+        "alias": "인증서 표시 이름 일부",
+        "password": "인증서_비밀번호"
+      }
+    }
+  ],
+  "settings": {
+    "page_unit": 10,
+    "output_dir": "output",
+    "output_excel": "분석결과_크롤링.xlsx",
+    "db_path": "",
+    "browser_wait_seconds": 120,
+    "request_delay_seconds": 1.0,
+    "chrome_profile_path": "",
+    "debug_mode": false
+  }
+}

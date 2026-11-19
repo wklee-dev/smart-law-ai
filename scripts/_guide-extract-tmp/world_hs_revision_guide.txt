@@ -1,0 +1,323 @@
+관세법령정보포털 세계HS 개정표 크롤러 운영 가이드
+항목
+내용
+문서명
+관세법령정보포털 세계HS 개정표 크롤러 운영 가이드
+문서 버전
+V1.0
+작성일
+2026-09-10
+작성자
+Manus AI
+대상 데이터
+관세법령정보포털 세계HS 개정표
+기본 대상 DB
+`D:\SQLiteDB\smart_law_ai.db`
+1. 목적과 적용 범위
+본 프로그램은 관세법령정보포털의 
+세계HS 개정표
+에서 제공하는 모든 개정 버전과 모든 목록 페이지를 수집하여 SQLite 데이터베이스에 적재한다. 설계서의 요구사항에 따라 품목번호와 국문·영문 설명을 포함한 
+레코드 본문 전체
+를 저장한다. 포털 화면의 버전 선택 값은 `2017-2022`, `2012-2017`, `2007-2012`, `2002-2007`이며, 프로그램의 기본 실행은 네 버전을 모두 대상으로 한다.[1] 실행 프로그램 `world_hs_revision_crawler.py`는 프로젝트 
+루트
+에 배치한다.
+대상 DB에 기존 데이터가 존재할 수 있으므로 기존 테이블을 변경하거나 삭제하지 않는다. 대신 `world_hs_revision` 접두어의 전용 테이블을 생성한다. 수집 원문의 전체 JSON을 함께 보존하므로, 포털이 이후 필드를 추가하더라도 최초 수집 시점의 원문을 확인할 수 있다.
+전체 수집 원칙:
+ 실제 운영 시 `--max-pages` 옵션을 사용하지 않는다. 이 옵션은 연결 검증 전용이며, 기본 실행은 포털이 반환한 전체 건수에서 계산한 마지막 페이지까지 수집한다.
+2. 수집 대상과 방식
+프로그램은 화면 HTML을 반복 파싱하지 않고, 해당 화면이 브라우저에서 호출하는 공개 목록 API를 사용한다. 요청에는 개정 전·후 연도, 페이지 번호, 페이지당 건수, 빈 품목번호/설명 조건을 전달한다. 응답의 `resultVo` 목록과 `paginationInfo.totalRecordCount`를 검증하고, 첫 페이지의 전체 건수를 기준으로 마지막 페이지를 계산한다.[1]
+검증 시점인 2026-09-10에 각 버전의 목록 API가 반환한 전체 건수는 아래와 같았다. 이 수치는 포털의 데이터 정정에 따라 달라질 수 있으므로, 프로그램은 값을 하드코딩하지 않고 매 실행 시 다시 읽는다.
+개정 버전
+검증 시 전체 건수
+페이지당 100건일 때 예상 페이지 수
+기본 수집 여부
+2017-2022
+188
+2
+포함
+2012-2017
+132
+2
+포함
+2007-2012
+153
+2
+포함
+2002-2007
+340
+4
+포함
+합계
+813
+10
+포함
+3. 프로그램 구조
+프로그램은 단일 실행 파일을 계층별 책임으로 분리하여 구성한다. 포털 통신 계층은 HTTP 요청과 재시도를 담당한다. 수집 제어 계층은 버전과 페이지 순회, 수량 완전성 검증, 재개 여부를 판단한다. SQLite 저장 계층은 스키마 생성, 원문 보존, UPSERT, 실행 이력과 체크포인트 기록을 담당한다.
+┌──────────────────────────────────────────────────────────────────┐
+│ CLI: world_hs_revision_crawler.py                                │
+│  --db / --versions / --page-unit / --resume / --dry-run          │
+└──────────────────────┬───────────────────────────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────────────────────────┐
+│ 수집 제어: crawl()                                                │
+│  1) 버전별 첫 페이지에서 전체 건수 확인                           │
+│  2) 전체 페이지 산출 및 페이지별 건수 완전성 검증                │
+│  3) 체크포인트 확인, 적재, 완료·실패 상태 갱신                   │
+└───────────────┬──────────────────────────────┬───────────────────┘
+                │                              │
+                ▼                              ▼
+┌───────────────────────────────┐  ┌───────────────────────────────┐
+│ PortalClient                   │  │ WorldHSRevisionRepository     │
+│ POST 목록 API                  │  │ SQLite 스키마·UPSERT·이력     │
+│ 타임아웃·지수 백오프 재시도    │  │ 트랜잭션·체크포인트           │
+└───────────────┬───────────────┘  └───────────────┬───────────────┘
+                ▼                                  ▼
+  관세법령정보포털 세계HS 개정표 API       smart_law_ai.db 전용 테이블
+4. 데이터베이스 설계
+4.1 테이블 생성 원칙
+모든 테이블은 `CREATE TABLE IF NOT EXISTS`로 생성한다. 따라서 동일 DB를 여러 번 실행해도 기존 테이블은 삭제되거나 변경되지 않는다. 본문 테이블의 자연키는 `개정 전 연도 + 개정 후 연도 + 포털 원본 일련번호`이다. 이 키를 기준으로 UPSERT를 수행하므로, 재실행 시 중복 행이 생기지 않고 포털 수정 내용은 최신 값으로 갱신된다.
+4.2 본문 테이블: `world_hs_revision`
+열명
+SQLite 형식
+NULL
+키·인덱스
+설명
+`revision_id`
+INTEGER
+불가
+PK, 자동 증가
+내부 식별자
+`source_serial_no`
+TEXT
+불가
+자연키 구성
+포털 `hsRefrTbSrno` 원본 일련번호
+`base_version_year`
+INTEGER
+불가
+자연키 구성, 인덱스
+개정 전 HS 버전 연도
+`revised_version_year`
+INTEGER
+불가
+자연키 구성, 인덱스
+개정 후 HS 버전 연도
+`version_pair`
+TEXT
+불가
+표시용 버전 쌍. 예: `2017-2022`
+`before_hs_code`
+TEXT
+가능
+인덱스
+개정 전 품목번호 원문. 복수 줄을 보존
+`after_hs_code`
+TEXT
+가능
+인덱스
+개정 후 품목번호 원문. 복수 줄을 보존
+`description_ko`
+TEXT
+가능
+국문 개정 설명 전문
+`description_en`
+TEXT
+가능
+영문 개정 설명 전문
+`source_registered_date`
+TEXT
+가능
+포털 등록일 원문
+`source_last_changed_at`
+TEXT
+가능
+포털 최종 변경일 원문
+`source_response_json`
+TEXT
+불가
+포털 `resultVo` 개별 객체 전체 JSON 원문
+`source_url`
+TEXT
+불가
+수집 화면 URL
+`page_index`
+INTEGER
+불가
+최초/최종 적재 시 페이지 번호
+`crawled_at`
+TEXT
+불가
+UTC ISO-8601 수집 시각
+`record_hash`
+TEXT
+불가
+핵심 본문 열의 SHA-256 변경 추적 값
+고유 제약조건:
+ `UNIQUE (base_version_year, revised_version_year, source_serial_no)`
+4.3 운영 이력 테이블: `world_hs_revision_crawl_run`
+열명
+SQLite 형식
+설명
+`run_id`
+TEXT
+실행 UUID, 기본키
+`started_at`, `finished_at`
+TEXT
+실행 시작·종료 UTC 시각
+`status`
+TEXT
+`RUNNING`, `COMPLETED`, `FAILED` 중 하나
+`source_api_url`
+TEXT
+실제 호출한 목록 API 주소
+`requested_versions`
+TEXT
+이번 실행의 버전 쌍 목록
+`page_unit`
+INTEGER
+페이지당 요청 레코드 수
+`resume_mode`
+INTEGER
+재개 모드 사용 여부. 0 또는 1
+`expected_records`
+INTEGER
+각 버전의 포털 전체 건수를 합산한 값
+`fetched_records`
+INTEGER
+이번 실행에서 실제 응답으로 검증한 행 수
+`written_records`
+INTEGER
+이번 실행에서 UPSERT한 행 수
+`skipped_pages`
+INTEGER
+`--resume`으로 적재를 건너뛴 완료 페이지 수
+`error_message`
+TEXT
+실패 시 오류 원인
+4.4 페이지 체크포인트 테이블: `world_hs_revision_crawl_checkpoint`
+열명
+SQLite 형식
+설명
+`base_version_year`, `revised_version_year`
+INTEGER
+개정 전·후 연도. 페이지 식별키 구성
+`page_unit`, `page_index`
+INTEGER
+페이지 크기와 페이지 번호. 페이지 식별키 구성
+`expected_total_count`
+INTEGER
+해당 버전의 포털 전체 건수
+`received_count`
+INTEGER
+이 페이지에서 검증·저장한 실제 행 수
+`status`
+TEXT
+`RUNNING`, `COMPLETED`, `FAILED` 중 하나
+`attempt_count`
+INTEGER
+동일 페이지 시도 횟수
+`last_run_id`
+TEXT
+마지막 처리 실행 UUID
+`started_at`, `completed_at`
+TEXT
+처리 시작·완료 UTC 시각
+`last_error`
+TEXT
+마지막 실패 메시지
+기본키:
+ `(base_version_year, revised_version_year, page_unit, page_index)`
+5. 설치와 실행 방법
+5.1 사전 요건
+Python 3.10 이상과 SQLite 쓰기 권한이 필요하다. 프로그램의 유일한 외부 패키지는 `requests`이다. Windows에서 설계서의 DB 경로를 그대로 사용할 때에는 해당 드라이브와 디렉터리에 쓰기 권한이 있어야 한다. 상위 폴더가 존재하지 않으면 프로그램이 생성한다.
+5.2 실행 명령 표
+목적
+Windows PowerShell 명령
+Linux/macOS 명령
+결과
+패키지 설치
+`py -m pip install -r requirements.txt`
+`python3 -m pip install -r requirements.txt`
+`requests` 설치
+전체 수집
+`py .\world_hs_revision_crawler.py --db "D:\SQLiteDB\smart_law_ai.db"`
+`python3 world_hs_revision_crawler.py --db /data/SQLiteDB/smart_law_ai.db`
+네 버전의 마지막 페이지까지 수집
+중단 후 재개
+`py .\world_hs_revision_crawler.py --db "D:\SQLiteDB\smart_law_ai.db" --resume`
+`python3 world_hs_revision_crawler.py --db /data/SQLiteDB/smart_law_ai.db --resume`
+완료 체크포인트는 적재하지 않고 미완료 페이지 재개
+특정 버전만 수집
+`py .\world_hs_revision_crawler.py --db "D:\SQLiteDB\smart_law_ai.db" --versions 2017-2022`
+`python3 world_hs_revision_crawler.py --db /data/SQLiteDB/smart_law_ai.db --versions 2017-2022`
+선택한 버전만 전체 수집
+여러 버전 선택
+`py .\world_hs_revision_crawler.py --db "D:\SQLiteDB\smart_law_ai.db" --versions 2017-2022,2012-2017`
+`python3 world_hs_revision_crawler.py --db /data/SQLiteDB/smart_law_ai.db --versions 2017-2022,2012-2017`
+지정 버전들을 함께 수집
+연결·적재 검증
+`py .\world_hs_revision_crawler.py --db .\output\smoke.db --versions 2017-2022 --page-unit 100 --max-pages 1 --delay 0`
+`python3 world_hs_revision_crawler.py --db ./output/smoke.db --versions 2017-2022 --page-unit 100 --max-pages 1 --delay 0`
+첫 페이지 100건만 검증용 적재
+DB 기록 없이 API 검증
+`py .\world_hs_revision_crawler.py --versions 2017-2022 --max-pages 1 --dry-run`
+`python3 world_hs_revision_crawler.py --versions 2017-2022 --max-pages 1 --dry-run`
+API 응답과 수량만 검증
+상세 로그
+실행 명령 뒤에 `--verbose` 추가
+실행 명령 뒤에 `--verbose` 추가
+요청·재시도·페이지 진행 로그 출력
+실행이 성공하면 표준 출력에 `run_id`, 대상 버전 수, 포털 전체 건수, 실제 검증 행 수, UPSERT 행 수, 건너뛴 페이지 수를 JSON으로 출력한다. 이 출력과 `world_hs_revision_crawl_run` 테이블을 함께 보관하면 수집 감사 이력을 확인할 수 있다.
+6. 무결성 검증과 장애 대응
+프로그램은 레코드를 저장하기 전에 다음 조건을 확인한다. HTTP 상태가 성공이어야 한다. JSON 응답에 포털 오류 플래그가 없어야 한다. `resultVo`가 목록이어야 한다. 전체 건수가 정수여야 한다. 각 페이지의 응답 행 수가 전체 건수와 페이지 번호로 계산한 기대 행 수와 동일해야 한다. 수집 중 같은 버전의 전체 건수가 바뀌면 혼합 시점 데이터를 만들지 않도록 실행을 실패 처리한다.
+상황
+프로그램 동작
+운영자 조치
+일시적 네트워크 오류 또는 타임아웃
+최대 3회, 1초·2초 지수 백오프로 재시도
+계속 실패하면 네트워크와 포털 접속 상태 확인 후 재실행
+포털이 오류 JSON 반환
+해당 실행을 실패 처리하고 오류 메시지 기록
+포털 점검 후 재실행
+페이지 행 수 불일치 또는 전체 건수 변동
+불완전 데이터 적재를 막기 위해 실패 처리
+잠시 후 전체 수집을 새로 실행. 필요 시 `--reset-checkpoints` 사용
+프로세스 강제 종료
+마지막 페이지가 `RUNNING` 또는 `FAILED` 상태로 남음
+동일 DB에서 `--resume`으로 재개
+이미 완료된 페이지 재실행
+기본 모드는 다시 읽고 UPSERT
+빠른 재개가 필요하면 `--resume` 사용
+포털 화면 또는 API 개편
+API 응답 형식 검증에서 실패할 수 있음
+`docs/ULS0201012Q.js`와 화면 요청을 확인해 필드·URL을 수정하고 단위 테스트 실행
+7. 운영 SQL 예시
+다음 SQL은 SQLite GUI 도구 또는 SQLite 지원 애플리케이션에서 실행한다.
+-- 버전별 누적 적재 건수
+SELECT version_pair, COUNT(*) AS row_count
+FROM world_hs_revision
+GROUP BY version_pair
+ORDER BY version_pair DESC;
+-- 최근 실행 이력
+SELECT run_id, status, started_at, finished_at,
+       expected_records, fetched_records, written_records, skipped_pages, error_message
+FROM world_hs_revision_crawl_run
+ORDER BY started_at DESC
+LIMIT 20;
+-- 실패 또는 미완료 페이지
+SELECT base_version_year || '-' || revised_version_year AS version_pair,
+       page_unit, page_index, status, attempt_count, last_error
+FROM world_hs_revision_crawl_checkpoint
+WHERE status &lt;&gt; 'COMPLETED'
+ORDER BY base_version_year DESC, page_index;
+8. 테스트와 검증 결과
+배포 패키지에는 외부 포털에 연결하지 않는 단위 테스트가 포함되어 있다. 테스트는 스키마 생성, 전체 원문 JSON 보존, UPSERT 중복 방지와 갱신, 재개 체크포인트, 포털 오류 응답 거부, 버전 파서 검증을 수행한다.
+python3 -m unittest discover -s tests -v
+2026-09-10에 실제 포털을 대상으로 페이지당 100건으로 
+기본 네 버전의 전체 페이지
+를 연계 검증했다. 포털의 합계 813건과 실제 수신·UPSERT 건수가 모두 813건으로 일치했고, 10개 페이지 체크포인트가 모두 `COMPLETED` 상태인 것을 확인했다. 또한 검증 DB의 813개 행 모두에 포털 개별 응답 JSON 원문이 보존되었다. 별도로 `2017-2022` 첫 페이지 100건을 제한 적재하는 연결·형식 검증도 수행했다.[1]
+9. 향후 확장 고려사항
+SQLite는 초기 적재와 단일 운영 환경에 적합하다. 향후 MS-SQL로 이전할 경우 `revision_id`는 `IDENTITY`, 설명과 원문 JSON은 `NVARCHAR(MAX)`, 시간 열은 `DATETIME2`, 고유 제약조건은 동일한 복합 UNIQUE 제약조건으로 매핑할 수 있다. 원문 JSON과 정규화 열을 동시에 보존하는 설계는 검색 인덱스, 벡터 검색, 변경 이력 분석을 추가할 때도 재수집 없이 확장할 수 있게 한다.
+References
+[1]: https://unipass.customs.go.kr/clip/hsinfosrch/openULS0201012Q.do "관세법령정보포털 CLIP 세계HS 개정표"

@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-19",
+  "scope": "시행법령에서 모든 단일 K 검색어의 첫 페이지만 조회, 목록 전용",
+  "rules": 479,
+  "unique_queries": 469,
+  "list_rows": 242,
+  "status": "completed",
+  "stats": {
+    "queries": 469,
+    "failed_queries": 0,
+    "pages": 469,
+    "listed": 365,
+    "selected": 242,
+    "detail_attempts": 0,
+    "details": 0,
+    "files": 0,
+    "failed_files": 0,
+    "failed_items": 0,
+    "missing_file_annexes": 0,
+    "format_mismatches": 0,
+    "end_page_stops": 0
+  },
+  "ended_at": "2026-10-19T00:22:15+00:00",
+  "error": ""
+}

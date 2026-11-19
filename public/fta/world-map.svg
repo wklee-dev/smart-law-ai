@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" preserveAspectRatio="xMidYMid meet">
+  <rect width="1000" height="480" fill="#f4f6f8"/>
+  <!-- simplified land masses (equirectangular-ish) -->
+  <g fill="#d8dde3" stroke="#c5ccd4" stroke-width="0.8">
+    <!-- N America -->
+    <path d="M80 90 L160 70 L220 95 L250 140 L230 200 L180 230 L120 210 L90 160 Z"/>
+    <!-- S America -->
+    <path d="M200 250 L240 240 L260 300 L250 380 L220 400 L200 360 L190 300 Z"/>
+    <!-- Europe -->
+    <path d="M460 80 L520 70 L540 100 L530 140 L490 150 L460 120 Z"/>
+    <!-- Africa -->
+    <path d="M480 160 L540 150 L560 220 L540 310 L500 320 L470 260 Z"/>
+    <!-- Asia -->
+    <path d="M540 60 L720 50 L820 90 L850 150 L800 200 L720 220 L640 200 L560 160 L530 100 Z"/>
+    <!-- SE Asia / islands -->
+    <path d="M720 230 L780 220 L800 260 L760 280 L720 260 Z"/>
+    <!-- Australia -->
+    <path d="M760 320 L850 310 L880 350 L850 390 L780 380 Z"/>
+    <!-- NZ -->
+    <path d="M900 370 L920 360 L930 390 L910 400 Z"/>
+    <!-- Middle East -->
+    <path d="M560 160 L620 150 L640 190 L600 200 Z"/>
+  </g>
+  <g stroke="#cfd5db" stroke-width="0.5" fill="none" opacity="0.5">
+    <line x1="0" y1="240" x2="1000" y2="240"/>
+    <line x1="500" y1="0" x2="500" y2="480"/>
+  </g>
+</svg>

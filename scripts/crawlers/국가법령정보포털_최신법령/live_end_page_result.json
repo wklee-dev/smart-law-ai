@@ -1,0 +1,21 @@
+{
+  "scope": "공포법령, K열 gubun 1, --end-page 2",
+  "status": "completed",
+  "stats": {
+    "queries": 1,
+    "failed_queries": 0,
+    "pages": 2,
+    "listed": 100,
+    "selected": 100,
+    "detail_attempts": 0,
+    "details": 0,
+    "files": 0,
+    "failed_files": 0,
+    "failed_items": 0,
+    "missing_file_annexes": 0,
+    "format_mismatches": 0,
+    "end_page_stops": 1
+  },
+  "stored_rows": 100,
+  "download_directory_created": false
+}

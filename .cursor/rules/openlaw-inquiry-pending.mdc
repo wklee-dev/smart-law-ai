@@ -1,0 +1,15 @@
+---
+description: OPEN API 법령 조회(openlaw_*) — 2026-07-15 1차 구현 완료
+alwaysApply: false
+---
+
+# OPEN API 법령 조회
+
+1차 구현 완료 (`/openlaw-inquiry`). 상세: `scripts/openlawapi/OPENLAW_INQUIRY_PLAN.md`
+
+- `app/lib/openlaw-sqlite-server.ts`
+- `app/api/openlaw-inquiry/**`
+- `app/components/openlaw-inquiry-view.tsx`
+- 메뉴: 조회 → OPEN API 법령 조회
+
+기존 `law_*` / 일반법령조회와 매핑하지 않는다.

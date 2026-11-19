@@ -1,0 +1,78 @@
+/**
+ * PageHeader compact — 기존 .sl-page-header default는 globals 유지
+ * 호출부에서 variant="compact" 일 때만 적용
+ */
+
+.sl-page-header--compact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 12px;
+  margin: 0 0 8px;
+  padding: 6px 10px;
+  min-height: 32px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--ciel-line, #e5e9ef);
+  box-shadow: none;
+}
+
+.sl-page-header--compact .sl-page-header__main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.sl-page-header--compact h1 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ciel-text, #1e293b);
+}
+
+.sl-page-header--compact p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ciel-muted, #64748b);
+  max-width: none;
+}
+
+.sl-page-header--compact .sl-page-header__extra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+}
+
+/* 스코프 페이지의 구 대형 패딩을 compact가 이기도록 */
+.fta-rates-ui .sl-page-header--compact,
+.duty-modern-ui .sl-page-header--compact,
+.import-taxes-ui .sl-page-header--compact,
+.tariff-rules-ui .sl-page-header--compact {
+  margin-bottom: 8px;
+  padding: 6px 10px;
+}
+
+.fta-rates-ui .sl-page-header--compact h1,
+.duty-modern-ui .sl-page-header--compact h1,
+.import-taxes-ui .sl-page-header--compact h1,
+.tariff-rules-ui .sl-page-header--compact h1 {
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.fta-rates-ui .sl-page-header--compact p,
+.duty-modern-ui .sl-page-header--compact p,
+.import-taxes-ui .sl-page-header--compact p,
+.tariff-rules-ui .sl-page-header--compact p {
+  font-size: 12.5px;
+  line-height: 1.4;
+  max-width: none;
+}

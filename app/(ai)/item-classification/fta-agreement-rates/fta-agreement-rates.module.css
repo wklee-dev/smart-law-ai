@@ -1,0 +1,447 @@
+/* FTA 포털(관세청) 협정별 세율정보 스타일 */
+
+.root {
+  --fta-navy: #1e2f4f;
+  --fta-blue: #2563a8;
+  --fta-line: #d0d7e0;
+  --fta-bg: #f4f7f9;
+  --fta-head: #eef2f7;
+  --fta-text: #222;
+  --fta-muted: #666;
+  color: var(--fta-text);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.card {
+  border: 1px solid var(--fta-line);
+  background: #fff;
+  padding: 14px 16px 18px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fta-navy);
+}
+
+.sourceLink {
+  color: var(--fta-blue);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.sourceLink:hover {
+  text-decoration: underline;
+}
+
+.nationGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 900px) {
+  .nationGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.nationBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 6px 8px;
+  border: 1px solid #c5ced8;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.nationBtn:hover {
+  border-color: var(--fta-navy);
+  background: #f7fafc;
+}
+
+.nationBtnOn {
+  border: 2px solid #111;
+  font-weight: 700;
+  background: #fff;
+}
+
+.nationKr {
+  font-size: 12.5px;
+}
+
+.nationEn {
+  font-size: 11px;
+  color: var(--fta-muted);
+}
+
+.searchBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--fta-line);
+  background: var(--fta-bg);
+  margin-bottom: 14px;
+}
+
+.radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.searchInput {
+  flex: 1 1 220px;
+  min-width: 180px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid #d8dee6;
+  background: #fff;
+  font-size: 13px;
+}
+
+.searchBtn {
+  height: 32px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--fta-navy);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.searchBtn:hover {
+  background: #162438;
+}
+
+.searchBtn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.sectionTitle {
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  background: var(--fta-head);
+  border: 1px solid var(--fta-line);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fta-navy);
+}
+
+.guideTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+
+.guideTable th,
+.guideTable td {
+  border: 1px solid var(--fta-line);
+  padding: 7px 10px;
+  text-align: left;
+  font-size: 12.5px;
+}
+
+.guideTable th {
+  background: var(--fta-head);
+  width: 28%;
+  font-weight: 600;
+  color: #445;
+}
+
+.chapterGrid {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 4px;
+  border: 1px solid var(--fta-line);
+  padding: 8px;
+  background: #fff;
+}
+
+@media (max-width: 1100px) {
+  .chapterGrid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.chapterCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 64px;
+  padding: 6px 4px;
+  border: 1px solid #e2e8f0;
+  background: #fafbfc;
+  text-align: center;
+  cursor: pointer;
+  color: inherit;
+}
+
+.chapterCell:hover {
+  border-color: var(--fta-blue);
+  background: #eef5fb;
+}
+
+.chapterCode {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--fta-blue);
+  font-variant-numeric: tabular-nums;
+}
+
+.chapterKr {
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.chapterEn {
+  font-size: 10px;
+  color: var(--fta-muted);
+  line-height: 1.15;
+}
+
+.resultMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  color: var(--fta-muted);
+}
+
+.backLink {
+  border: 0;
+  background: transparent;
+  color: var(--fta-blue);
+  cursor: pointer;
+  font-size: 12.5px;
+  padding: 0;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--fta-line);
+}
+
+.grid {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+.grid th,
+.grid td {
+  border: 1px solid #e5e9ef;
+  padding: 7px 8px;
+  vertical-align: top;
+  font-size: 12.5px;
+}
+
+.grid th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.grid td.hs {
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, Consolas, monospace;
+  white-space: nowrap;
+  width: 7.5rem;
+}
+
+.grid td.div {
+  text-align: center;
+  width: 3.5rem;
+}
+
+.grid td.rate {
+  width: 11rem;
+  white-space: nowrap;
+}
+
+.rateCell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.yearBtn {
+  border: 1px solid #94a3b8;
+  background: #fff;
+  color: #334155;
+  font-size: 11px;
+  padding: 2px 8px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.yearBtn:hover {
+  border-color: var(--fta-blue);
+  color: var(--fta-blue);
+}
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.pageBtn {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border: 1px solid #d8dee6;
+  background: #fff;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.pageBtnOn {
+  background: var(--fta-navy);
+  border-color: var(--fta-navy);
+  color: #fff;
+  font-weight: 700;
+}
+
+.pageBtn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.empty {
+  padding: 28px 12px;
+  text-align: center;
+  color: var(--fta-muted);
+  border: 1px solid var(--fta-line);
+  background: #fff;
+}
+
+.error {
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  border: 1px solid #f1c0c0;
+  background: #fff5f5;
+  color: #b91c1c;
+  font-size: 12.5px;
+}
+
+.muted {
+  color: var(--fta-muted);
+}
+
+/* 모든 연도 보기 모달 */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.35);
+  padding: 16px;
+}
+
+.modal {
+  width: min(360px, 100%);
+  background: #fff;
+  border: 1px solid #94a3b8;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.modalHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #334155;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.modalClose {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.modalBody {
+  padding: 10px;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.modalMeta {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--fta-muted);
+}
+
+.yearTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.yearTable th,
+.yearTable td {
+  border: 1px solid #d8dee6;
+  padding: 6px 8px;
+  text-align: center;
+  font-size: 12.5px;
+}
+
+.yearTable th {
+  background: #f1f5f9;
+}

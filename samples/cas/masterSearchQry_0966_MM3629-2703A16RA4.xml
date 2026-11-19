@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<masterSearchQryRtnVo>
+  <ntceInfo />
+  <tCnt>1</tCnt>
+  <masterSearchQryVo>
+    <cstmUniq>한국무라1011017</cstmUniq>
+    <mstCd>MM3629-2703A16RA4</mstCd>
+    <custCd>0966</custCd>
+    <lCl>L00009</lCl>
+    <mCl>M00057</mCl>
+    <sCl>S00223</sCl>
+    <hscode>8536691000</hscode>
+    <stdrdGodsNm>PLUGS AND SOCKETS FOR PRINTED CIRCUITS</stdrdGodsNm>
+    <dlGodsNm>PLUGS AND SOCKETS FOR PRINTED CIRCUITS</dlGodsNm>
+    <qntyUnt>PC</qntyUnt>
+    <orgExprObj>B</orgExprObj>
+    <orgExprMth>G</orgExprMth>
+    <workDt>20230824</workDt>
+    <tdmkNm>MURATA</tdmkNm>
+    <refUnt>PC</refUnt>
+    <erp>(26.04.20 업데이트)</erp>
+    <assgnTartObj>N</assgnTartObj>
+    <intrmNotiObj>N</intrmNotiObj>
+    <addRt>0</addRt>
+    <tspTp>1</tspTp>
+    <cifDcsMth>1</cifDcsMth>
+    <reprWorkYn>N</reprWorkYn>
+    <exntRslt>B</exntRslt>
+    <factor>0.0</factor>
+    <erpCd>CON-ML</erpCd>
+    <delYn>N</delYn>
+    <regDt>2023-08-24 09:59:57</regDt>
+    <regMan>HSKWON</regMan>
+    <updDt>2024-03-21 12:38:34</updDt>
+    <updMan>HSKWON</updMan>
+    <notFtaAppTg>N</notFtaAppTg>
+    <pstpYn>N</pstpYn>
+    <seyulGubun>C</seyulGubun>
+    <gbHsCheckYn>N</gbHsCheckYn>
+    <idtcYn>N</idtcYn>
+    <mirequmExceptYn>N</mirequmExceptYn>
+    <addMony>0.0</addMony>
+    <ftaAppTgYn>N</ftaAppTgYn>
+    <newMstYn>N</newMstYn>
+    <mayagMstYn>N</mayagMstYn>
+    <bseYn>N</bseYn>
+    <masterSearchLawMngVo>
+      <yr>2026</yr>
+      <eximptRqmntSeq>047333596</eximptRqmntSeq>
+      <cstmUniq>한국무라1011017</cstmUniq>
+      <mstCd>MM3629-2703A16RA4</mstCd>
+      <delYn>N</delYn>
+      <lawCd>047</lawCd>
+      <lawNm>자원의 절약과 재활용촉진에 관한 법률</lawNm>
+      <eximptRqmntOrgan>한국환경공단</eximptRqmntOrgan>
+      <eximptRqmntDoc>(통합공고)폐기물부담금,재활용의무대상물품,포장재의</eximptRqmntDoc>
+      <lawClNm>수입</lawClNm>
+      <schGubun>1</schGubun>
+      <schGubunNm>통합공고</schGubunNm>
+      <appLawChkYn>N</appLawChkYn>
+    </masterSearchLawMngVo>
+    <masterSearchDutyMatrVo>
+      <cstmUniq>한국무라1011017</cstmUniq>
+      <mstCd>MM3629-2703A16RA4</mstCd>
+      <seqNo>1</seqNo>
+      <dutyMatr>품목분류 사전심사 대상의 건</dutyMatr>
+      <delYn>N</delYn>
+      <regDt>2023-08-24 12:51:54</regDt>
+      <regMan>HSKWON</regMan>
+      <updDt>2023-08-24 12:51:54</updDt>
+      <updMan>HSKWON</updMan>
+    </masterSearchDutyMatrVo>
+    <masterSearchDutyMatrVo>
+      <cstmUniq>한국무라1011017</cstmUniq>
+      <mstCd>MM3629-2703A16RA4</mstCd>
+      <seqNo>2</seqNo>
+      <dutyMatr>동축케이블로 용도세율 적용의 건</dutyMatr>
+      <delYn>N</delYn>
+      <regDt>2023-08-24 12:51:55</regDt>
+      <regMan>HSKWON</regMan>
+      <updDt>2023-08-24 12:51:55</updDt>
+      <updMan>HSKWON</updMan>
+    </masterSearchDutyMatrVo>
+  </masterSearchQryVo>
+</masterSearchQryRtnVo>

@@ -1,0 +1,33 @@
+{
+  "과": {
+    "match": "신고과",
+    "db": "Expo_gwa",
+    "key": "expoGwa",
+    "sheet": "expo1"
+  },
+  "결제종류": null,
+  "해외거래처코드": null,
+  "해외거래처상호": null,
+  "제조장소": null,
+  "적재항 코드": null,
+  "운송형태": null,
+  "제조일자": null,
+  "LC번호": null,
+  "총 란수": null,
+  "결제통화단위": null,
+  "장치장 일련번호": null,
+  "관세사실적": null,
+  "중고여부": null,
+  "간이환급구분": null,
+  "산업단지부호": null,
+  "포장단위": null,
+  "출항일": null,
+  "선사항공사부호": null,
+  "선사항공사명": null,
+  "선편명": null,
+  "장치장부호": null,
+  "선적여부": null,
+  "선별결과": null,
+  "정정차수": null,
+  "순중량": null
+}

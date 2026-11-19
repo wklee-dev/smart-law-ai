@@ -1,0 +1,25 @@
+# Cursor(AI·인덱싱)가 읽으면 안 되는 비밀 정보 — 앱/크롤러 실행에는 영향 없음
+
+# 환경변수 (Supabase service_role·DB 비밀번호, API 키 등)
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.local.example
+!**/env.example
+!**/.env.example
+
+# 유니패스 계정·인증서 비밀번호
+scripts/crawlers/unipass_분석진행사항/config.json
+scripts/crawlers/unipass_분석진행사항/cookies.json
+scripts/crawlers/unipass_분석진행사항/customs_ids.xlsx
+
+# Supabase CLI 로컬 캐시 (프로젝트 ref·토큰 관련)
+supabase/.temp/
+supabase/.branches/
+
+# 인증서·키 파일
+*.pem
+*.key
+*.pfx
+*.p12

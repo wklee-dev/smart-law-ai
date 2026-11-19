@@ -1,0 +1,76 @@
+/**
+ * Phase A — 공통 목록/사례 테이블 토큰
+ * - `.answer-table.case-table` 업무 목록에 적용
+ * - 관세율표 Compact(`.tariff-*` / rate-sheet)는 비침범
+ * - colspan/rowspan/열폭 전용 클래스 유지
+ */
+
+.answer-table.case-table {
+  font-size: 12.5px;
+  line-height: 1.45;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.answer-table.case-table thead th {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #334155;
+  background: #f1f5f9;
+  padding: 6px 8px;
+  white-space: nowrap;
+  width: auto;
+}
+
+.answer-table.case-table tbody td {
+  padding: 5px 8px;
+  color: #1e293b;
+  border-color: #e2e8f0;
+  vertical-align: middle;
+}
+
+.answer-table.case-table tbody tr:hover td {
+  background: #f8fafc;
+}
+
+.answer-table.case-table td.wrap,
+.answer-table.case-table td.pre {
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.answer-table.case-table td.num,
+.answer-table.case-table td.rate,
+.answer-table.case-table td.center {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.table-scroll {
+  border-radius: 8px;
+}
+
+/* FTA mini 결과표 — 밀도 유지 + hover만 통일 */
+.fta-mini {
+  font-size: 12.5px;
+}
+
+.fta-mini thead th {
+  font-size: 12px;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.fta-mini tbody tr:hover td {
+  background: #f8fafc;
+}
+
+/* 빈 상태 한 줄 */
+.answer-table.case-table td.muted,
+.fta-mini td.muted {
+  color: #64748b;
+  text-align: center;
+}

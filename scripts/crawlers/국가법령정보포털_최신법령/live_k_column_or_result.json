@@ -1,0 +1,145 @@
+{
+  "source": "Excel K only",
+  "condition": "OR",
+  "queries": [
+    "\"관세법\"",
+    "\"음악산업진흥에 관한 법률 시행규칙\""
+  ],
+  "categories": {
+    "promulgated": {
+      "queries": [
+        {
+          "query": "\"관세법\"",
+          "first_page_rows": 50,
+          "first_page_matches": 50,
+          "search_total_pages": 28
+        },
+        {
+          "query": "\"음악산업진흥에 관한 법률 시행규칙\"",
+          "first_page_rows": 13,
+          "first_page_matches": 13,
+          "search_total_pages": 1
+        }
+      ],
+      "first_page_matches": 63
+    },
+    "effective": {
+      "queries": [
+        {
+          "query": "\"관세법\"",
+          "first_page_rows": 11,
+          "first_page_matches": 11,
+          "search_total_pages": 1
+        },
+        {
+          "query": "\"음악산업진흥에 관한 법률 시행규칙\"",
+          "first_page_rows": 1,
+          "first_page_matches": 1,
+          "search_total_pages": 1
+        }
+      ],
+      "first_page_matches": 12
+    },
+    "scheduled": {
+      "queries": [
+        {
+          "query": "\"관세법\"",
+          "first_page_rows": 6,
+          "first_page_matches": 6,
+          "search_total_pages": 1
+        },
+        {
+          "query": "\"음악산업진흥에 관한 법률 시행규칙\"",
+          "first_page_rows": 0,
+          "first_page_matches": 0,
+          "search_total_pages": 1
+        }
+      ],
+      "first_page_matches": 6
+    },
+    "repealed": {
+      "queries": [
+        {
+          "query": "\"관세법\"",
+          "first_page_rows": 50,
+          "first_page_matches": 50,
+          "search_total_pages": 4
+        },
+        {
+          "query": "\"음악산업진흥에 관한 법률 시행규칙\"",
+          "first_page_rows": 0,
+          "first_page_matches": 0,
+          "search_total_pages": 1
+        }
+      ],
+      "first_page_matches": 50
+    },
+    "temporary": {
+      "queries": [
+        {
+          "query": "\"관세법\"",
+          "first_page_rows": 0,
+          "first_page_matches": 0,
+          "search_total_pages": 1
+        },
+        {
+          "query": "\"음악산업진흥에 관한 법률 시행규칙\"",
+          "first_page_rows": 0,
+          "first_page_matches": 0,
+          "search_total_pages": 1
+        }
+      ],
+      "first_page_matches": 0
+    },
+    "temporary_articles": {
+      "queries": [
+        {
+          "query": "\"관세법\"",
+          "first_page_rows": 0,
+          "first_page_matches": 0,
+          "search_total_pages": 0
+        },
+        {
+          "query": "\"음악산업진흥에 관한 법률 시행규칙\"",
+          "first_page_rows": 0,
+          "first_page_matches": 0,
+          "search_total_pages": 0
+        }
+      ],
+      "first_page_matches": 0
+    },
+    "unconstitutional": {
+      "queries": [
+        {
+          "query": "\"관세법\"",
+          "first_page_rows": 0,
+          "first_page_matches": 0,
+          "search_total_pages": 0
+        },
+        {
+          "query": "\"음악산업진흥에 관한 법률 시행규칙\"",
+          "first_page_rows": 0,
+          "first_page_matches": 0,
+          "search_total_pages": 0
+        }
+      ],
+      "first_page_matches": 0
+    }
+  },
+  "detail": {
+    "k_query": "\"음악산업진흥에 관한 법률 시행규칙\"",
+    "title": "음악산업진흥에 관한 법률 시행규칙",
+    "gubun": [
+      248
+    ],
+    "source_id": "291399",
+    "articles": 18,
+    "addenda": 20,
+    "annexes": 20,
+    "available_file_links": 60,
+    "actually_downloaded_test_files": 1,
+    "bytes": 80230,
+    "sha256": "27f8d130c35538fe7f2a86a1a3739090ead5ae1bfc99cb68368fcb0fc9a02e15",
+    "repeat_status": "existing"
+  }
+}

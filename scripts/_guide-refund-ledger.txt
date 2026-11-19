@@ -1,0 +1,380 @@
+
+엔컴환급 수입원장 조회
+ndrawSearchWanjangQry 호출 가이드 (Cursor 연동용)
+HanjooGatewayAPI  |  문서 버전 1.0  |  응답: XML(계층)  |  인증: CAS Bearer만  |  운영: https://gateway.hjcustoms.co.kr:8444
+0. Cursor에서 이 문서로 프로그램 만들기
+다른 PC의 Cursor에서 아래 순서만 따르면 됩니다.
+단계
+할 일
+1
+이 파일(CAS_환급수입원장_API_Guide V1.0.docx)을 Cursor 채팅에 @첨부
+2
+부록 A 「요청문 템플릿」 전체를 복사해 Cursor에 붙여넣기
+3
+Gateway URL·.env(CAS_GATEWAY_BASE_URL) 확인
+4
+CAS 로그인 → custCd로 조회 테스트
+비밀번호·token은 Cursor 대화에 넣지 마세요.
+1. 개요
+엔컴환급 DB 수입원장(wonjang1·wonjang2)을 조회합니다. 거래처코드만 필수이며, 원장번호·신고번호·수리일·근거서류·HS는 선택입니다. 년도(yy) 조건은 사용하지 않습니다.
+인증: CAS ID/PW 로그인 후 Bearer만 허용 (X-API-Key 불가). 호출 시 GATEWAY_API_AUDIT_LOG에 전 항목이 기록됩니다.
+항목
+내용
+URL
+GET /api/cas/ndrawSearchWanjangQry
+응답
+application/xml (마스터→상세 계층)
+인증
+Authorization: Bearer {token}
+테이블
+ndraw010.kcba.wonjang1 / wonjang2
+2. Base URL · .env
+환경
+Base URL
+비고
+운영
+https://gateway.hjcustoms.co.kr:8444
+외부 연동
+로컬
+http://127.0.0.1:5050
+Gateway PC만
+호출 앱 .env / Vercel (필수)
+CAS_GATEWAY_BASE_URL=https://gateway.hjcustoms.co.kr:8444# 로컬 Gateway: CAS_GATEWAY_BASE_URL=http://127.0.0.1:5050
+Vercel은 Environment Variables 등록 후 Redeploy.
+3. 인증 (필수)
+POST {Base}/api/auth/loginContent-Type: application/json{{"userId":"CAS아이디","password":"비밀번호"}}
+Authorization: Bearer {token}Accept: application/xml
+401 → 재로그인. API Key로 호출하면 401.
+4. 조회 요청
+파라미터
+필수
+설명
+custCd
+Y
+거래처코드 (DEAL_CD)
+srlNo
+N
+원장번호
+impSingoNo
+N
+수입신고번호
+fromDt
+N
+수입수리일 From (YYYYMMDD). toDt와 함께
+toDt
+N
+수입수리일 To (YYYYMMDD). fromDt와 함께
+lcNo
+N
+근거서류번호
+hsCd
+N
+HS (또는 hs)
+fromDt와 toDt는 둘 다 있거나 둘 다 없어야 합니다.
+GET {Base}/api/cas/ndrawSearchWanjangQry?custCd=999TGET {Base}/api/cas/ndrawSearchWanjangQry?custCd=999T&amp;srlNo=001515GET {Base}/api/cas/ndrawSearchWanjangQry?custCd=999T&amp;impSingoNo=4329725400209MGET {Base}/api/cas/ndrawSearchWanjangQry?custCd=999T&amp;fromDt=20250101&amp;toDt=20251231GET {Base}/api/cas/ndrawSearchWanjangQry?custCd=999T&amp;hsCd=8414809220
+5. 응답 XML
+화물진행정보 API와 같이 마스터(원장1) 아래에 상세(원장2)가 반복됩니다. tCnt는 마스터 건수입니다.
+&lt;ndrawSearchWanjangQryRtnVo&gt;  &lt;ntceInfo/&gt;  &lt;tCnt&gt;1&lt;/tCnt&gt;  &lt;ndrawSearchWanjangQryVo&gt;    &lt;dealCd&gt;999T&lt;/dealCd&gt;    &lt;yy&gt;25&lt;/yy&gt;    &lt;srlNo&gt;001515&lt;/srlNo&gt;    &lt;impSingoNo&gt;4329725400209M&lt;/impSingoNo&gt;    &lt;!-- 값 있는 원장1 항목만 --&gt;    &lt;ndrawSearchWanjang2Vo&gt;      &lt;rowNo&gt;0001&lt;/rowNo&gt;      &lt;jajeCd&gt;828610-5002S&lt;/jajeCd&gt;      &lt;!-- 값 있는 원장2 항목만 --&gt;    &lt;/ndrawSearchWanjang2Vo&gt;  &lt;/ndrawSearchWanjangQryVo&gt;&lt;/ndrawSearchWanjangQryRtnVo&gt;
+값이 없는 컬럼은 XML 요소를 출력하지 않습니다.
+결과 없음: ntceInfo=결과값 없음, tCnt=0
+5.1 원장1(마스터) 응답 항목
+DB 컬럼
+XML 요소
+항목명(국문)
+DEAL_CD
+dealCd
+거래처코드
+YY
+yy
+원장년도
+SRL_NO
+srlNo
+원장번호
+IMP_SINGO_NO
+impSingoNo
+신고번호
+IMP_LAN
+impLan
+란번호
+IMP_OK_DATE
+impOkDate
+수리일자
+RMTL_DITC
+rmtlDitc
+원재료구분
+RMTL_DITC_CNTN
+rmtlDitcCntn
+원재료구분명
+LC_NO
+lcNo
+근거서류번호
+HS_CD
+hsCd
+HS
+PUM
+pum
+품명
+STL_CURR
+stlCurr
+결제통화
+STL_AMT
+stlAmt
+결제금액
+CIF_KRW
+cifKrw
+신고금액CIF(원화)
+IMP_QTY
+impQty
+수입물량
+QTY_UNIT
+qtyUnit
+단위
+GWAN_TAX
+gwanTax
+관세
+INTAX_DITC
+intaxDitc
+개별소비세구분
+INTAX_DITC_CNTN
+intaxDitcCntn
+개별소비세구분명
+INTAX
+intax
+개별소비세
+EDU_TAX
+eduTax
+교육세
+NONG_TAX
+nongTax
+농특세
+RMN_QTY
+rmnQty
+잔량
+RMN_INTAX
+rmnIntax
+잔량개별소비세
+RMN_GWAN_TAX
+rmnGwanTax
+잔량관세
+RMN_EDU_TAX
+rmnEduTax
+잔량교육세
+RMN_NONG_TAX
+rmnNongTax
+잔량농특세
+SENDR_CD
+sendrCd
+송신자코드
+SENDR_CRP
+sendrCrp
+송신자법인
+SEND_DATE
+sendDate
+송신일
+LMT_GIVE_DATE
+lmtGiveDate
+환급 지급제한일
+LMT_IN_DATE
+lmtInDate
+기납 지급제한일
+USE_DITC
+useDitc
+사용여부
+STS
+sts
+상태
+ADJ_USE_DITC
+adjUseDitc
+조정사용여부
+HS_YEAR
+hsYear
+HS년도
+HS_Biyul_Cd
+hsBiyulCd
+HS비율코드
+HS_Biyul_NM
+hsBiyulNm
+HS비율명
+HS_Biyul
+hsBiyul
+HS비율
+HS_Weight
+hsWeight
+HS중량
+NAT_CD
+natCd
+원산지
+BRND_NM
+brndNm
+브랜드명
+OTAX
+otax
+교통에너지환경세
+LTAX
+ltax
+주세
+RMN_OTAX
+rmnOtax
+잔량 교통에너지환경세
+RMN_LTAX
+rmnLtax
+잔량 주세
+W4G_DIV
+w4gDiv
+4세대 신고자료
+bf_gwan_tax
+bfGwanTax
+이전관세
+bf_rmn_gwan_tax
+bfRmnGwanTax
+이전잔량관세
+SenderNm
+sendernm
+송신자명
+5.2 원장2(상세) 응답 항목
+DB 컬럼
+XML 요소
+항목명(국문)
+ROW_NO
+rowNo
+순번
+JAJE_CD
+jajeCd
+자재코드
+GUKYK
+gukyk
+규격
+IMP_OK_DATE
+impOkDate
+수리일
+QTY
+qty
+물량
+QTY_UNIT
+qtyUnit
+단위
+STL_AMT
+stlAmt
+결제금액
+CIF_KRW
+cifKrw
+신고금액
+UNIT_PRC
+unitPrc
+원자재단가
+UNIT_TAX
+unitTax
+단위세액
+GWAN_TAX
+gwanTax
+관세
+INTAX
+intax
+개별소비세
+EDU_TAX
+eduTax
+교육세
+NONG_TAX
+nongTax
+농특세
+FST_QTY
+fstQty
+최초잔량
+FST_GWAN_TAX
+fstGwanTax
+최초관세
+FST_INTAX
+fstIntax
+최초개별소비세
+FST_EDU_TAX
+fstEduTax
+최초교육세
+FST_NONG_TAX
+fstNongTax
+최초농특세
+RMN_QTY
+rmnQty
+잔량
+RMN_GWAN_TAX
+rmnGwanTax
+잔량 관세
+RMN_INTAX
+rmnIntax
+잔량 개별소비세
+RMN_EDU_TAX
+rmnEduTax
+잔량 교육세
+RMN_NONG_TAX
+rmnNongTax
+잔량 농특세
+Gukyk2
+gukyk2
+규격2
+USE_DITC
+useDitc
+사용여부
+PUM
+pum
+품명
+Use_Gbn
+useGbn
+사용구분
+Qty_Sayu
+qtySayu
+물량사유
+Tax_Sayu
+taxSayu
+세액사유
+IMP_HNG
+impHng
+행번호
+OTAX
+otax
+교통에너지환경세
+LTAX
+ltax
+주세
+RMN_OTAX
+rmnOtax
+잔량 교통에너지환경세
+RMN_LTAX
+rmnLtax
+잔량 주세
+FST_OTAX
+fstOtax
+최초 교통에너지환경세
+FST_LTAX
+fstLtax
+최초 주세
+bf_gwan_tax
+bfGwanTax
+이전관세
+bf_rmn_gwan_tax
+bfRmnGwanTax
+이전잔량관세
+6. 오류
+HTTP
+의미
+400
+custCd 누락, fromDt/toDt 한쪽만 등 — XML ntceInfo
+401
+Bearer 없음/만료
+503
+DB/설정 오류
+7. 호출 예제
+TOKEN=$(curl -s -X POST -H "Content-Type: application/json" \  -d '{"userId":"CAS아이디","password":"비밀번호"}' \  "https://gateway.hjcustoms.co.kr:8444/api/auth/login" | jq -r .token)curl -s -H "Authorization: Bearer $TOKEN" -H "Accept: application/xml" \  "https://gateway.hjcustoms.co.kr:8444/api/cas/ndrawSearchWanjangQry?custCd=999T"
+8. 감사 로그
+호출마다 GATEWAY_API_AUDIT_LOG에 기록됩니다. interface_fields에는 원장1·원장2 설계 항목이 남습니다.
+부록 A. Cursor 요청문 템플릿
+아래를 그대로 복사해 Cursor에 붙여넣으세요.
+첨부 가이드(CAS_환급수입원장_API_Guide V1.0.docx)를 참고하여 환급 수입원장 조회 연동 프로그램을 만들어 주세요.## Gateway- 운영: https://gateway.hjcustoms.co.kr:8444- 로컬: http://127.0.0.1:5050- 호출 앱 .env (필수): CAS_GATEWAY_BASE_URL=https://gateway.hjcustoms.co.kr:8444## 필수 규칙1) CAS 로그인만 사용. API Key(X-API-Key) 사용 금지.2) POST /api/auth/login → token 저장 → Authorization: Bearer {token}3) 조회: GET /api/cas/ndrawSearchWanjangQry?custCd=거래처코드   선택: &amp;srlNo=원장번호 &amp;impSingoNo=수입신고번호         &amp;fromDt=YYYYMMDD&amp;toDt=YYYYMMDD (수리일 구간, 둘 다 필요)         &amp;lcNo=근거서류번호 &amp;hsCd=HS (또는 &amp;hs=)   ※ 년도(yy) 조건 없음.4) 응답은 XML만. 계층 구조:   루트: ndrawSearchWanjangQryRtnVo   마스터(원장1): ndrawSearchWanjangQryVo   상세(원장2): ndrawSearchWanjang2Vo (마스터 하위에 반복)5) tCnt = 마스터(원장1) 건수. 무결과 시 ntceInfo=결과값 없음, tCnt=06) 필드명은 camelCase. DB 값이 없으면 XML 요소 없음.7) 401이면 자동 재로그인.8) CAS 비밀번호·token을 소스/README에 평문 저장하지 말 것.## 사용자 UI- [로그인] CAS userId / password- 조회: 거래처코드(custCd) 필수  선택: 원장번호, 수입신고번호, 수리일 From~To, 근거서류번호, HS- [조회] → 마스터/상세(자재) 그리드 (가이드 5.1·5.2 XML 요소명 기준)## API 호출1) POST /api/auth/login  Body: { "userId":"...","password":"..." }2) GET /api/cas/ndrawSearchWanjangQry?custCd=999T   Header: Authorization: Bearer {token}, Accept: application/xml3) XML 파싱: tCnt, ndrawSearchWanjangQryVo 반복 → 하위 ndrawSearchWanjang2Vo## 산출물- 실행 가능한 프로그램- README (URL, 로그인·조회 방법)- .env.example (CAS_GATEWAY_BASE_URL만, 비밀값 제외)
+부록 B. 주의
+• API Key 사용 금지. CAS 로그인만.
+• CAS_GATEWAY_BASE_URL 미설정 시 로그인 실패.
+• 년도(yy)는 조회 조건이 아닙니다. 응답 필드로만 내려옵니다.
+• 비밀번호·token을 가이드/대화에 올리지 말 것.
+부록 C. 개정 이력
+버전
+내용
+1.0
+최초 작성 — ndrawSearchWanjangQry (custCd 필수, yy 조건 없음, 계층 XML)

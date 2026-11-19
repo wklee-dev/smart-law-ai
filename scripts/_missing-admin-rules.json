@@ -1,0 +1,62 @@
+[
+  {
+    "param": "i",
+    "description": "간이정액환급률표",
+    "gubun": "adm_rule",
+    "url": "https://www.law.go.kr/행정규칙/간이정액환급률표개정고시/(2025-70,20260101)"
+  },
+  {
+    "param": "b",
+    "description": "관세법 제226조에 따른 세관장확인물품 및 확인방법 지정고시",
+    "gubun": "adm_rule",
+    "url": "https://www.law.go.kr/행정규칙/관세법제226조에따른세관장확인물품및확인방법지정고시"
+  },
+  {
+    "param": "h",
+    "description": "관세법시행규칙",
+    "gubun": "adm_rule",
+    "url": "https://www.law.go.kr/법령/관세법시행규칙"
+  },
+  {
+    "param": "f",
+    "description": "대외무역관리규정",
+    "gubun": "adm_rule",
+    "url": "https://www.law.go.kr/행정규칙/대외무역관리규정/(2024-43,20240301)"
+  },
+  {
+    "param": "a",
+    "description": "사후관리에 관한 고시",
+    "gubun": "adm_rule",
+    "url": "https://www.law.go.kr/행정규칙/사후관리에관한고시/(2026-5,20260101)"
+  },
+  {
+    "param": "j",
+    "description": "수입원재료에 대한 환급방법 조정에 관한 고시",
+    "gubun": "adm_rule",
+    "url": "https://www.law.go.kr/행정규칙/수입원재료에대한환급방법조정에관한고시"
+  },
+  {
+    "param": "g",
+    "description": "원산지표시제도 운영에 관한 고시",
+    "gubun": "adm_rule",
+    "url": "https://www.law.go.kr/행정규칙/원산지표시제도운영에관한고시"
+  },
+  {
+    "param": "d",
+    "description": "자유무역협정(FTA)관세법 시행규칙",
+    "gubun": "adm_rule",
+    "url": "https://www.law.go.kr/법령/자유무역협정의이행을위한관세법의특례에관한법률시행규칙"
+  },
+  {
+    "param": "e",
+    "description": "자유무역협정(FTA)관세법 시행령",
+    "gubun": "adm_rule",
+    "url": "https://www.law.go.kr/법령/자유무역협정의이행을위한관세법의특례에관한법률시행령"
+  },
+  {
+    "param": "c",
+    "description": "통합공고",
+    "gubun": "adm_rule",
+    "url": "https://www.law.go.kr/행정규칙/통합공고/(2025-42,20251224)"
+  }
+]

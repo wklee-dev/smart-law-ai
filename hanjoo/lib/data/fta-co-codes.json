@@ -1,0 +1,1198 @@
+{
+  "version": "1.0",
+  "learnedAt": "2026-11-03 09:16",
+  "sourceDir": "D:\\Manus\\FTA포털_원산지증명서서식",
+  "forms": [
+    {
+      "ftaCd": "FCL",
+      "formNo": "별지 제8호서식",
+      "revision": "",
+      "title": "칠레와의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "6. Preference Criterion (특혜기준)",
+      "sourceFile": "한칠레.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "A",
+          "basis": "WO",
+          "meaning": "역내국에서만 완전하게 획득하거나 생산된 경우",
+          "page": 3,
+          "status": "verified"
+        },
+        {
+          "code": "B",
+          "basis": "PSR",
+          "meaning": "비원산지재료가 부속서4의 세번변경기준·부가가치기준·주요공정기준 및 제4장의 다른 적용가능한 기준을 충족한 경우",
+          "page": 3,
+          "status": "verified"
+        },
+        {
+          "code": "C",
+          "basis": "PE",
+          "meaning": "협정 제4.2조 제1(a)~(d)의 원산지요건을 충족한 원산지재료로만 생산된 경우",
+          "page": 3,
+          "status": "verified"
+        },
+        {
+          "code": "D",
+          "basis": "SPECIAL",
+          "meaning": "비원산지재료가 협정 4.2.1 C(i, ii)에 해당하여 세번변경은 이루어지지 않았으나 부가가치기준을 충족한 경우",
+          "page": 3,
+          "status": "verified"
+        }
+      ],
+      "extras": [
+        {
+          "field": "7. Regional Value Content",
+          "content": "부가가치기준 적용 시 공제법 \"BD\", 집적법 \"BU\"",
+          "page": 3,
+          "status": "verified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "ftaCd": "FSG",
+      "formNo": "별지 제10호서식",
+      "revision": "개정 2021. 12. 31.",
+      "title": "싱가포르와의협정에따른대한민국의원산지증명서",
+      "method": "code",
+      "field": "13. Origin Criterion (원산지결정기준)",
+      "sourceFile": "한싱가포르.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "완전생산기준 적용품목",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTC",
+          "basis": "PSR",
+          "meaning": "세번변경기준 적용품목",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "VAC",
+          "basis": "PSR",
+          "meaning": "부가가치기준 적용품목",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTC & VAC",
+          "basis": "PSR",
+          "meaning": "세번변경기준과 부가가치기준 동시 적용품목",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "OP",
+          "basis": "SPECIAL",
+          "meaning": "역외가공 적용품목",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Gaesung Products",
+          "basis": "SPECIAL",
+          "meaning": "개성공단 적용품목",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "De Minimis",
+          "basis": "SPECIAL",
+          "meaning": "최소기준 적용품목",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Others",
+          "basis": "OTHER",
+          "meaning": "그 밖의 기준 적용품목",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [],
+      "notes": [
+        "대한민국 발급 원산지증명서 서식 기준입니다. 싱가포르 발급 서식은 자료가 없어 확인이 필요합니다."
+      ]
+    },
+    {
+      "ftaCd": "FEF",
+      "formNo": "별지 제11호서식",
+      "revision": "",
+      "title": "「대한민국과스위스연방간의농업에관한협정」에따른",
+      "method": "none",
+      "field": "",
+      "sourceFile": "한EFTA.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "needs_review",
+      "codes": [],
+      "extras": [],
+      "notes": [
+        "제공된 서식은 스위스 치즈 원산지증명서(Certificate of Authenticity)뿐이며 원산지기준 기재란이 없습니다.",
+        "EFTA 일반 물품의 원산지신고 문안 자료가 없어 확인이 필요합니다."
+      ]
+    },
+    {
+      "ftaCd": "FAS",
+      "formNo": "별지 제12호서식",
+      "revision": "",
+      "title": "아세안회원국과의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "8. Origin Criterion (원산지결정기준, FORM AK)",
+      "sourceFile": "한아세안.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "수출당사국의 영역에서 완전생산된 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTH 또는 RVC 40%",
+          "basis": "GENERAL",
+          "meaning": "HS 4단위 세번변경 또는 역내가치포함비율 40% 이상인 물품(일반기준)",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTC",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 세번변경기준을 충족하는 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "WO-AK",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 체약당사국 영역에서 완전생산된 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "RVC ○%",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 일정 역내가치포함비율을 충족하는 물품 (예: RVC 45%)",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTH + RVC ○%",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 세번변경기준과 역내가치포함비율을 동시에 충족하는 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Specific Process",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 특정 공정을 수행한 물품 (예: 재단 및 봉제공정)",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Rule 6",
+          "basis": "SPECIAL",
+          "meaning": "부속서3 제6조를 충족하는 물품(개성공업지구에서 생산된 물품)",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [
+        {
+          "field": "9. Gross weight / Value",
+          "content": "역내가치포함비율 기준이 사용된 경우에 한정하여 FOB가격 기재",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "ftaCd": "FIN",
+      "formNo": "별지 제14호서식",
+      "revision": "",
+      "title": "인도와의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "10. Origin criterion (원산지결정기준)",
+      "sourceFile": "한인도.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "수출당사국의 영역에서 완전생산된 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTSH + RVC 35%",
+          "basis": "GENERAL",
+          "meaning": "협정 제3.4조 제1항 나호를 충족하는 물품(일반기준)",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CC, CTH, CTSH",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 세번변경기준을 충족하는 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "RVC ○%",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 역내가치포함비율을 충족하는 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CC, CTH, CTSH 또는 RVC ○%",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 세번변경기준 또는 역내가치포함비율을 충족하는 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CC, CTH, CTSH + RVC ○%",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 세번변경기준과 역내부가가치비율을 동시에 충족하는 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "SP",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 특정공정을 수행한 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Others",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 기타",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "OP",
+          "basis": "SPECIAL",
+          "meaning": "협정 제3.14조를 충족하는 물품(개성공업지구에서 생산된 물품)",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [],
+      "notes": []
+    },
+    {
+      "ftaCd": "FEU",
+      "formNo": "별표 17",
+      "revision": "",
+      "title": "유럽연합당사자와의 협정에 따른 원산지증명서에 기재할 사항",
+      "method": "declaration",
+      "field": "송품장 등 상업서류의 원산지신고 문안",
+      "sourceFile": "한EU.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [],
+      "extras": [
+        {
+          "field": "원산지신고 문안",
+          "content": "\"… these products are of … preferential origin.\" 문안에 원산지 국가를 기재 (원산지기준 부호 기재란 없음)",
+          "page": 1,
+          "status": "verified"
+        },
+        {
+          "field": "특례 문구",
+          "content": "의정서 부속서 2-가 적용 시 \"Derogation - Annex Ⅱ(a) of Protocol\" 기재",
+          "page": 1,
+          "status": "verified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "ftaCd": "FGB",
+      "formNo": "별표 20의2",
+      "revision": "신설 2019. 10. 31.",
+      "title": "영국과의 협정에 따른 원산지증명서에 기재할 사항",
+      "method": "declaration",
+      "field": "송품장 등 상업서류의 원산지신고 문안",
+      "sourceFile": "한영국.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [],
+      "extras": [
+        {
+          "field": "원산지신고 문안",
+          "content": "\"… these products are of … preferential origin.\" 문안에 원산지 국가를 기재 (원산지기준 부호 기재란 없음)",
+          "page": 1,
+          "status": "verified"
+        },
+        {
+          "field": "특례 문구",
+          "content": "의정서 부속서 2-가 적용 시 \"Derogation - Annex Ⅱ(a) of Protocol\" 기재",
+          "page": 1,
+          "status": "verified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "ftaCd": "FPE",
+      "formNo": "별지 제15호서식",
+      "revision": "",
+      "title": "페루와의협정부속서4-가부록4-가-1에따른원산지증명서의서식",
+      "method": "code",
+      "field": "9. Origin criterion (원산지결정기준)",
+      "sourceFile": "한페루.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "협정에 따라 완전생산된 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "WP",
+          "basis": "PE",
+          "meaning": "협정 원산지결정기준에 부합하는 재료로만 생산된 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PSR",
+          "basis": "PSR",
+          "meaning": "부속서 3-가(품목별 원산지 규정)의 세번변경·역내부가가치비율·공정 등 요건에 부합하는 비원산지재료를 사용하여 생산된 물품. 역내부가가치비율 요건 적용 시 비율과 \"BD\"/\"BU\" 병기",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "OP",
+          "basis": "SPECIAL",
+          "meaning": "협정 제3.15조(영역 원칙)를 적용받는 물품",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [],
+      "notes": [
+        "별지 제15호서식(부속서4-가 부록4-가-1, 기관발급용) 기준입니다."
+      ]
+    },
+    {
+      "ftaCd": "FUS",
+      "formNo": "별지 제17호서식",
+      "revision": "",
+      "title": "미합중국과의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "5. Preference Criterion (원산지결정기준)",
+      "sourceFile": "한미.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "협정 제6.1조 가호에 따른 원산지물품(완전생산)",
+          "page": 1,
+          "status": "verified"
+        },
+        {
+          "code": "PSR",
+          "basis": "PSR",
+          "meaning": "협정 제6.1조 나호에 따른 원산지물품(품목별 원산지기준 충족)",
+          "page": 1,
+          "status": "verified"
+        },
+        {
+          "code": "PE",
+          "basis": "PE",
+          "meaning": "협정 제6.1조 다호에 따른 원산지물품(원산지재료로만 생산)",
+          "page": 1,
+          "status": "verified"
+        }
+      ],
+      "extras": [],
+      "notes": []
+    },
+    {
+      "ftaCd": "FTR",
+      "formNo": "별표 19",
+      "revision": "",
+      "title": "터키와의 협정에 따른 원산지증명서에 기재할 사항",
+      "method": "declaration",
+      "field": "송품장 등 상업서류의 원산지신고 문안",
+      "sourceFile": "한튀르키에.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [],
+      "extras": [
+        {
+          "field": "원산지신고 문안",
+          "content": "\"… these products are of … preferential origin.\" 문안에 원산지 국가를 기재 (원산지기준 부호 기재란 없음)",
+          "page": 1,
+          "status": "verified"
+        },
+        {
+          "field": "특례 문구",
+          "content": "의정서 부속서 2-가 적용 시 \"Derogation – Annex II(a) of the Protocol on Rules of Origin and Origin Procedures\" 기재",
+          "page": 1,
+          "status": "verified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "ftaCd": "FAU",
+      "formNo": "별지 제19호서식",
+      "revision": "",
+      "title": "호주와의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "8. Preference criterion (원산지결정기준)",
+      "sourceFile": "한호주.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "협정 제3.1조 가호에 따라 완전생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PE",
+          "basis": "PE",
+          "meaning": "협정 제3.1조 나호에 따라 원산지재료로만 생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PSR",
+          "basis": "PSR",
+          "meaning": "협정 제3.1조 다호에 따라 품목별 원산지기준을 충족하는 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Other",
+          "basis": "OTHER",
+          "meaning": "협정 제3장(원산지규정)에 따라 원산지 물품으로 인정되는 경우",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [],
+      "notes": []
+    },
+    {
+      "ftaCd": "FCA",
+      "formNo": "별지 제20호서식",
+      "revision": "",
+      "title": "캐나다와의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "7. Preference Criterion (원산지결정기준)",
+      "sourceFile": "한캐나다.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "A",
+          "basis": "WO",
+          "meaning": "협정 제3.2조에 따라 완전생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "B",
+          "basis": "PE",
+          "meaning": "협정 제3.1조 가호 1목·2목·3목에 따라 원산지재료로만 생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "C",
+          "basis": "PSR",
+          "meaning": "협정 제3장, 제3.1조 나호, 부속서3-가에 따라 품목별 원산지기준을 충족하는 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "D",
+          "basis": "SPECIAL",
+          "meaning": "부속서3-가의 세번변경기준을 충족하지 않더라도 협정 제3.3조 제2항 및 제3.4조에 해당하는 경우",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [
+        {
+          "field": "9. Value Test",
+          "content": "부가가치 계산 시 순원가 \"NC\", 거래가격·공장도가격 \"TV\"",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "ftaCd": "FCO",
+      "formNo": "별지 제18호서식",
+      "revision": "",
+      "title": "콜롬비아와의 협정에 따른 원산지증명서의 서식",
+      "method": "code",
+      "field": "7. Preference Criterion (원산지결정기준)",
+      "sourceFile": "한콜롬비아.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "A",
+          "basis": "WO",
+          "meaning": "협정 제3.1조 가호에 따라 완전생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "B",
+          "basis": "PSR",
+          "meaning": "협정 제3.1조 나호에 따라 품목별 원산지결정기준을 충족하는 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "C",
+          "basis": "PE",
+          "meaning": "협정 제3.1조 다호에 따라 원산지재료로만 생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "D",
+          "basis": "SPECIAL",
+          "meaning": "협정 제3.16조(영역원칙)의 적용을 받는 경우",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [
+        {
+          "field": "9. RVC 계산방법",
+          "content": "역내부가가치비율 적용 시 공제법 \"BD\", 집적법 \"BU\"",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "ftaCd": "FCN",
+      "formNo": "별지 제24호서식",
+      "revision": "개정 2022. 7. 5.",
+      "title": "중국과의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "10. Origin criterion (원산지결정기준)",
+      "sourceFile": "한중국.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "협정 제3.4조 및 부속서3-가에 따라 완전생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "WP",
+          "basis": "PE",
+          "meaning": "협정 제3장에 부합하는 원산지재료로만 생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PSR",
+          "basis": "PSR",
+          "meaning": "비원산지재료를 사용하여 세번변경·역내부가가치비율·특정공정요건 등 부속서3-가 요건을 충족하여 생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "OP",
+          "basis": "SPECIAL",
+          "meaning": "협정 제3.3조(특정상품의 취급)를 적용받는 경우",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [],
+      "notes": []
+    },
+    {
+      "ftaCd": "FVN",
+      "formNo": "별지 제22호서식",
+      "revision": "개정 2023. 6. 1.",
+      "title": "베트남과의 협정에 따른 원산지증명서의 서식",
+      "method": "code",
+      "field": "8. Origin Criterion (원산지결정기준)",
+      "sourceFile": "한베트남.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "수출당사국의 영역에서 완전생산된 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTC",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 세번변경기준을 충족하는 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "RVC ○%",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 역내부가가치기준을 충족하는 물품 (예: RVC 45%)",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTH+RVC 40% 등",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 세번변경기준+역내부가가치기준 등 결합기준을 충족하는 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Specific Processes",
+          "basis": "PSR",
+          "meaning": "품목별기준 중 특정공정기준을 충족한 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PE",
+          "basis": "PE",
+          "meaning": "원산지재료로만 전적으로 수출당사국의 영역에서 생산된 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Article 3.5",
+          "basis": "SPECIAL",
+          "meaning": "협정 제3.5조를 충족하는 물품(개성공업지구 생산물품)",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [],
+      "notes": []
+    },
+    {
+      "ftaCd": "FNZ",
+      "formNo": "별지 제21호서식",
+      "revision": "",
+      "title": "뉴질랜드와의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "7. Preference Criterion (원산지결정기준)",
+      "sourceFile": "한뉴질랜드.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "A",
+          "basis": "WO",
+          "meaning": "협정 제3.2조 가호에 따라 완전생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "B",
+          "basis": "PE",
+          "meaning": "협정 제3.2조 다호에 따라 원산지재료로만 생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "C",
+          "basis": "PSR",
+          "meaning": "협정 제3.2조 나호에 따라 품목별원산지기준을 충족하는 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "D",
+          "basis": "SPECIAL",
+          "meaning": "특정 비원산지재료가 필요한 세번변경을 거치지 않아 품목별원산지기준을 충족하지 않는 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "E",
+          "basis": "SPECIAL",
+          "meaning": "부속서 3-나(한반도역외가공지역 위원회)에 근거하여 역외가공지역에서 생산된 경우",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [
+        {
+          "field": "9. RVC 계산방법",
+          "content": "역내부가가치 기준 적용 시 공제법 \"BD\", 집적법 \"BU\"",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "notes": [
+        "작성방법상 원산지신고서(송품장 기재 방식이 아닌 신고서 방식) 서식입니다."
+      ]
+    },
+    {
+      "ftaCd": "FCE",
+      "formNo": "별지 제24호의2서식",
+      "revision": "신설 2019. 2. 8.",
+      "title": "중미공화국들과의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "7. Preference Criterion (원산지 기준, 택일)",
+      "sourceFile": "한중미.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "A",
+          "basis": "WO",
+          "meaning": "협정 제3.1조에 따라 \"완전하게 획득되거나 전적으로 생산된\" 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "B",
+          "basis": "PE",
+          "meaning": "협정 제3.1조에 따라 원산지 재료로만 생산된 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "C",
+          "basis": "PSR",
+          "meaning": "부속서 3-가(품목별 원산지 규정)의 세부 원산지 규정을 충족하는 경우",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "D",
+          "basis": "SPECIAL",
+          "meaning": "협정 제3.15조(역외가공)의 적용을 받는 경우",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [
+        {
+          "field": "9. RVC 계산방법",
+          "content": "역내부가가치포함비율 적용 시 공제법 \"BD\", 집적법 \"BU\"",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "ftaCd": "FRC",
+      "formNo": "별지 제24호의5서식",
+      "revision": "신설 2022. 1. 28.",
+      "title": "｢역내포괄적경제동반자협정｣ 제3.17조에 따른 원산지증명서의 서식",
+      "method": "code",
+      "field": "10. Origin Conferring Criterion (원산지 결정 기준)",
+      "sourceFile": "RCEP.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "협정 제3.2(가)조를 충족하는 완전획득 또는 생산된 상품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PE",
+          "basis": "PE",
+          "meaning": "협정 제3.2(나)조를 충족하는 원산지 재료로만 생산된 상품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTC",
+          "basis": "PSR",
+          "meaning": "부속서 3-가 품목별 요건 중 세번변경",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "RVC",
+          "basis": "PSR",
+          "meaning": "부속서 3-가 품목별 요건 중 역내가치포함비율",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CR",
+          "basis": "PSR",
+          "meaning": "부속서 3-가 품목별 요건 중 화학반응",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "ACU",
+          "basis": "SPECIAL",
+          "meaning": "협정 제3.4조(누적)를 충족하는 상품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "DMI",
+          "basis": "SPECIAL",
+          "meaning": "협정 제3.7조(최소허용수준)를 충족하는 상품",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [
+        {
+          "field": "11. RCEP Country of Origin",
+          "content": "원산지 국가를 특정할 수 없는 경우 최고세율 국가명 뒤에 \"*\"(제2.6조제6항가호) 또는 \"**\"(나호) 표시",
+          "page": 3,
+          "status": "verified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "ftaCd": "FIL",
+      "formNo": "별지 제24호의7서식",
+      "revision": "신설 2022. 7. 5.",
+      "title": "이스라엘과의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "9. Origin Criterion (원산지 기준)",
+      "sourceFile": "한이스라엘과.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "협정 제3.3조의 의미 내에서 완전하게 획득되거나 생산된 상품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PSR",
+          "basis": "PSR",
+          "meaning": "비원산지 재료가 협정 제3.4조의 충분한 작업 또는 가공을 거쳐 획득된 상품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PE",
+          "basis": "PE",
+          "meaning": "원산지 자격을 갖춘 재료만으로 획득된 상품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "OP",
+          "basis": "SPECIAL",
+          "meaning": "협정 부속서 3-나(한반도 역외가공지역 위원회)에 따라 역외가공 지역에서 생산된 상품",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [],
+      "notes": []
+    },
+    {
+      "ftaCd": "FKH",
+      "formNo": "별지 제24호의9서식",
+      "revision": "신설 2022. 7. 5.",
+      "title": "캄보디아와의협정(제3.16조)에따른원산지증명서의서식",
+      "method": "code",
+      "field": "9. Origin Criterion (원산지결정기준)",
+      "sourceFile": "한캄보디아.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "협정 제3.3조에 규정된 완전하게 획득되거나 생산된 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PE",
+          "basis": "PE",
+          "meaning": "원산지 재료로만 수출 당사국의 영역에서 생산된 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTC",
+          "basis": "PSR",
+          "meaning": "품목별 규정 중 세번변경기준을 충족하는 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "RVC ○%",
+          "basis": "PSR",
+          "meaning": "품목별 규정 중 일정 역내가치포함비율을 충족하는 물품 (예: RVC 45%)",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTH + RVC ○%",
+          "basis": "PSR",
+          "meaning": "품목별 규정 중 세번변경기준과 역내가치포함비율을 동시에 충족하는 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Specific Processes",
+          "basis": "PSR",
+          "meaning": "품목별 규정 중 특정 공정을 수행한 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Article 3.5",
+          "basis": "SPECIAL",
+          "meaning": "협정 제3.5조를 충족하는 물품(개성공업지구에서 생산된 물품)",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [],
+      "notes": []
+    },
+    {
+      "ftaCd": "FID",
+      "formNo": "별지 제24호의3서식",
+      "revision": "신설 2021. 12. 31.",
+      "title": "인도네시아와의협정에따른원산지증명서의서식",
+      "method": "code",
+      "field": "8. 원산지 기준",
+      "sourceFile": "한인도네시아.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "전적으로 수출 당사국의 영역에서 완전하게 획득되거나 생산된 상품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PE",
+          "basis": "PE",
+          "meaning": "제3장에 부합하는 원산지 재료로만 생산된 상품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CC / CTH / CTSH",
+          "basis": "PSR",
+          "meaning": "품목별원산지규정 중 세번변경",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "RVC / QVC40",
+          "basis": "PSR",
+          "meaning": "품목별원산지규정 중 역내가치포함비율/인정가치포함비율",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CC / CTH / CTSH 또는 RVC/QVC40",
+          "basis": "PSR",
+          "meaning": "품목별원산지규정 중 세번변경 또는 역내가치포함비율/인정가치포함비율",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CC ex / CTH ex / CTSH ex 또는 RVC/QVC40",
+          "basis": "PSR",
+          "meaning": "품목별원산지규정 중 그 밖의 사항",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "Article 3.5",
+          "basis": "SPECIAL",
+          "meaning": "제3.5조(특정상품의 취급)를 충족하는 상품",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [
+        {
+          "field": "8. RVC/QVC 계산방법",
+          "content": "RVC/QVC 적용 시 공제법 \"BD\", 집적법 \"BU\" 기재",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "ftaCd": "FPH",
+      "formNo": "별지 제24호의12서식",
+      "revision": "신설 2024. 12. 30.",
+      "title": "필리핀과의협정(부속서4-가)에따른원산지증명서의서식",
+      "method": "code",
+      "field": "7. Origin Criterion (원산지 기준)",
+      "sourceFile": "한필리핀.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "needs_review",
+      "codes": [
+        {
+          "code": "",
+          "basis": "WO",
+          "meaning": "제4.2조 가호에 따라 \"완전하게 획득되거나 전적으로 생산된\" 물품",
+          "page": 2,
+          "status": "needs_review"
+        },
+        {
+          "code": "",
+          "basis": "PSR",
+          "meaning": "제4.2조 나호에 따라 부속서 4-나(품목별 원산지 규정)의 세부 원산지 규정을 충족하는 물품",
+          "page": 2,
+          "status": "needs_review"
+        },
+        {
+          "code": "",
+          "basis": "PE",
+          "meaning": "제4.2조 다호에 따라 원산지 재료로만 생산된 물품",
+          "page": 2,
+          "status": "needs_review"
+        }
+      ],
+      "extras": [
+        {
+          "field": "9. RVC 계산방법",
+          "content": "역내가치포함기준 적용 시 공제법 \"BD\", 집적법 \"BU\"",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "notes": [
+        "작성방법에 기준(가·나·다)만 서술되어 있고 기재할 부호 문자는 명시되어 있지 않아 확인이 필요합니다."
+      ]
+    },
+    {
+      "ftaCd": "FAE",
+      "formNo": "별지제24호의13서식",
+      "revision": "신설 2026. 1. 6.",
+      "title": "아랍에미리트와의협정(부속서3-나)에따른원산지증명서의서식",
+      "method": "code",
+      "field": "10. Origin Criterion (원산지 기준)",
+      "sourceFile": "한아랍에미리트.pdf",
+      "sourceUrl": "https://www.customs.go.kr/ftaportalkr/cm/cntnts/cntntsView.do?mi=3404&cntntsId=2776",
+      "legalBasis": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행규칙",
+      "status": "verified",
+      "codes": [
+        {
+          "code": "WO",
+          "basis": "WO",
+          "meaning": "협정 제3.3조를 충족하는, 수출국에서 완전하게 획득되거나 생산된 물품",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "CTC",
+          "basis": "PSR",
+          "meaning": "협정 제3.4조 충족 물품 중 세번변경",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "QVC",
+          "basis": "PSR",
+          "meaning": "협정 제3.4조 충족 물품 중 인정가치포함비율",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "SO",
+          "basis": "PSR",
+          "meaning": "협정 제3.4조 충족 물품 중 특정 제조 또는 가공",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "COMBO",
+          "basis": "PSR",
+          "meaning": "협정 제3.4조 충족 물품 중 결합 기준",
+          "page": 2,
+          "status": "verified"
+        },
+        {
+          "code": "PE",
+          "basis": "PE",
+          "meaning": "협정 제3.2조 다호에 따라 원산지 재료로만 생산된 물품",
+          "page": 2,
+          "status": "verified"
+        }
+      ],
+      "extras": [],
+      "notes": []
+    }
+  ]
+}

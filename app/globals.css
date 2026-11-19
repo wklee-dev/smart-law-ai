@@ -1,0 +1,296 @@
+@import "tailwindcss";
+
+:root {
+  /* Enterprise SaaS — reference palette */
+  --sl-page-bg: #f4f7f9;
+  --sl-card-bg: #ffffff;
+  --sl-navy: #1e2f4f;
+  --sl-navy-hover: #162438;
+  --sl-navy-muted: #2a3f66;
+  --sl-text: #333333;
+  --sl-text-muted: #666666;
+  --sl-text-subtle: #94a3b8;
+  --sl-border: #e5e9ef;
+  --sl-border-strong: #d8dee6;
+  --sl-table-header: #f8fafc;
+  --sl-accent: #1e2f4f;
+  --sl-accent-hover: #162438;
+  --sl-focus-ring: rgba(30, 47, 79, 0.18);
+  --sl-radius: 6px;
+  --sl-radius-lg: 8px;
+  --background: var(--sl-page-bg);
+  --foreground: var(--sl-text);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-noto-sans-kr), var(--font-geist-sans), "Malgun Gothic",
+    "Apple SD Gothic Neo", sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  background: var(--sl-page-bg);
+  color: var(--sl-text);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 페이지·그리드 공통 */
+.sl-page {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--sl-page-bg);
+  padding: 1rem;
+  color: var(--sl-text);
+}
+
+.sl-page-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--sl-navy);
+}
+
+.sl-table-wrap {
+  min-height: 0;
+  overflow: auto;
+  border-radius: var(--sl-radius);
+  border: 1px solid var(--sl-border);
+  background: #fff;
+}
+
+.sl-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  font-size: 12px;
+}
+
+.sl-th {
+  border: 1px solid var(--sl-border);
+  background: var(--sl-table-header);
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sl-text-muted);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.sl-td {
+  border: 1px solid var(--sl-border);
+  background: #fff;
+  padding: 0.375rem 0.5rem;
+  font-size: 12px;
+  color: var(--sl-text);
+  vertical-align: top;
+}
+
+/* 공통 카드·입력 (cas-ncom-ui 외 화면용) */
+.sl-card {
+  border-radius: var(--sl-radius-lg);
+  border: 1px solid var(--sl-border);
+  background: var(--sl-card-bg);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.sl-input {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: var(--sl-radius);
+  border: 1px solid var(--sl-border-strong);
+  background: #fff;
+  padding: 0 0.625rem;
+  font-size: 13px;
+  color: var(--sl-text);
+}
+
+.sl-input:focus {
+  border-color: var(--sl-navy);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--sl-focus-ring);
+}
+
+.sl-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--sl-text-muted);
+}
+
+/* CLIP ntx_page 종합정보 HTML (관세율 등) */
+.clip-ntx-content {
+  overflow: visible;
+}
+
+.clip-ntx-content .table_top {
+  margin-bottom: 2rem;
+  overflow: visible;
+}
+
+.clip-ntx-content table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+/* CLIP 표 caption(「○○의 종류 / …으로 구성 됨」) — h2·헤더와 중복 */
+.clip-ntx-content table > caption {
+  display: none !important;
+}
+
+/* CLIP HTML은 span_left2(-) 등 자체 목록 기호 사용 */
+.clip-ntx-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.clip-ntx-content thead {
+  display: table-header-group;
+}
+
+.clip-ntx-content tbody {
+  display: table-row-group;
+}
+
+.clip-ntx-content tr {
+  display: table-row;
+}
+
+.clip-ntx-content th,
+.clip-ntx-content td {
+  display: table-cell;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+.clip-ntx-content .textLeft {
+  text-align: left;
+}
+
+.clip-ntx-content .listtype_04 {
+  margin-bottom: 1rem;
+}
+
+.clip-ntx-content .listtype_04 li,
+.clip-ntx-content ul li {
+  margin-bottom: 0.35rem;
+  padding-left: 0.25rem;
+}
+
+/* 수출입공고 종합정보 — 조문 참조를 본문 옆(인라인)에 표시 */
+.clip-ntx-content span.listtype_04link {
+  display: inline;
+  margin-left: 0.35rem;
+  white-space: nowrap;
+}
+
+/* 제목 옆 관련 조문 버튼 (수출입승인 면제, 통합공고와의 관계 등) */
+.clip-ntx-content .clear {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.clip-ntx-content .clear::after {
+  display: none;
+}
+
+.clip-ntx-content h2.floatLeft {
+  float: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.clip-ntx-content button.relationlink {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+  background: #fff;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  cursor: pointer;
+  vertical-align: middle;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.clip-ntx-content button.relationlink::before {
+  content: "관련";
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  background: #e8e8e8;
+  border-right: 1px solid #bdbdbd;
+  color: #444;
+  font-weight: 600;
+}
+
+.clip-ntx-content button.relationlink span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  color: #1e2f4f;
+}
+
+.clip-ntx-content button.relationlink span::before {
+  content: "";
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: center / contain no-repeat
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e2f4f' stroke-width='2'%3E%3Cpath d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71'/%3E%3Cpath d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'/%3E%3C/svg%3E");
+}
+
+.clip-ntx-content .organlist,
+.clip-ntx-content .relationlist {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--sl-border);
+  background: #fafbfc;
+}
+
+.clip-ntx-content .relationlist li {
+  margin-bottom: 0.35rem;
+}
+
+.clip-ntx-content a.lworCdln {
+  color: #b45309;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.clip-ntx-content .diagram_area {
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.clip-ntx-content .diagram_area img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}

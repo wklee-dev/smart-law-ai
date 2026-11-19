@@ -1,0 +1,42 @@
+{
+  "dbPath": "D:/SQLiteDB/smart_law_ai.db",
+  "summary": {
+    "rule_master": 174,
+    "bodyPresent": 171,
+    "bodyMissingSatelliteOnly": 3,
+    "noRenderableRows": 0
+  },
+  "bodyMissingSatelliteOnly": [
+    {
+      "param": "ADM_006",
+      "description": "간이정액환급률표",
+      "gubun": "6",
+      "admin_rule": 0,
+      "addendum": 66,
+      "annex": 1,
+      "attachment": 6,
+      "raw_rule": 0
+    },
+    {
+      "param": "ADM_007",
+      "description": "간이정액환급률표 개정고시",
+      "gubun": "7",
+      "admin_rule": 0,
+      "addendum": 66,
+      "annex": 1,
+      "attachment": 6,
+      "raw_rule": 0
+    },
+    {
+      "param": "ADM_136",
+      "description": "자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 시행령 제2조제5항의 규정에 의한 상호대응세율표",
+      "gubun": "136",
+      "admin_rule": 0,
+      "addendum": 7,
+      "annex": 1,
+      "attachment": 19,
+      "raw_rule": 0
+    }
+  ],
+  "noRenderableRows": []
+}

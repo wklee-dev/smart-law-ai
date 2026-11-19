@@ -1,0 +1,190 @@
+
+HanjooGatewayAPI
+API 목록 (한눈에 보기)
+문서 버전 1.0  |  운영: https://gateway.hjcustoms.co.kr:8444  |  로컬: http://127.0.0.1:5050
+1. Base URL
+환경
+Base URL
+비고
+운영
+https://gateway.hjcustoms.co.kr:8444
+외부 연동
+로컬
+http://127.0.0.1:5050
+Gateway PC 루프백
+2. 공통·인증
+Method
+Path
+용도
+인증
+응답
+GET
+/health
+생존 확인
+없음
+JSON
+GET
+/health/db
+DB 연결
+API Key
+JSON
+POST
+/api/auth/login
+CAS 로그인 → token
+없음
+JSON
+GET/POST
+/api/auth/userFieldProfile
+인터페이스 항목 조회/저장
+Bearer만
+JSON
+3. 수입·수출 실적 (NCOM)
+Method
+Path
+용도
+인증
+응답
+감사로그
+GET
+/api/ncom/ncomSearchQry
+수입실적 (Mode A/B/C)
+Bearer 또는 API Key
+XML (hanjoo…)
+O
+GET
+/api/ncom/ncomSearchExpoQry
+수출실적 (Mode A/B/C)
+Bearer 또는 API Key
+XML (ehanjoo…)
+O
+Mode A=기간+통관부호, B=신고번호, C=BL/Invoice+년도. 값이 있는 XML 항목만 반환. 필드 설정(userFieldProfile) 적용.
+4. 3M 전용 API
+Method
+Path
+용도
+인증
+응답
+감사로그
+GET
+/api/ncom/selectExpoCertiList
+3M 수출증명서
+Bearer만
+XML
+O
+GET
+/api/ncom/selectExpprooMstFtaList
+3M 품목·원산지판정기준
+Bearer만
+XML
+O
+GET
+/api/ncom/selectExpprooCoDeciStdiList
+3M HS·원산지판정기준
+Bearer만
+XML
+O
+4.1 3M 조회 조건
+API
+필수 조건
+searchMode
+비고
+selectExpoCertiList
+from_dt + to_dt
+10/20/30/40/50
+통관부호 서버고정(한국쓰리1771019)
+selectExpprooMstFtaList
+yr
+MST / SAP / HS
+custCd 기본 0736
+selectExpprooCoDeciStdiList
+yr
+HS
+custCd 기본 0736
+3M API는 인터페이스 항목 설정 UI 없음. 응답에 나온 필드를 감사 로그에 자동 기록. 값이 없는 항목은 XML 요소 생략.
+5. 기타 API
+Method
+Path
+용도
+인증
+응답
+GET
+/api/cas/customerMstSearchQry
+거래처 조회
+API Key
+JSON
+GET
+/api/cas/casSearchCommQry
+공통코드 조회
+API Key
+JSON
+GET
+/api/cas/masterSearchQry
+수입품목마스터
+CAS Bearer만
+XML
+GET
+/api/cas/expMasterSearchQry
+수출품목마스터
+CAS Bearer만
+XML
+GET
+/api/cas/ndrawSearchWanjangQry
+환급 수입원장
+CAS Bearer만
+XML
+POST
+/api/customs/impo/items
+수입 자재 요약
+API Key
+JSON
+POST
+/api/ncom/ncomInsUpImpo41Qry
+수입모델규격 요건 Upsert
+CAS Bearer만
+JSON
+6. 인증 요약
+구분
+대상 API
+헤더
+없음
+/health, POST /api/auth/login
+-
+Bearer만
+userFieldProfile, 3M 3종, ncomInsUpImpo41Qry, masterSearchQry, expMasterSearchQry, ndrawSearchWanjangQry
+Authorization: Bearer {token}
+Bearer 또는 API Key
+ncomSearchQry, ncomSearchExpoQry
+Bearer 또는 X-API-Key
+API Key만
+CAS·customs 등
+X-API-Key
+CAS 로그인: POST /api/auth/login → token (기본 유효 8시간).
+7. Cursor 가이드 문서
+가이드 파일
+대상 API
+NCOM_수입실적조회_API_Guide V1.8.docx
+ncomSearchQry
+NCOM_수출실적조회_API_Guide V1.8.docx
+ncomSearchExpoQry
+NCOM_수입모델규격요건관리_API_Guide V1.4.docx
+ncomInsUpImpo41Qry
+CAS_3M수출증명서_API_Guide V1.0.docx
+selectExpoCertiList
+CAS_3M품목_원산지판정기준_API_Guide V1.0.docx
+selectExpprooMstFtaList
+CAS_3M_HS_원산지판정기준_API_Guide V1.0.docx
+selectExpprooCoDeciStdiList
+CAS_거래처명조회_Guide V1.2.docx
+customerMstSearchQry
+CAS_수입품목마스터_API_Guide V1.1.docx
+masterSearchQry
+CAS_수출품목마스터_API_Guide V1.1.docx
+expMasterSearchQry
+CAS_환급수입원장_API_Guide V1.0.docx
+ndrawSearchWanjangQry
+가이드는 Cursor 채팅에 @첨부 후 부록 A 요청문을 붙여 넣어 연동 프로그램을 만들 수 있습니다.
+8. 감사 로그
+GATEWAY_API_AUDIT_LOG 기록 대상: ncomSearchQry, ncomSearchExpoQry, selectExpoCertiList, selectExpprooMstFtaList, selectExpprooCoDeciStdiList, masterSearchQry, expMasterSearchQry, ndrawSearchWanjangQry
+SELECT TOP 50 api_nm, user_id, search_mode, search_cond, result_cnt,       interface_field_cnt, http_status, req_dtFROM dbo.GATEWAY_API_AUDIT_LOGORDER BY req_dt DESC;
+9. 로컬 실행
+cd D:\CursorProject\HanjooGatewayAPI$env:ASPNETCORE_ENVIRONMENT = "Development"dotnet run# http://127.0.0.1:5050/health

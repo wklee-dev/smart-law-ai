@@ -1,0 +1,37 @@
+
+=== https://www.clhs.co.kr/ ===
+len=53750 hits={'관세평가': 2}
+  snippet[관세평가]: der="0" src="images/tree_sub.gif" width="9" height="9">	<a href="law.asp?strlaw=관세평가운영에관한고시"><font color="#757575">관세평가운영에관한고시</font></a></td> 	</tr> 	<tr> 		<td width="175" height="24" style="padd
+  val_links: https://gwanbo.go.kr, law.asp?strlaw=관세평가운영에관한고시
+
+=== https://www.clhs.co.kr/tariffbase.asp ===
+len=20600 hits={}
+
+=== https://www.clhs.co.kr/Cuslist.asp ===
+len=31746 hits={}
+
+=== https://www.clhs.co.kr/lawlist.asp ===
+len=45393 hits={}
+
+=== https://www.clhs.co.kr/tool.asp ===
+len=20689 hits={}
+  val_links: https://gwanbo.go.kr
+
+=== https://www.clhs.co.kr/commu.asp ===
+len=18017 hits={}
+  val_links: https://gwanbo.go.kr
+
+=== https://www.clhs.co.kr/userHSlist.asp ===
+len=45674 hits={}
+
+=== https://www.clhs.co.kr/Y2026/duty.asp ===
+len=14923 hits={}
+
+=== https://www.clhs.co.kr/Y2026/iolaw.asp ===
+len=14690 hits={}
+
+=== Cuslist search 관세평가 ===
+rows_with_관세평가_tag=0
+tr_count=21
+
+=== clip_precedent.db tables: ['crawl_meta', 'sqlite_sequence', 'clip_precedent', 'clip_precedent_detail', 'clip_precedent_history', 'clip_precedent_law', 'clip_precedent_hs', 'clip_precedent_attachment', 'clip_precedent_image'] ===

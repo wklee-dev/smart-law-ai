@@ -1,0 +1,67 @@
+/**
+ * Phase D — 법령 문서 뷰어 가독성 (원문 텍스트·조항 구조 미변경)
+ */
+
+/* CIEL 법령 리더: 본문 14px / TOC sticky 톤 */
+.ciel-law-toc {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  background: #f8fafc;
+}
+
+.ciel-law-toc-title {
+  font-size: 13px;
+  background: #f1f5f9;
+}
+
+.ciel-law-toc a:hover,
+.ciel-law-toc a:focus-visible {
+  background: #eef5ff;
+  color: #1d4ed8;
+  outline: none;
+}
+
+.ciel-law-body > h2 {
+  font-size: 16px;
+  color: #0f172a;
+}
+
+.ciel-law-article h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.ciel-law-article > p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #1e293b;
+}
+
+/* 고시/공고 HTML · law-view — 크기만, 내용 보존 */
+.notice-html {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #1e293b;
+}
+
+.law-view,
+.duty-law-body,
+.approval-exemption .approval-section > p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.law-view h3,
+.law-view h4,
+.approval-section > h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* duty modern 법령 섹션이 있으면 TOC 하이라이트 톤만 보강 */
+.duty-modern-ui .duty-law-toc a:hover {
+  background: #eef5ff;
+}

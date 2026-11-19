@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "db": "D:\\SQLiteDB\\smart_law_ai.db",
+  "downloads": "C:\\SQLiteDB\\downloads",
+  "keywords": "data/keywords.xlsx",
+  "law_url_policy": "include",
+  "request_delay": 1.0,
+  "timeout": 30,
+  "retries": 3,
+  "end_page": 70
+}

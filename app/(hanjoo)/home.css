@@ -1,0 +1,349 @@
+/* Home portal (/) — page-scoped Compact One-Screen; imported only from page.tsx */
+
+.home-portal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  width: 100%;
+}
+
+/* —— Hero —— */
+.home-hero {
+  padding: 12px 14px 10px;
+  border-radius: 10px;
+  border: 1px solid #dbeafe;
+  background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 35%, #f8fbff 70%, #ffffff 100%);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  min-width: 0;
+}
+
+.home-hero-kicker {
+  margin: 0 0 2px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ciel-on, #30528c);
+  text-transform: uppercase;
+}
+
+.home-hero h1 {
+  margin: 0 0 4px;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #1f2937;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.home-hero-desc {
+  margin: 0 0 8px;
+  max-width: 42rem;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.home-hero-search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: #fff;
+  border: 1px solid #e5e9ef;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+  max-width: 560px;
+}
+
+.home-hero-search select,
+.home-hero-search input {
+  height: 32px;
+  border: 1px solid #e5e9ef;
+  border-radius: 6px;
+  padding: 0 10px;
+  background: #fff;
+  color: #1f2937;
+  font: inherit;
+  font-size: 13px;
+}
+
+.home-hero-search input {
+  flex: 1 1 160px;
+  min-width: 140px;
+}
+
+.home-hero-search select:focus,
+.home-hero-search input:focus {
+  outline: 2px solid rgba(var(--ciel-on-rgb, 48, 82, 140), 0.25);
+  border-color: var(--ciel-on, #30528c);
+}
+
+.home-hero-search .sl-btn:not(.sl-ui-btn),
+.home-hero-search button[type="submit"]:not(.sl-ui-btn) {
+  height: 32px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--sl-action-primary, var(--ciel-on, #30528c));
+  color: var(--sl-action-primary-text, #fff);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(var(--ciel-on-rgb, 48, 82, 140), 0.28);
+}
+
+.home-hero-search button.sl-ui-btn.sl-ui-btn--large,
+.home-hero-search button.home-hero-lookup {
+  height: 32px;
+  padding: 0 14px;
+}
+
+.home-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.home-shortcut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid #dbeafe;
+  background: #ffffff;
+  color: #1e2f4f;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.home-shortcut:hover {
+  background: #eff6ff;
+  text-decoration: none;
+  color: #1e2f4f;
+}
+
+/* —— Grid —— */
+.home-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 8px;
+  align-items: start;
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .home-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-main {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .home-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* —— Cards —— */
+.home-card {
+  background: #ffffff;
+  border: 1px solid #e5e9ef;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+
+.home-card-soft {
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.home-card-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 30px;
+  padding: 4px 10px;
+  background: #eef2f7;
+  border-bottom: 1px solid #e5e9ef;
+}
+
+.home-card-hd h3 {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #1e2f4f;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.home-more {
+  flex: 0 0 auto;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ciel-on, #30528c);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.home-more:hover {
+  text-decoration: underline;
+}
+
+.home-card-bd {
+  padding: 6px 10px 8px;
+}
+
+.home-card-bd.muted,
+.home-card-bd > .muted {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.home-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home-list li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 4px 8px;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 0;
+  border-bottom: 1px solid #eef2f6;
+  font-size: 12.5px;
+  min-width: 0;
+}
+
+.home-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.home-list-compact li {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.home-list-date {
+  color: #64748b;
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.home-list-title {
+  min-width: 0;
+  color: #1f2937;
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.home-list-title a {
+  color: #162438;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-list-title a:hover {
+  text-decoration: underline;
+  color: var(--ciel-on, #30528c);
+}
+
+.home-chip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.home-chip-list a {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid #e5e9ef;
+  background: #f4f7f9;
+  color: #1e2f4f;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-chip-list a:hover {
+  background: #e2e8f0;
+  text-decoration: none;
+}
+
+/* 환율 표 — 홈 전용 밀도 */
+.home-portal .fx-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.home-portal .fx-table th,
+.home-portal .fx-table td {
+  padding: 3px 4px;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.home-portal .fx-note {
+  margin: 4px 0 0;
+  font-size: 11px;
+}
+
+/* 메인에서만 Footer 여백 축소 (공통 Footer 문구·구조 유지) */
+.site-main:has(.home-portal) .site-footer {
+  padding: 8px 12px;
+  font-size: 11.5px;
+}
+
+.site-main:has(.home-portal) .site-footer .muted {
+  margin-top: 2px;
+}
+
+@media (max-width: 1366px) {
+  .home-hero {
+    padding: 10px 12px;
+  }
+
+  .home-layout {
+    gap: 8px;
+  }
+}

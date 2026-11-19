@@ -1,0 +1,282 @@
+{
+  "source": "D:\\Manus\\법령정보및관세율,품목분류사례 처리현황.xlsx",
+  "sheet": "리스트",
+  "columns": [
+    {
+      "key": "name",
+      "label": "항목"
+    },
+    {
+      "key": "progress",
+      "label": "진행사항"
+    },
+    {
+      "key": "scope",
+      "label": "대상"
+    },
+    {
+      "key": "extraProgress",
+      "label": "추가진행사항"
+    },
+    {
+      "key": "remaining",
+      "label": "남은 것"
+    },
+    {
+      "key": "db",
+      "label": "DB"
+    },
+    {
+      "key": "embedding",
+      "label": "embedding"
+    },
+    {
+      "key": "programPath",
+      "label": "프로그램 위치"
+    },
+    {
+      "key": "attachment",
+      "label": "첨부파일"
+    },
+    {
+      "key": "invoke",
+      "label": "호출"
+    },
+    {
+      "key": "verify",
+      "label": "검증"
+    },
+    {
+      "key": "embeddingNote",
+      "label": "EMBEDDING"
+    }
+  ],
+  "items": [
+    {
+      "name": "관세율",
+      "progress": "2026 ~ 2018 완료",
+      "scope": "",
+      "extraProgress": "2018~2026",
+      "remaining": "",
+      "db": "tariff.db",
+      "embedding": "tariff-chunks",
+      "programPath": "CD \"D:\\Manus\\관세율\\tariff\"\r\nD:\\Crawling\\관세율",
+      "attachment": "",
+      "invoke": "python tariff_crawler_v2.py crawl --year 2026 --country KR\r\npython tariff_crawler_v2.py crawl --year 2026 --country KR --no-resume    => 다시 수집할때\r\n--관세율상세만 업데이트 할때\r\npython tariff_crawler_v2.py crawl-detail --year 2026 --country KR\r\n세율,요건,전략물자 포함\r\npython tariff_verifier.py --year 2026 --country KR --full --detail-sample 9999\r\npython tariff_verifier.py --db D:\\SQLiteDB\\tariff.db --year 2026 --country KR --full --detail-sample 9999\r\npython tariff_crawler_v2.py update-unit --year 2026 --country KR --db D:\\SQLiteDB\\tariff.db",
+      "verify": "python tariff_verifier.py --year 2026 --country KR\r\n기본검증 : python tariff_verifier.py --year 2026 --country KR --full",
+      "embeddingNote": ""
+    },
+    {
+      "name": "HS해설서",
+      "progress": "2022, 2017, 2012, 2007 완료",
+      "scope": "",
+      "extraProgress": "2022, 2017, 2012, 2007",
+      "remaining": "",
+      "db": "hs_manual_complete.db",
+      "embedding": "hs_chunks",
+      "programPath": "cd D:\\Crawling\\HS해설서",
+      "attachment": "",
+      "invoke": "python crawl_hs_manual_final.py --year 2022 \r\npython crawl_hs_manual_final.py --year 2017",
+      "verify": "python verify_hs_manual_v2.py --year 2022",
+      "embeddingNote": ""
+    },
+    {
+      "name": "품목분류 국내사례",
+      "progress": "2026-35 주차 완료(~8/30)",
+      "scope": "RPA-02 설치완료\r\n매주 월요일 새벽3시에 마지막 주차만 크롤링",
+      "extraProgress": "위원회결정사항\r\n협의회결정사항\r\n품목분류사례",
+      "remaining": "",
+      "db": "domestic_hs_class.db",
+      "embedding": "시행일자(F~T)를 년-주차로 해서  가져온다",
+      "programPath": "cd \"D:\\Crawling\\품목분류_국내사례\"",
+      "attachment": "run_weekly.bat\r\n직전 주차 크롤링 (crawler_modified.py --week 2026-35)",
+      "invoke": "python crawler_modified.py --week 2025-14\r\npython crawler_modified.py --week 2025-14 --force   강제수집\r\n배치파일 run_crawler.bat 2020\r\n배치파일 run_crawler_v2.bat 2020 2025",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "품목분류 외국사례",
+      "progress": "2026-35 주차 완료(~8/30)",
+      "scope": "RPA-02 설치완료\r\n매주 월요일 새벽4시에 마지막 주차만 크롤링",
+      "extraProgress": "2026~1988년까지 완료",
+      "remaining": "",
+      "db": "hsforeigncase.db",
+      "embedding": "",
+      "programPath": "cd \"D:\\Crawling\\품목분류_외국사례\"",
+      "attachment": "",
+      "invoke": "python customs_foreign_cases_crawler.py --week 2026-1 --country ALL\r\npython customs_foreign_cases_crawler.py --week 2025-14 --country EU\r\n배치파일\r\nrun_crawler_foreign.bat 2022",
+      "verify": "python customs_foreign_cases_crawler.py --week 2025-14 --country ALL\r\npython customs_foreign_cases_crawler.py --week 2025-14 --country EU",
+      "embeddingNote": ""
+    },
+    {
+      "name": "법령정보 공동활용(API)",
+      "progress": "완료",
+      "scope": "",
+      "extraProgress": "API 호출",
+      "remaining": "",
+      "db": "smart_law_ai.db",
+      "embedding": "law_chunks",
+      "programPath": "D:\\Crawling\\openlawapi",
+      "attachment": "",
+      "invoke": "",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "행정규칙",
+      "progress": "400여개 완료",
+      "scope": "",
+      "extraProgress": "안만복부대표",
+      "remaining": "",
+      "db": "admin_rules.db",
+      "embedding": "",
+      "programPath": "cd \"D:\\Crawling\\law_crawler\"",
+      "attachment": "D:\\SQLiteDB\\ATTACH",
+      "invoke": "python crawler.py -p d --force          # d 파라미터 기존 데이터 삭제 후 재크롤링\r\npython crawler.py -p d e h --force      # 복수 파라미터 재크롤링",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "행정규칙(CLIP)",
+      "progress": "완료",
+      "scope": "2026-06-05 1페이즈 크롤링했음",
+      "extraProgress": "고시/훈령/예규/공고",
+      "remaining": "매주 1페이지만 크롤링",
+      "db": "clip_admin_rule.db",
+      "embedding": "",
+      "programPath": "cd \"D:\\Crawling\\CLIP_행정규칙\"",
+      "attachment": "D:\\SQLiteDB\\ATTACH",
+      "invoke": "python clip_crawler.py --start 1 --end 5\r\npython clip_crawler.py --start 28 --end 28",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "판례,결정례(CLIP)",
+      "progress": "완료",
+      "scope": "1~377 페이지",
+      "extraProgress": "과세전적부심사/심사청구/심판청구",
+      "remaining": "",
+      "db": "clip_precedent.db",
+      "embedding": "",
+      "programPath": "cd \"D:\\Crawling\\CLIP_판례결정례\"",
+      "attachment": "",
+      "invoke": "python clip_precedent.py --page 1\r\npython clip_precedent.py --start 1 --end 10",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "질의회신(CLIP)",
+      "progress": "완료",
+      "scope": "",
+      "extraProgress": "FTA/통관/심사/조사/공통",
+      "remaining": "",
+      "db": "clip_question.db",
+      "embedding": "",
+      "programPath": "cd \"D:\\Crawling\\CLIP_질의회신\"",
+      "attachment": "",
+      "invoke": "python clip_question_crawler_final.py --start 1 --end 10\r\npython clip_question_crawler_final.py --start 1 --end 127 --category al",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "유니패스 공인인증서 로그인",
+      "progress": "완료",
+      "scope": "pip install pyautogui\r\n권한 팝업 처리용 패키지 추가 설치",
+      "extraProgress": "",
+      "remaining": "",
+      "db": "",
+      "embedding": "",
+      "programPath": "cd \"D:\\Crawling\\unipass_cert_login\"",
+      "attachment": "",
+      "invoke": "python cert_login.py --account HQ",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "분석진행사항",
+      "progress": "완료",
+      "scope": "",
+      "extraProgress": "",
+      "remaining": "",
+      "db": "unipass_bunsuk.db",
+      "embedding": "",
+      "programPath": "cd \"D:\\Crawling\\unipass_crawler\"",
+      "attachment": "",
+      "invoke": "# DB 파일 삭제 후 재실행 (테이블 자동 재생성)\r\ndel output\\unipass_bunsuk.db\r\npython main.py                      본사 → 지사1 → 지사2 순서로 전체 처리\r\npython main.py --account HQ  본사만 처리\r\npython main.py --debug",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "전자등기 우편발송 목록(유니패스 품목분류회신서)",
+      "progress": "완료/2026년5월까지 완료",
+      "scope": "PDF 파일로 있음\r\n추가 크롤링 작업시 오류발생",
+      "extraProgress": "2012~2026년\r\n2026년5월21까지 있음",
+      "remaining": "post_ 이름 붙임",
+      "db": "unipass_bunsuk.db",
+      "embedding": "",
+      "programPath": "D:\\HJCustoms\\프로젝트\\01.진행중\\01.AI 품목분류시스템\\품목분류\\품목분류회신서-UNIPASS\r\nD:\\Crawling\\unipass_edi_crawler",
+      "attachment": "",
+      "invoke": "python unipass_post_crawler.py --year 2025 --week 22",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "유니패스 세관장확인",
+      "progress": "완료",
+      "scope": "",
+      "extraProgress": "엑셀다운로드 받아 이력 저장, SP 호출함",
+      "remaining": "CAS에 저장됨",
+      "db": "unipass_impo_hs\r\nunipass_expo_hs",
+      "embedding": "",
+      "programPath": "c:\\kcba\\unipass\\세관장확인\\unipass_hs",
+      "attachment": "",
+      "invoke": "python unipass_crawler.py d    ==> 개발\r\npython unipass_crawler.py",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "씨엘",
+      "progress": "70%완료",
+      "scope": "",
+      "extraProgress": "수출입요령",
+      "remaining": "",
+      "db": "D:\\SQLiteDB\\ciel.db",
+      "embedding": "",
+      "programPath": "D:\\Crawling\\CIEL",
+      "attachment": "",
+      "invoke": "python ciel_crawler.py",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "원산지결정기준",
+      "progress": "완료",
+      "scope": "https://www.customs.go.kr/ftaportalkor/ad/ftaTrtyPsr/psr.do?mi=3528#",
+      "extraProgress": "FTA포털",
+      "remaining": "",
+      "db": "D:\\SQLiteDB\\smart_law_ai.db",
+      "embedding": "",
+      "programPath": "D:\\Crawling\\FTA",
+      "attachment": "협정 파라메터는 원산지결정기준 참조",
+      "invoke": "py -m pip install -r requirements.txt\r\npy fta_psr_crawler.py all\r\n\r\n개별실행 시\r\npy fta_psr_crawler.py us\r\npy fta_psr_crawler.py cl\r\npy fta_psr_crawler.py eu\r\npy fta_psr_crawler.py rc",
+      "verify": "",
+      "embeddingNote": ""
+    },
+    {
+      "name": "원산지결정기준(협정별 약어표)",
+      "progress": "완료",
+      "scope": "",
+      "extraProgress": "FTA PASS",
+      "remaining": "",
+      "db": "",
+      "embedding": "",
+      "programPath": "",
+      "attachment": "",
+      "invoke": "",
+      "verify": "",
+      "embeddingNote": ""
+    }
+  ],
+  "syncedAt": "2026-09-02T08:21:57.299Z",
+  "excelModifiedAt": "2026-09-01T11:16:31.883Z"
+}

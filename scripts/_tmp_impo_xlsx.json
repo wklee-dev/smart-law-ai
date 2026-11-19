@@ -1,0 +1,440 @@
+{
+  "file": "수입테이블.xlsx",
+  "sheets": {
+    "impo1 공통": {
+      "max_cols_first15": 180,
+      "rows": [
+        {
+          "row": 1,
+          "cols": 180,
+          "values": [
+            "테이블명",
+            "impo1",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "row": 2,
+          "cols": 3,
+          "values": [
+            "칼럼",
+            "내용",
+            "형식"
+          ]
+        },
+        {
+          "row": 3,
+          "cols": 3,
+          "values": [
+            "Impo_key",
+            "관리번호",
+            "VARCHAR(11)"
+          ]
+        },
+        {
+          "row": 4,
+          "cols": 3,
+          "values": [
+            "Impo_year",
+            "제출년월",
+            "VARCHAR(4)"
+          ]
+        },
+        {
+          "row": 5,
+          "cols": 3,
+          "values": [
+            "Impo_jechl_no",
+            "제출번호 : 저장을 하면 생성됨",
+            "VARCHAR(6)"
+          ]
+        },
+        {
+          "row": 6,
+          "cols": 3,
+          "values": [
+            "Impo_chk_dg",
+            "체크디지트",
+            "CHAR(1)"
+          ]
+        },
+        {
+          "row": 7,
+          "cols": 3,
+          "values": [
+            "Impo_tcano",
+            "그룹식별부호:관세사",
+            "VARCHAR(5)"
+          ]
+        },
+        {
+          "row": 8,
+          "cols": 3,
+          "values": [
+            "Impo_local_gubun",
+            "수입구분",
+            "CHAR(2)"
+          ]
+        },
+        {
+          "row": 9,
+          "cols": 3,
+          "values": [
+            "Impo_save_gbn",
+            "저장여부(N:임시저장, 출력가능:'M')",
+            "CHAR(1)"
+          ]
+        },
+        {
+          "row": 10,
+          "cols": 3,
+          "values": [
+            "Impo_file_no1",
+            "파일번호1",
+            "VARCHAR(20)"
+          ]
+        },
+        {
+          "row": 11,
+          "cols": 3,
+          "values": [
+            "Impo_file_no2",
+            "파일번호2",
+            "VARCHAR(20)"
+          ]
+        },
+        {
+          "row": 12,
+          "cols": 3,
+          "values": [
+            "Impo_singoja_sangho",
+            "신고자상호",
+            "VARCHAR(30)"
+          ]
+        },
+        {
+          "row": 13,
+          "cols": 3,
+          "values": [
+            "Impo_suipja_code",
+            "수입자코드",
+            "VARCHAR(4)"
+          ]
+        },
+        {
+          "row": 14,
+          "cols": 3,
+          "values": [
+            "Impo_suipja_sangho",
+            "수입자상호",
+            "VARCHAR(30)"
+          ]
+        },
+        {
+          "row": 15,
+          "cols": 3,
+          "values": [
+            "Impo_suipja_muyk",
+            null,
+            "VARCHAR(8)"
+          ]
+        }
+      ]
+    },
+    "impo2 란": {
+      "max_cols_first15": 3,
+      "rows": [
+        {
+          "row": 1,
+          "cols": 2,
+          "values": [
+            "테이블명",
+            "impo2"
+          ]
+        },
+        {
+          "row": 2,
+          "cols": 3,
+          "values": [
+            "칼럼",
+            "내용",
+            "형식"
+          ]
+        },
+        {
+          "row": 3,
+          "cols": 3,
+          "values": [
+            "Imlan_key",
+            "관리번호",
+            "VARCHAR(11)"
+          ]
+        },
+        {
+          "row": 4,
+          "cols": 3,
+          "values": [
+            "Imlan_jechl_lan",
+            "란번호",
+            "CHAR(3)"
+          ]
+        },
+        {
+          "row": 5,
+          "cols": 3,
+          "values": [
+            "Imlan_hs",
+            "세번부호",
+            "VARCHAR(10)"
+          ]
+        },
+        {
+          "row": 6,
+          "cols": 3,
+          "values": [
+            "Imlan_whan_jepum",
+            null,
+            "VARCHAR(30)"
+          ]
+        },
+        {
+          "row": 7,
+          "cols": 3,
+          "values": [
+            "Imlan_seyul_gubun",
+            "세율구분(FTA세율 조인)-세종",
+            "VARCHAR(6)"
+          ]
+        },
+        {
+          "row": 8,
+          "cols": 3,
+          "values": [
+            "Imlan_seyul_prn",
+            "세율설명",
+            "VARCHAR(4)"
+          ]
+        },
+        {
+          "row": 9,
+          "cols": 3,
+          "values": [
+            "Imlan_popum",
+            "표준품명",
+            "VARCHAR(50)"
+          ]
+        },
+        {
+          "row": 10,
+          "cols": 3,
+          "values": [
+            "Imlan_gurae_pum",
+            "거래품명",
+            "VARCHAR(75)"
+          ]
+        },
+        {
+          "row": 11,
+          "cols": 3,
+          "values": [
+            "Imlan_model_code",
+            "상표코드",
+            "VARCHAR(4)"
+          ]
+        },
+        {
+          "row": 12,
+          "cols": 3,
+          "values": [
+            "Imlan_model",
+            "상표명",
+            "VARCHAR(50)"
+          ]
+        },
+        {
+          "row": 13,
+          "cols": 3,
+          "values": [
+            "Imlan_gwan_gele",
+            "관세사기재란-거래관계",
+            "CHAR(1)"
+          ]
+        },
+        {
+          "row": 14,
+          "cols": 3,
+          "values": [
+            "Imlan_gwan_hs",
+            "관세사기재란-품명규격세번",
+            "CHAR(1)"
+          ]
+        },
+        {
+          "row": 15,
+          "cols": 3,
+          "values": [
+            "Imlan_gwan_gumsa",
+            "관세사기재란-검사의견",
+            "CHAR(1)"
+          ]
+        }
+      ]
+    },
+    "impo3 규격": {
+      "max_cols_first15": 3,
+      "rows": [
+        {
+          "row": 1,
+          "cols": 2,
+          "values": [
+            "테이블명",
+            "impo3"
+          ]
+        },
+        {
+          "row": 2,
+          "cols": 3,
+          "values": [
+            "칼럼",
+            "내용",
+            "형식"
+          ]
+        },
+        {
+          "row": 3,
+          "cols": 3,
+          "values": [
+            "Impum_key",
+            "관리번호",
+            "VARCHAR(11)"
+          ]
+        },
+        {
+          "row": 4,
+          "cols": 3,
+          "values": [
+            "Impum_lan",
+            "란번호",
+            "CHAR(3)"
+          ]
+        },
+        {
+          "row": 5,
+          "cols": 3,
+          "values": [
+            "Impum_heang",
+            "행번호",
+            "CHAR(2)"
+          ]
+        },
+        {
+          "row": 6,
+          "cols": 3,
+          "values": [
+            "Impum_jajae_code",
+            "자재코드",
+            "VARCHAR(50)"
+          ]
+        },
+        {
+          "row": 7,
+          "cols": 3,
+          "values": [
+            "Impum_gukyk1",
+            "규격1",
+            "VARCHAR(30)"
+          ]
+        },
+        {
+          "row": 8,
+          "cols": 3,
+          "values": [
+            "Impum_gukyk2",
+            "규격2",
+            "VARCHAR(30)"
+          ]
+        },
+        {
+          "row": 9,
+          "cols": 3,
+          "values": [
+            "Impum_gukyk3",
+            "규격3",
+            "VARCHAR(140)"
+          ]
+        },
+        {
+          "row": 10,
+          "cols": 3,
+          "values": [
+            "Impum_sungbun1",
+            "성분1",
+            "VARCHAR(24)"
+          ]
+        },
+        {
+          "row": 11,
+          "cols": 3,
+          "values": [
+            "Impum_sungbun2",
+            "성분2",
+            "VARCHAR(24)"
+          ]
+        },
+        {
+          "row": 12,
+          "cols": 3,
+          "values": [
+            "Impum_sungbun3",
+            "성분3",
+            "VARCHAR(102)"
+          ]
+        },
+        {
+          "row": 13,
+          "cols": 3,
+          "values": [
+            "Impum_su",
+            "수량",
+            "FLOAT"
+          ]
+        },
+        {
+          "row": 14,
+          "cols": 3,
+          "values": [
+            "Impum_su_danwi",
+            "수량단위",
+            "CHAR(3)"
+          ]
+        },
+        {
+          "row": 15,
+          "cols": 3,
+          "values": [
+            "Impum_danga",
+            "단가",
+            "FLOAT"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "db_path": "D:\\SQLiteDB\\smart_law_ai.db",
+  "download_root": "C:\\SQLiteDB\\downloads",
+  "category": "행정예고",
+  "page_size": 100,
+  "delay_seconds": 0.5,
+  "timeout_seconds": 60,
+  "retry_count": 3,
+  "backup_before_run": false,
+  "log_dir": "logs",
+  "pages": ""
+}

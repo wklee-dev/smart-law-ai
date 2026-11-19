@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-19",
+  "scope": "시행법령 K열 gubun 248, 종료페이지 1, 새 시험 DB와 다운로드 폴더",
+  "status": "partial",
+  "stats": {
+    "queries": 1,
+    "failed_queries": 0,
+    "pages": 1,
+    "listed": 1,
+    "selected": 1,
+    "detail_attempts": 1,
+    "details": 1,
+    "files": 60,
+    "failed_files": 0,
+    "failed_items": 0,
+    "missing_file_annexes": 0,
+    "format_mismatches": 20,
+    "end_page_stops": 0
+  },
+  "tables": {
+    "llc_v1_list": 1,
+    "llc_v1_raw_articles": 18,
+    "llc_v1_raw_addendum": 20,
+    "llc_v1_raw_annex": 20,
+    "llc_v1_raw_attachment": 60
+  },
+  "formats": {
+    ".hwp": 40,
+    ".pdf": 20
+  },
+  "total_bytes": 2433771,
+  "files_checked": 60,
+  "hash_and_size_pass": true,
+  "errors": [],
+  "title": "음악산업진흥에 관한 법률 시행규칙",
+  "gubun": [248],
+  "note": "HWPX 표시 링크 20개가 실제 HWP를 반환함. 실제 확장자로 파일을 보존하고 경고를 기록함. 파일 다운로드 실패는 없음."
+}
