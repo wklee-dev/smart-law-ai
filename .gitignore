@@ -57,8 +57,8 @@ deploy/rpa-03/logs/
 /.tmp-*
 /_migrate_*
 
-# 계정정보 포함 분석 문서
-scripts/_ciel_extract/CLHS_화면분석_및_독립웹사이트_구축설계서_V1.txt
+# CIEL 화면분석 자료 (저장소 제외)
+scripts/_ciel_extract/
 
 # supabase CLI (로컬 캐시)
 supabase/.temp/
