@@ -50,7 +50,7 @@ body {
   color: var(--ciel-text);
   background: var(--ciel-bg);
   font-family: "Pretendard", "Malgun Gothic", "Noto Sans KR", sans-serif;
-  font-size: 14px;
+  font-size: 12.5px;
   line-height: 1.55;
 }
 
@@ -781,7 +781,7 @@ button.side-caret {
 }
 .duty-notes h3 {
   margin: 8px 0 6px;
-  font-size: 15px;
+  font-size: 13px;
 }
 .duty-notes p {
   margin: 0 0 8px;
@@ -799,7 +799,7 @@ button.side-caret {
   padding: 7px 10px;
   background: var(--ciel-head);
   color: var(--ciel-blue);
-  font-size: 14px;
+  font-size: 13px;
 }
 .duty-explanation section > div {
   padding: 9px 12px;
@@ -1124,7 +1124,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
   padding: 7px 10px;
   background: var(--ciel-head);
   color: var(--ciel-blue);
-  font-size: 14px;
+  font-size: 13px;
 }
 .guideline-text {
   white-space: pre-wrap;
@@ -1228,7 +1228,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
 .approval-section h3 {
   margin: 0 0 7px;
   color: #111827;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
 }
 .approval-section p {
@@ -1267,7 +1267,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
 .origin-ciel-section h3 {
   margin: 18px 0 6px;
   color: #111827;
-  font-size: 14px;
+  font-size: 13px;
 }
 .origin-ciel-section p {
   margin: 3px 0;
@@ -1483,7 +1483,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
   padding: 2px 0 10px;
   border-bottom: 2px solid #334155;
   color: #111827;
-  font-size: 16px;
+  font-size: 13px;
 }
 .ciel-law-article {
   scroll-margin-top: 8px;
@@ -1619,7 +1619,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
 }
 .hs-rules-intro {
   color: #1a1a1a;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 .hs-rule {
   padding: 12px 0;
@@ -1632,7 +1632,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
 }
 .hs-rule h3 {
   margin: 0 0 8px;
-  font-size: 15px;
+  font-size: 13px;
   color: var(--ciel-blue);
 }
 .hs-rule h4 {
@@ -1644,7 +1644,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
   margin: 0;
   white-space: pre-wrap;
   line-height: 1.75;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 
 .fta-principle {
@@ -1682,7 +1682,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
 }
 .fta-card h3 {
   margin: 0;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--ciel-blue);
 }
@@ -1719,7 +1719,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
   margin: 0;
   white-space: pre-wrap;
   line-height: 1.75;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 @media (max-width: 900px) {
   .fta-treaty {
@@ -1797,7 +1797,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
   justify-content: space-between;
   gap: 16px;
   margin: 4px 0 8px;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 .fta-contact a {
   font-weight: 700;
@@ -1838,7 +1838,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
 .fta-body > p {
   margin: 0;
   line-height: 1.7;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 .fta-label {
   font-weight: 700;
@@ -2020,7 +2020,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
   margin: 4px 0 8px;
   padding-left: 18px;
   line-height: 1.7;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 .fta-stored {
   margin-top: 10px;
@@ -2036,7 +2036,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
   margin: 0;
   white-space: pre-wrap;
   line-height: 1.7;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 .fta-laws a {
   color: var(--ciel-blue);
@@ -2071,6 +2071,8 @@ form.sl-search-toolbar--compact.duty-hs-search select {
 .fta-mini.fta-origin-result {
   table-layout: fixed;
 }
+.fta-mini.fta-origin-result col.agr { width: 7.5em; }
+.fta-mini.fta-origin-result col.nations { width: 25.5em; }
 .fta-mini.fta-origin-result col.hs { width: 4.5em; }
 .fta-mini.fta-origin-result col.rule { width: auto; }
 .fta-mini.fta-origin-result td.hs {
@@ -2970,7 +2972,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
 .sl-page-header p {
   margin: 0;
   color: var(--ciel-muted);
-  font-size: 13.5px;
+  font-size: 12.5px;
   line-height: 1.55;
   max-width: 52rem;
 }
@@ -3064,7 +3066,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
   border-bottom: 0;
   border-radius: var(--ciel-radius-lg) var(--ciel-radius-lg) 0 0;
   color: var(--ciel-blue);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
 }
 .feed-head {
@@ -3440,7 +3442,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
 }
 .en-notes-hd {
   margin: 0 0 10px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   color: #1a233a;
 }
@@ -3975,7 +3977,7 @@ form.sl-search-toolbar--compact.duty-hs-search select {
   font-weight: 600;
 }
 .answer-table .hs-no {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.02em;
   color: #1e3a5f;
@@ -4408,7 +4410,7 @@ a.law-name:hover {
 }
 .law-meta-card h2 {
   margin: 0;
-  font-size: 18px;
+  font-size: 13px;
   color: #1a233a;
 }
 .law-meta-card dl {
@@ -4443,7 +4445,7 @@ a.law-name:hover {
   padding: 8px 14px;
   background: #eef6f4;
   color: #0f5c57;
-  font-size: 15px;
+  font-size: 13px;
 }
 .law-jo > p,
 .law-oldnew p {
@@ -4451,7 +4453,7 @@ a.law-name:hover {
   padding: 12px 14px;
   white-space: pre-wrap;
   line-height: 1.7;
-  font-size: 14px;
+  font-size: 12.5px;
 }
 .law-oldnew {
   display: grid;
@@ -4679,7 +4681,7 @@ a.law-name:hover {
 }
 .tax-dialog h2 {
   margin: 0;
-  font-size: 18px;
+  font-size: 13px;
   color: #1e2f4f;
 }
 .tax-dialog header button,

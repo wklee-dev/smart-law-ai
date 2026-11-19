@@ -499,7 +499,7 @@ export async function getDutyView(code: string, pageRaw: number, hsRaw = ""): Pr
       const found = (await db.all(
         `SELECT hs_code_display AS hs, item_name AS name, category_symbol AS symbol,
                   tariff_rate AS rate, amount_per_unit AS amount,
-                  effective_start_date AS startAt, effective_end_date AS endAt
+                  effective_start_date AS "startAt", effective_end_date AS "endAt"
              FROM clip_tariff_rate
             WHERE category_symbol IN (${marks})${hsClause}
             ORDER BY category_symbol, hs_code

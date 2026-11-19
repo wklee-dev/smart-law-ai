@@ -23,25 +23,25 @@
 }
 
 .ciel-law-body > h2 {
-  font-size: 16px;
+  font-size: 13px;
   color: #0f172a;
 }
 
 .ciel-law-article h4 {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   color: #0f172a;
 }
 
 .ciel-law-article > p {
-  font-size: 14px;
+  font-size: 12.5px;
   line-height: 1.65;
   color: #1e293b;
 }
 
 /* 고시/공고 HTML · law-view — 크기만, 내용 보존 */
 .notice-html {
-  font-size: 14px;
+  font-size: 12.5px;
   line-height: 1.65;
   color: #1e293b;
 }
@@ -49,14 +49,14 @@
 .law-view,
 .duty-law-body,
 .approval-exemption .approval-section > p {
-  font-size: 14px;
+  font-size: 12.5px;
   line-height: 1.65;
 }
 
 .law-view h3,
 .law-view h4,
 .approval-section > h3 {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: #0f172a;
 }

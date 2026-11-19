@@ -265,7 +265,7 @@
 
 .fta-rates-ui .fta-duty-pane > .fta-card > header h3 {
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--fta-navy);
 }
@@ -394,6 +394,58 @@
   margin: 12px 14px;
 }
 
+/* 씨엘HS 협정관세율·원산지결정기준 본문 (cl_fta_page) */
+.fta-rates-ui .fta-cl {
+  padding: 10px 16px 14px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #1a233a;
+  word-break: keep-all;
+}
+.fta-rates-ui .fta-cl p { margin: 0; }
+.fta-rates-ui .fta-cl p.gap { margin-top: 14px; }
+.fta-rates-ui .fta-cl p.i1 { padding-left: 1.2em; }
+.fta-rates-ui .fta-cl p.i2 { padding-left: 2.4em; }
+.fta-rates-ui .fta-cl p.i3 { padding-left: 3.6em; }
+.fta-rates-ui .fta-cl p.i4 { padding-left: 4.8em; }
+.fta-rates-ui .fta-cl b { color: var(--fta-navy); }
+.fta-rates-ui .fta-cl a { color: #1d4ed8; text-decoration: none; }
+.fta-rates-ui .fta-cl a:hover { text-decoration: underline; }
+.fta-rates-ui .fta-cl table {
+  width: 100%;
+  margin: 6px 0 4px;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.fta-rates-ui .fta-cl th,
+.fta-rates-ui .fta-cl td {
+  padding: 5px 8px;
+  border: 1px solid var(--fta-line);
+  vertical-align: top;
+  text-align: left;
+}
+.fta-rates-ui .fta-cl th {
+  background: var(--fta-head);
+  color: #475569;
+  font-weight: 700;
+}
+.fta-rates-ui .fta-cl .c { text-align: center; vertical-align: middle; }
+.fta-rates-ui .fta-cl .r { text-align: right; }
+.fta-rates-ui .fta-cl p.hang { text-indent: -1.2em; }
+.fta-rates-ui .fta-cl p.hang:not(.i1):not(.i2):not(.i3):not(.i4) { padding-left: 1.2em; }
+.fta-rates-ui .fta-cl td { overflow-wrap: anywhere; }
+.fta-rates-ui .fta-cl td.nb,
+.fta-rates-ui .fta-cl th.nb { border: 0; }
+.fta-rates-ui .fta-cl table { max-width: 100%; }
+.fta-rates-ui .fta-cl table.i1 { margin-left: 1.2em; }
+.fta-rates-ui .fta-cl table.i2 { margin-left: 2.4em; }
+.fta-rates-ui .fta-cl table.i3 { margin-left: 3.6em; }
+.fta-rates-ui .fta-cl table.i4 { margin-left: 4.8em; }
+.fta-rates-ui .fta-cl table.nb td { vertical-align: middle; padding: 2px 6px; }
+.fta-rates-ui .fta-cl td.frac { border-bottom: 1px solid #1a233a; }
+.fta-rates-ui .fta-cl td.frac-t { border-top: 1px solid #1a233a; }
+
 /* Origin pane: visual shell only — do not restyle article body content heavily */
 .fta-rates-ui .fta-origin-pane > .fta-card {
   background: #fff;
@@ -410,7 +462,7 @@
 
 .fta-rates-ui .fta-origin-pane > .fta-card > header h3 {
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--fta-navy);
 }

@@ -1,3 +1,4 @@
+import { getClFtaGuide } from "@/app/lib/cl-fta-guide-server";
 import {
   listClFtaAttachments,
   listClFtaGeneralForAgreement,
@@ -34,15 +35,21 @@ export function GET(req: Request) {
           { status: 404 },
         );
       }
+      const rateCodes = listClFtaRateCodes(db, ftaCd, opts);
       return NextResponse.json({
         ok: true,
         nation,
         general: listClFtaGeneralForAgreement(db, ftaCd),
         psrGuide: listClFtaPsrGuide(db, ftaCd),
         recom: listClFtaRecom(db, ftaCd),
-        rateCodes: listClFtaRateCodes(db, ftaCd, opts),
+        rateCodes,
         hs2Options: listClFtaHs2Options(db, ftaCd, opts),
         attachments: listClFtaAttachments(db, ftaCd),
+        guide: getClFtaGuide(
+          db,
+          ftaCd,
+          rateCodes.map((c) => c.rate_cd),
+        ),
       });
     } finally {
       db.close();

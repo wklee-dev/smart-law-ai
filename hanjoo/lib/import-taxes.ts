@@ -319,7 +319,7 @@ export async function listImportTaxes(query: { asOf?: string; tax?: string; law?
     const rows: ImportTaxRow[] = [];
     for (const spec of SPECS) {
       const version = await db.get(
-        `SELECT v.id AS id, l.law_name_kr AS lawName, v.enforcement_date AS enforce
+        `SELECT v.id AS id, l.law_name_kr AS "lawName", v.enforcement_date AS enforce
            FROM laws l
            JOIN law_versions v ON v.law_id = l.id
           WHERE l.law_id = ?
@@ -341,7 +341,7 @@ export async function listImportTaxes(query: { asOf?: string; tax?: string; law?
       const found = new Map<string, Article>();
       for (const title of spec.titles) {
         const row = await db.get(
-          `SELECT id, article_no AS articleNo, article_title AS title, article_content AS content
+          `SELECT id, article_no AS "articleNo", article_title AS title, article_content AS content
              FROM law_articles
             WHERE law_version_id = ? AND article_type = '조문' AND article_title = ?
             ORDER BY display_order, id

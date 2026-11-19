@@ -147,7 +147,33 @@ export function adaptSqlForDialect(
   s = s.replace(/\s+COLLATE\s+NOCASE\b/gi, "");
   // SQLite ESCAPE '\\' → Postgres ESCAPE '\'
   s = s.replace(/ESCAPE\s+'\\\\'/gi, "ESCAPE '\\'");
+  s = quotePgMixedCaseColumns(s);
   return s;
+}
+
+/** SQLite에서 옮겨온 Postgres 대소문자 혼용 컬럼 — 따옴표 없으면 소문자로 해석되어 "컬럼 없음" */
+const PG_MIXED_CASE_COLUMNS = [
+  "Gwanse_code",
+  "Gwanse_semyung",
+  "Gwanse_gubun",
+  "Gwanse_agreecd",
+  "enfrDt",
+  "lworAdmnRulNo",
+  "pmgtDtTpNo",
+];
+const PG_MIXED_CASE_RE = new RegExp(
+  `(?<![\\w"])(${PG_MIXED_CASE_COLUMNS.join("|")})(?![\\w"])`,
+  "gi",
+);
+const PG_MIXED_CASE_CANON = new Map(
+  PG_MIXED_CASE_COLUMNS.map((c) => [c.toLowerCase(), c]),
+);
+
+export function quotePgMixedCaseColumns(sql: string): string {
+  return sql.replace(
+    PG_MIXED_CASE_RE,
+    (m) => `"${PG_MIXED_CASE_CANON.get(m.toLowerCase()) ?? m}"`,
+  );
 }
 
 /** 분리 env 우선, 없으면 URL 분해. 다른 모듈(행정규칙 등)도 이 설정 사용 */

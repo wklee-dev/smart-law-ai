@@ -1,5 +1,9 @@
 import { FOREIGN_BUCKETS } from "@/hanjoo/lib/case-buckets";
-import { withSmartLawDb, type SmartLawDb } from "@/hanjoo/lib/smart-law-db";
+import {
+  getSmartLawSqliteRow,
+  withSmartLawDb,
+  type SmartLawDb,
+} from "@/hanjoo/lib/smart-law-db";
 
 const FOREIGN_BUCKET_SQL = `UPPER(TRIM(COALESCE(NULLIF(TRIM(tab_country_code), ''), country_code)))`;
 
@@ -314,7 +318,7 @@ export async function getForeignCase(id: number): Promise<ForeignCaseDetail | nu
           `SELECT id FROM foreign_case_images
               WHERE UPPER(TRIM(country_code)) = UPPER(?)
                 AND TRIM(case_srno) = ?
-                AND COALESCE(image_size, length(image_data), 0) > 0
+                AND ${db.dialect === "postgres" ? "COALESCE(image_size, 0)" : "COALESCE(image_size, length(image_data), 0)"} > 0
               ORDER BY seq, id
               LIMIT 12`,
           [countryCode, srno],
@@ -349,11 +353,10 @@ export async function readForeignCaseImage(
 ): Promise<{ data: Buffer; contentType: string } | null> {
   if (!Number.isFinite(id) || id <= 0) return null;
   return withDb(async (db) => {
-    const row = await db.get(
-      `SELECT image_data, image_ext FROM foreign_case_images
-          WHERE id = ? AND COALESCE(image_size, length(image_data), 0) > 0`,
-      [id],
-    );
+    const sql = `SELECT image_data, image_ext FROM foreign_case_images
+          WHERE id = ? AND COALESCE(image_size, length(image_data), 0) > 0`;
+    const row =
+      db.dialect === "postgres" ? getSmartLawSqliteRow(sql, [id]) : await db.get(sql, [id]);
     if (!row?.image_data) return null;
     const data = Buffer.isBuffer(row.image_data)
       ? row.image_data

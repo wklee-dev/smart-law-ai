@@ -149,7 +149,7 @@ export async function searchFtaAbbr(q: {
     );
     const offset = (page - 1) * pageSize;
     const rows = await db.all(
-      `SELECT COALESCE(id, rowid) AS id, hs_version, agreement_name, hs6_code,
+      `SELECT ${db.dialect === "postgres" ? "NULL" : "COALESCE(id, rowid)"} AS id, hs_version, agreement_name, hs6_code,
               goods4_name, goods6_name, origin_rule_text, abbreviation
          FROM ${RULES}
          ${whereSql}
@@ -160,8 +160,8 @@ export async function searchFtaAbbr(q: {
     return {
       total,
       page,
-      rows: rows.map((r) => ({
-        id: Number(r.id) || 0,
+      rows: rows.map((r, i) => ({
+        id: Number(r.id) || offset + i + 1,
         year: str(r.hs_version),
         agreement: str(r.agreement_name),
         hs: str(r.hs6_code),

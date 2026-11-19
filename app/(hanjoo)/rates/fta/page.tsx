@@ -586,6 +586,8 @@ type AgreementDetail = {
   effect: string;
   baseYear: string;
   treatyUrl: string;
+  clDuty: string;
+  clOrigin: string;
   certificate: string[];
   criterion: string[];
   sections: { heading: string; content: string }[];
@@ -1018,6 +1020,10 @@ function FtaAgreementDetail({
       {pane === "duty" ? (
         <div className="fta-duty-pane">
           <DutyLookup code={detail.code} agreements={choices} onPick={onPick} host={lookupHost} />
+          {detail.clDuty ? (
+            <ClPageCard title="협정관세율" html={detail.clDuty} />
+          ) : (
+          <>
           <article className="fta-card">
             <header>
               <h3>적용대상</h3>
@@ -1150,6 +1156,8 @@ function FtaAgreementDetail({
               </div>
             </article>
           ) : null}
+          </>
+          )}
           {detail.posts.length > 0 ? (
             <article className="fta-card">
               <header>
@@ -1175,6 +1183,9 @@ function FtaAgreementDetail({
       ) : (
         <div className="fta-origin-pane">
           <OriginLookup code={detail.code} agreements={choices} onPick={onPick} host={lookupHost} />
+          {detail.clOrigin ? (
+            <ClPageCard title="원산지결정기준" html={detail.clOrigin} />
+          ) : (
           <article className="fta-card">
             <header>
               <h3>원산지결정기준</h3>
@@ -1196,9 +1207,21 @@ function FtaAgreementDetail({
               <p className="muted">저장된 원산지결정기준이 없습니다.</p>
             ) : null}
           </article>
+          )}
         </div>
       )}
     </div>
+  );
+}
+
+function ClPageCard({ title, html }: { title: string; html: string }) {
+  return (
+    <article className="fta-card">
+      <header>
+        <h3>{title}</h3>
+      </header>
+      <div className="fta-cl" dangerouslySetInnerHTML={{ __html: html }} />
+    </article>
   );
 }
 

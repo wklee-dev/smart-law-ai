@@ -10,6 +10,7 @@ import "server-only";
 
 import fs from "node:fs";
 import path from "node:path";
+import { quotePgMixedCaseColumns } from "@/app/lib/smart-law-db";
 import { DatabaseSync } from "node:sqlite";
 import pg from "pg";
 import { smartLawSqliteDbPath } from "@/hanjoo/lib/paths";
@@ -176,6 +177,7 @@ export function adaptSqlForDialect(sql: string, dialect: "postgres" | "sqlite"):
   s = s.replace(/\s+COLLATE\s+NOCASE\b/gi, "");
   // SQLite ESCAPE '\\' → Postgres ESCAPE '\'
   s = s.replace(/ESCAPE\s+'\\\\'/gi, "ESCAPE '\\'");
+  s = quotePgMixedCaseColumns(s);
   return s;
 }
 
@@ -314,6 +316,24 @@ async function openSqliteDb(readOnly = true): Promise<SmartLawDb> {
       db.close();
     },
   };
+}
+
+/**
+ * 이미지 BLOB 조회 — Postgres로는 BLOB을 옮기지 않았으므로 항상 SQLite 파일에서 읽는다.
+ * 파일이 없으면 null.
+ */
+export function getSmartLawSqliteRow(
+  sql: string,
+  params: unknown[] = [],
+): Record<string, unknown> | null {
+  const p = path.resolve(smartLawSqliteDbPath().trim());
+  if (!fs.existsSync(p)) return null;
+  const db = new DatabaseSync(p, { readOnly: true });
+  try {
+    return (db.prepare(sql).get(...(params as never[])) as Record<string, unknown>) ?? null;
+  } finally {
+    db.close();
+  }
 }
 
 /** Postgres 우선, 없으면 SQLite */

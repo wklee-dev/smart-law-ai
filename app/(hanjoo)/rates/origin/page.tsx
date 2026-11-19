@@ -181,6 +181,12 @@ function OriginCriteria() {
         {searched ? (
           <div className="table-scroll">
             <table className="answer-table case-table fta-mini fta-origin-result">
+              <colgroup>
+                <col className="agr" />
+                <col className="nations" />
+                <col className="hs" />
+                <col className="rule" />
+              </colgroup>
               <thead>
                 <tr>
                   <th>협정</th>

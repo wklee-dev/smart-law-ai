@@ -23,7 +23,7 @@
 
 .duty-modern-ui .sl-card-hd {
   padding: 11px 16px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--dm-navy);
   background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
@@ -409,7 +409,7 @@
 }
 
 .duty-dumping-ui .duty-law-doc-hd strong {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--dm-navy);
 }
@@ -435,7 +435,7 @@
 
 .duty-dumping-ui .duty-law-article-hd {
   margin: 0 0 10px;
-  font-size: 15.5px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.4;
   color: #1d4ed8;
@@ -444,7 +444,7 @@
 
 .duty-dumping-ui .duty-law-article-body {
   margin: 0;
-  font-size: 14px;
+  font-size: 12.5px;
   line-height: 1.65;
   white-space: pre-wrap;
   word-break: break-word;

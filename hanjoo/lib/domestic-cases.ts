@@ -1,4 +1,5 @@
 import {
+  getSmartLawSqliteRow,
   openSmartLawDb,
   smartLawTableExists,
   type SmartLawDb,
@@ -192,9 +193,9 @@ export async function readDomesticImage(
   imageId: number,
 ): Promise<{ contentType: string; data: Uint8Array } | null> {
   if (!(await smartLawTableExists(db, "case_images")) || !Number.isFinite(imageId)) return null;
-  const row = await db.get("SELECT image_data, content_type FROM case_images WHERE id = ?", [
-    imageId,
-  ]);
+  const sql = "SELECT image_data, content_type FROM case_images WHERE id = ?";
+  const row =
+    db.dialect === "postgres" ? getSmartLawSqliteRow(sql, [imageId]) : await db.get(sql, [imageId]);
   const raw = row?.image_data;
   if (!(raw instanceof Uint8Array) || raw.byteLength === 0) return null;
   const contentType = str(row?.content_type) || "image/jpeg";

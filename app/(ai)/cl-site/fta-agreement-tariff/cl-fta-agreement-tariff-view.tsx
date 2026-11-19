@@ -1,8 +1,11 @@
 "use client";
 
 import type {
-  ClFtaAttachRow,
+  ClFtaAnnexBlock,
+  ClFtaAnnexDoc,
   ClFtaGeneralRow,
+  ClFtaGuide,
+  ClFtaGuideLink,
   ClFtaHs2Option,
   ClFtaNationRow,
   ClFtaPsrDetail,
@@ -15,7 +18,6 @@ import type {
 import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./cl-fta-agreement-tariff.module.css";
 
-const SOURCE_URL = "https://www.clhs.co.kr/Y2026/duty.asp";
 const PAGE_WINDOW = 10;
 
 type OverviewTab = "general" | "nations";
@@ -114,6 +116,78 @@ function PsrTxtWithRefs({
   );
 }
 
+function AnnexBlocks({ blocks }: { blocks: ClFtaAnnexBlock[] }) {
+  return (
+    <>
+      {blocks.map((b, i) =>
+        b.t === "p" ? (
+          <p key={`ap-${i}`} className={styles.annexP}>
+            {b.text}
+          </p>
+        ) : (
+          <table key={`at-${i}`} className={styles.annexTable}>
+            <tbody>
+              {b.rows.map((row, ri) => (
+                <tr key={`ar-${ri}`}>
+                  {row.map((cell, ci) => (
+                    <td
+                      key={`ac-${ci}`}
+                      colSpan={cell.cs > 1 ? cell.cs : undefined}
+                      rowSpan={cell.rs > 1 ? cell.rs : undefined}
+                    >
+                      <AnnexBlocks blocks={cell.blocks} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ),
+      )}
+    </>
+  );
+}
+
+function AnnexDocList({ docs }: { docs: ClFtaAnnexDoc[] }) {
+  return (
+    <>
+      {docs.map((d, i) => (
+        <div key={`ad-${i}`} className={styles.annexDoc}>
+          <div className={styles.annexLabel}>
+            {d.href ? (
+              <a href={d.href} target="_blank" rel="noopener noreferrer">
+                {d.label}
+              </a>
+            ) : (
+              d.label
+            )}
+          </div>
+          <AnnexBlocks blocks={d.blocks} />
+        </div>
+      ))}
+    </>
+  );
+}
+
+function GuideLinkList({ items }: { items: ClFtaGuideLink[] }) {
+  return (
+    <ul className={styles.bulletList}>
+      {items.map((l, i) => (
+        <li key={`gl-${i}`}>
+          {l.href ? (
+            <a href={l.href} target="_blank" rel="noopener noreferrer">
+              {l.label}
+            </a>
+          ) : (
+            l.label
+          )}
+          {l.note ? <span className={styles.muted}> ({l.note})</span> : null}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function agreementTitle(n: ClFtaNationRow): string {
   // "칠레 FTA" → 칠레, "EFTA"는 그대로 (끝의 FTA만 떼면 E가 됨)
   const raw = (n.fta_nm || n.nation_nm || n.fta_cd).trim();
@@ -170,7 +244,7 @@ export function ClFtaAgreementTariffView() {
   const [recom, setRecom] = useState<ClFtaRecomRow[]>([]);
   const [rateCodes, setRateCodes] = useState<ClFtaRateCdRow[]>([]);
   const [hs2Options, setHs2Options] = useState<ClFtaHs2Option[]>([]);
-  const [attachments, setAttachments] = useState<ClFtaAttachRow[]>([]);
+  const [guide, setGuide] = useState<ClFtaGuide | null>(null);
 
   const [hsDraft, setHsDraft] = useState("");
   const [hsApplied, setHsApplied] = useState("");
@@ -220,7 +294,7 @@ export function ClFtaAgreementTariffView() {
         recom: ClFtaRecomRow[];
         rateCodes: ClFtaRateCdRow[];
         hs2Options: ClFtaHs2Option[];
-        attachments: ClFtaAttachRow[];
+        guide?: ClFtaGuide;
       }>(
         `/api/cl-fta-rate/agreement?ftaCd=${encodeURIComponent(cd)}&source=cl`,
       );
@@ -230,7 +304,7 @@ export function ClFtaAgreementTariffView() {
       setRecom(data.recom ?? []);
       setRateCodes(data.rateCodes ?? []);
       setHs2Options(data.hs2Options ?? []);
-      setAttachments(data.attachments ?? []);
+      setGuide(data.guide ?? null);
     } catch (e) {
       setNation(null);
       setError(e instanceof Error ? e.message : "협정 정보 조회 실패");
@@ -382,18 +456,11 @@ export function ClFtaAgreementTariffView() {
     }
   };
 
-  const applyLaws = general.filter(
-    (g) =>
-      g.gubun.includes("적용법령") ||
-      g.sect.includes("적용법령") ||
-      g.gubun.includes("적용"),
-  );
-  const certAttaches = attachments.filter(
-    (a) =>
-      a.doc_gb.includes("원산지증명") ||
-      /\.(hwp|hwpx|pdf)$/i.test(a.file_nm || a.file_url),
-  );
-  const otherAttaches = attachments.filter((a) => !certAttaches.includes(a));
+  const rateMember = (code: string): string => {
+    if (!ftaCd || !guide) return "";
+    const m = code.slice(ftaCd.length).match(/^([A-Z]{2})\d*$/);
+    return m ? (guide.memberNames[m[1]!] ?? "") : "";
+  };
 
   return (
     <div className={styles.root}>
@@ -436,14 +503,6 @@ export function ClFtaAgreementTariffView() {
           <>
             <div className={styles.headBar}>
               <h1 className={styles.headTitle}>FTA협정관세</h1>
-              <a
-                href={SOURCE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#dff", fontSize: 11, fontWeight: 400 }}
-              >
-                원본
-              </a>
             </div>
             <div className={styles.headSearch}>
               <select className={styles.select} defaultValue="HSK">
@@ -706,36 +765,17 @@ export function ClFtaAgreementTariffView() {
                 <>
                   <div className={styles.sectionBlock}>
                     <h3 className={styles.sectionH}>1. 적용법령</h3>
-                    {applyLaws.length ? (
-                      applyLaws.map((g, i) => (
-                        <div key={`al-${i}`} className={styles.sectionBody}>
-                          {g.content}
-                        </div>
-                      ))
+                    <div className={styles.guideSub}>협정문</div>
+                    {guide?.treaties.length ? (
+                      <GuideLinkList items={guide.treaties} />
                     ) : (
-                      <div className={styles.sectionBody}>
-                        자유무역협정의 이행을 위한 관세법의 특례에 관한 법률 및
-                        동법 시행령·시행규칙, 해당 협정문.
-                        {otherAttaches.length ? (
-                          <ul className={styles.bulletList}>
-                            {otherAttaches.map((a, i) => (
-                              <li key={`att-${i}`}>
-                                {a.file_url ? (
-                                  <a
-                                    href={a.file_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                  >
-                                    {a.file_nm || a.file_url}
-                                  </a>
-                                ) : (
-                                  a.file_nm
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                        ) : null}
-                      </div>
+                      <p className={styles.muted}>협정문 미수집</p>
+                    )}
+                    <div className={styles.guideSub}>국내법령·고시</div>
+                    {guide?.laws.length ? (
+                      <GuideLinkList items={guide.laws} />
+                    ) : (
+                      <p className={styles.muted}>등록된 내용이 없습니다.</p>
                     )}
                   </div>
 
@@ -751,38 +791,36 @@ export function ClFtaAgreementTariffView() {
 
                   <div className={styles.sectionBlock}>
                     <h3 className={styles.sectionH}>3. 원산지증명서</h3>
-                    {nation?.cert_desc ? (
-                      <ul className={styles.bulletList}>
-                        {splitBullets(nation.cert_desc).map((line, i) => (
-                          <li key={`c-${i}`}>{line}</li>
-                        ))}
-                      </ul>
-                    ) : (
+                    {guide?.certForms.length ? (
+                      <>
+                        <div className={styles.guideSub}>서식</div>
+                        <GuideLinkList items={guide.certForms} />
+                      </>
+                    ) : null}
+                    {guide?.certItems.length ? (
+                      <>
+                        <div className={styles.guideSub}>
+                          원산지증명서에 기재할 사항
+                        </div>
+                        <AnnexDocList docs={guide.certItems} />
+                      </>
+                    ) : null}
+                    {!guide?.certForms.length && !guide?.certItems.length ? (
                       <p className={styles.muted}>등록된 내용이 없습니다.</p>
-                    )}
-                    {certAttaches.length ? (
-                      <ul className={styles.bulletList}>
-                        {certAttaches.map((a, i) => (
-                          <li key={`cert-att-${i}`}>
-                            {a.file_url ? (
-                              <a
-                                href={a.file_url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {a.file_nm || a.file_url}
-                              </a>
-                            ) : (
-                              a.file_nm
-                            )}
-                          </li>
-                        ))}
-                      </ul>
                     ) : null}
                   </div>
 
+                  {guide?.guidance.length ? (
+                    <div className={styles.sectionBlock}>
+                      <h3 className={styles.sectionH}>4. 집행지침·안내</h3>
+                      <GuideLinkList items={guide.guidance} />
+                    </div>
+                  ) : null}
+
                   <div className={styles.sectionBlock}>
-                    <h3 className={styles.sectionH}>4. 세율부호</h3>
+                    <h3 className={styles.sectionH}>
+                      {guide?.guidance.length ? "5" : "4"}. 세율부호
+                    </h3>
                     {rateCodes.length === 0 ? (
                       <p className={styles.muted}>세율부호 없음</p>
                     ) : (
@@ -790,8 +828,8 @@ export function ClFtaAgreementTariffView() {
                         <thead>
                           <tr>
                             <th>부호</th>
-                            <th>내용</th>
-                            <th>설명</th>
+                            <th>국가</th>
+                            <th>관세율구분 명칭</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -799,9 +837,16 @@ export function ClFtaAgreementTariffView() {
                             <tr key={c.rate_cd}>
                               <td className={styles.num}>{c.rate_cd}</td>
                               <td className={styles.num}>
-                                {c.nation_nm || nation?.fta_nm || "-"}
+                                {rateMember(c.rate_cd) ||
+                                  c.nation_nm ||
+                                  nation?.nation_nm ||
+                                  "-"}
                               </td>
-                              <td>{c.grp_nm || "-"}</td>
+                              <td>
+                                {guide?.rateCodeNames[c.rate_cd] ||
+                                  c.grp_nm ||
+                                  "-"}
+                              </td>
                             </tr>
                           ))}
                         </tbody>
@@ -809,10 +854,19 @@ export function ClFtaAgreementTariffView() {
                     )}
                   </div>
 
-                  {recom.length > 0 ? (
+                  {guide?.recom.length ? (
                     <div className={styles.sectionBlock}>
                       <h3 className={styles.sectionH}>
-                        5. 협정관세추천 대상품목
+                        {guide.guidance.length ? "6" : "5"}. 협정관세추천
+                        대상품목
+                      </h3>
+                      <AnnexDocList docs={guide.recom} />
+                    </div>
+                  ) : recom.length > 0 ? (
+                    <div className={styles.sectionBlock}>
+                      <h3 className={styles.sectionH}>
+                        {guide?.guidance.length ? "6" : "5"}. 협정관세추천
+                        대상품목
                       </h3>
                       <p className={styles.muted}>
                         (추천기관 : {recom[0]?.agency || "—"})
@@ -990,14 +1044,21 @@ export function ClFtaAgreementTariffView() {
                     </table>
                   </div>
 
-                  {psrGuide.map((g, i) => (
-                    <div key={`pg-${i}`} className={styles.sectionBlock}>
-                      <h3 className={styles.sectionH}>
-                        {g.gubun || g.sect}
-                      </h3>
-                      <div className={styles.sectionBody}>{g.content}</div>
+                  {guide?.psrGuide.length ? (
+                    <div className={styles.sectionBlock}>
+                      <h3 className={styles.sectionH}>원산지결정기준 안내</h3>
+                      <AnnexDocList docs={guide.psrGuide} />
                     </div>
-                  ))}
+                  ) : (
+                    psrGuide.map((g, i) => (
+                      <div key={`pg-${i}`} className={styles.sectionBlock}>
+                        <h3 className={styles.sectionH}>
+                          {g.gubun || g.sect}
+                        </h3>
+                        <div className={styles.sectionBody}>{g.content}</div>
+                      </div>
+                    ))
+                  )}
                 </>
               )}
             </div>

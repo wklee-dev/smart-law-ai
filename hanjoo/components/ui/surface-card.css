@@ -11,7 +11,7 @@
 
 .panel-hd,
 .sl-card-hd {
-  font-size: 14px;
+  font-size: 13px;
   padding: 10px 14px;
 }
 
@@ -34,7 +34,7 @@
 .case-detail h3,
 .case-detail h4 {
   margin: 0 0 8px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: #1e293b;
 }
@@ -57,7 +57,7 @@
 .fta-card > header h3,
 .fta-card header h3 {
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: #1e293b;
 }

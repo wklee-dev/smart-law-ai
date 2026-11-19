@@ -86,6 +86,44 @@ export type ClFtaAttachRow = {
   save_path: string;
 };
 
+/** 협정 안내 화면 — 자체 DB(조약·법령·고시·서식·집행지침) 링크 */
+export type ClFtaGuideLink = {
+  label: string;
+  note: string;
+  href: string;
+};
+
+export type ClFtaAnnexCell = {
+  cs: number;
+  rs: number;
+  blocks: ClFtaAnnexBlock[];
+};
+
+/** 별표 HWP 에서 뽑은 본문 (fta_annex_doc.blocks_json) */
+export type ClFtaAnnexBlock =
+  | { t: "p"; text: string }
+  | { t: "table"; rows: ClFtaAnnexCell[][] };
+
+export type ClFtaAnnexDoc = {
+  label: string;
+  href: string;
+  blocks: ClFtaAnnexBlock[];
+};
+
+export type ClFtaGuide = {
+  treaties: ClFtaGuideLink[];
+  laws: ClFtaGuideLink[];
+  certForms: ClFtaGuideLink[];
+  certItems: ClFtaAnnexDoc[];
+  guidance: ClFtaGuideLink[];
+  /** 세율부호 → 관세율구분코드 공식 명칭 (TRRT_TPCD) */
+  rateCodeNames: Record<string, string>;
+  /** 세율부호 접미 국가코드 → 국가명 (예: CH → 스위스) */
+  memberNames: Record<string, string>;
+  recom: ClFtaAnnexDoc[];
+  psrGuide: ClFtaAnnexDoc[];
+};
+
 /** 협정관세추천 대상품목 */
 export type ClFtaRecomRow = {
   fta_cd: string;

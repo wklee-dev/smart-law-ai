@@ -178,6 +178,29 @@
   min-height: 0;
 }
 
+.home-card-wide {
+  grid-column: 1 / -1;
+}
+
+.home-news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 6px 16px;
+}
+
+.home-news-group {
+  min-width: 0;
+}
+
+.home-news-source {
+  margin: 4px 0 2px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #eef2f7;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ciel-on, #30528c);
+}
+
 .home-card-soft {
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }

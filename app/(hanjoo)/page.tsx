@@ -4,7 +4,7 @@ import { HomeHeroSearch } from "@/hanjoo/components/home/HomeHeroSearch";
 import { listLatestDomesticCases, openSmartLawDb } from "@/hanjoo/lib/domestic-cases";
 import { getWeeklyExchangeRates } from "@/hanjoo/lib/exchange-rates";
 import { listLatestLaws } from "@/hanjoo/lib/latest-laws";
-import { listClipAdminNotices } from "@/hanjoo/lib/clip-admin-notices";
+import { listHomeNews } from "@/hanjoo/lib/home-news";
 import { listHomeNlcNotices } from "@/hanjoo/lib/nlc-home";
 import { listLatestPrecedents } from "@/hanjoo/lib/precedents";
 
@@ -99,10 +99,10 @@ export default async function HomePage() {
     nlcError = true;
   }
 
-  let newsRows: Awaited<ReturnType<typeof listClipAdminNotices>>["rows"] = [];
+  let newsGroups: Awaited<ReturnType<typeof listHomeNews>> = [];
   let newsError = false;
   try {
-    newsRows = (await listClipAdminNotices(4, 1)).rows;
+    newsGroups = await listHomeNews(5);
   } catch {
     newsError = true;
   }
@@ -158,24 +158,37 @@ export default async function HomePage() {
               </div>
             </section>
 
-            <section className="home-card" id="news">
-              <CardHead title="뉴스" href="/news" />
+            <section className="home-card home-card-wide" id="news">
+              <CardHead title="뉴스" />
               <div className="home-card-bd">
                 {newsError ? (
                   <p className="muted">뉴스를 불러오지 못했습니다.</p>
-                ) : newsRows.length === 0 ? (
+                ) : newsGroups.length === 0 ? (
                   <p className="muted">표시할 뉴스가 없습니다.</p>
                 ) : (
-                  <ul className="home-list">
-                    {newsRows.map((n) => (
-                      <li key={n.noticeId}>
-                        <span className="home-list-date">{n.writtenDate || "날짜 없음"}</span>
-                        <span className="home-list-title" title={n.title}>
-                          <Link href={`/news?id=${encodeURIComponent(n.noticeId)}`}>{n.title}</Link>
-                        </span>
-                      </li>
+                  <div className="home-news-grid">
+                    {newsGroups.map((g) => (
+                      <div key={g.key} className="home-news-group">
+                        <h4 className="home-news-source">{g.label}</h4>
+                        <ul className="home-list">
+                          {g.items.map((n) => (
+                            <li key={n.id}>
+                              <span className="home-list-date">{n.date || "날짜 없음"}</span>
+                              <span className="home-list-title" title={n.title}>
+                                {n.url ? (
+                                  <a href={n.url} target="_blank" rel="noopener noreferrer">
+                                    {n.title}
+                                  </a>
+                                ) : (
+                                  n.title
+                                )}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 )}
               </div>
             </section>

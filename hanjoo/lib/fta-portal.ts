@@ -53,6 +53,11 @@ function digits(v: string): string {
 }
 
 
+/** 적재 순서 — Postgres로 옮긴 cl_fta_* 테이블에는 id가 없어 rowid→id 변환이 실패한다 */
+function insertionOrder(db: SmartLawDb): string {
+  return db.dialect === "postgres" ? "ctid" : "rowid";
+}
+
 async function withDb<T>(fn: (db: SmartLawDb) => Promise<T>): Promise<T> {
   return withSmartLawDb(fn);
 }
@@ -126,7 +131,7 @@ export async function listFtaGeneralPrinciples(): Promise<FtaGeneralSection[]> {
       (await db.all(`SELECT gubun, content
              FROM cl_fta_general
             WHERE fta_cd = 'FTA' AND sect = '일반원칙'
-            ORDER BY rowid`)) as Record<string, unknown>[]
+            ORDER BY ${insertionOrder(db)}`)) as Record<string, unknown>[]
     ).map((r) => ({
       heading: str(r.gubun),
       content: str(r.content),
@@ -142,6 +147,9 @@ export type FtaAgreementDetail = {
   baseYear: string;
   treatyUrl: string;
   certificate: string[];
+  /** 씨엘HS 협정관세율·원산지결정기준 화면 본문(정리된 HTML, cl_fta_page) */
+  clDuty: string;
+  clOrigin: string;
   criterion: string[];
   sections: { heading: string; content: string }[];
   forms: { kind: string; name: string; url: string }[];
@@ -192,7 +200,7 @@ export async function getFtaAgreementDetail(code: string): Promise<FtaAgreementD
     const sections = (await smartLawTableExists(db, "cl_fta_general"))
       ? (
           (await db.all(
-            `SELECT gubun, content FROM cl_fta_general WHERE fta_cd = ? ORDER BY rowid`,
+            `SELECT gubun, content FROM cl_fta_general WHERE fta_cd = ? ORDER BY ${insertionOrder(db)}`,
             [key],
           )) as Record<string, unknown>[]
         )
@@ -226,13 +234,28 @@ export async function getFtaAgreementDetail(code: string): Promise<FtaAgreementD
           year: str(r.base_yr),
         }))
       : [];
+    const treatyUrl = await ftaTreatyPath(db, key);
+    const clPages = new Map<string, string>();
+    if (await smartLawTableExists(db, "cl_fta_page")) {
+      const pages = (await db.all(`SELECT page_kind, html FROM cl_fta_page WHERE fta_cd = ?`, [key])) as Record<
+        string,
+        unknown
+      >[];
+      for (const page of pages) {
+        let html = str(page.html);
+        if (!treatyUrl) html = html.replace(/<a href="\/rates\/fta\/treaty\?[^"]*">([\s\S]*?)<\/a>/g, "$1");
+        clPages.set(str(page.page_kind), html);
+      }
+    }
     return {
       code: str(row.fta_cd),
       name,
       countries: countryText.split(/[,、]/).map((part) => part.trim()).filter(Boolean),
       effect: str(row.effect_dt),
       baseYear: str(row.base_yr),
-      treatyUrl: await ftaTreatyPath(db, key),
+      treatyUrl,
+      clDuty: clPages.get("duty") ?? "",
+      clOrigin: clPages.get("origin") ?? "",
       certificate: splitList(str(row.cert_desc)),
       criterion: splitList(str(row.psr_desc)),
       sections,
@@ -261,7 +284,7 @@ async function agreementLaws(db: SmartLawDb, tokens: string[]): Promise<{ name: 
     ]
       .filter(Boolean)
       .join(" OR ");
-    const rules = (await db.all(`SELECT law_name, gubun FROM admin_rule WHERE gubun <> 'adm_rule' AND (${where})`, [tokens])) as Record<string, unknown>[];
+    const rules = (await db.all(`SELECT law_name, gubun FROM admin_rule WHERE gubun <> 'adm_rule' AND (${where})`, tokens)) as Record<string, unknown>[];
     const best = new Map<string, number>();
     for (const rule of rules) {
       const lawName = str(rule.law_name);
